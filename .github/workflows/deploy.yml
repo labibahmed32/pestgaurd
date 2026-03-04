@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /public_html/pestgaurd/
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
           log-level: verbose
           exclude: |
             **/.git*
