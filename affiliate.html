@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Portal | Clima Pest Guard</title>
+    <link rel="icon" type="image/webp" href="images/fav.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.7;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            padding: 40px 20px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-logo {
+            display: inline-block;
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .hero-logo img {
+            height: 38px;
+            display: block;
+        }
+        .hero img {
+            height: 38px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #818cf8, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 18px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section */
+        .section {
+            padding: 60px 0;
+        }
+        .section-dark {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            color: #fff;
+        }
+        .section-gray {
+            background: #f5f5f5;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #6366f1;
+            margin-bottom: 10px;
+        }
+        .section-heading {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+        }
+        .section-dark .section-heading {
+            color: #fff;
+        }
+
+        /* Landing Pages Grid */
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .page-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(99,102,241,0.15);
+        }
+        .page-card.recommended {
+            border: 2px solid #6366f1;
+        }
+        .page-thumb {
+            height: 180px;
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .page-thumb img {
+            max-height: 120px;
+            max-width: 80%;
+            object-fit: contain;
+        }
+        .page-thumb .rec-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .page-info {
+            padding: 25px;
+        }
+        .page-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .page-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .page-meta span {
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .page-meta span::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #6366f1;
+            border-radius: 50%;
+        }
+        .page-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .page-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.3);
+        }
+        .page-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.4);
+        }
+        .page-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Commission Cards */
+        .commission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .comm-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 35px 30px;
+            text-align: center;
+        }
+        .comm-card.featured {
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            border: none;
+            transform: scale(1.05);
+        }
+        .comm-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+        .comm-card.featured .comm-label {
+            color: rgba(255,255,255,0.9);
+        }
+        .comm-value {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .comm-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+        .comm-card.featured .comm-desc {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Upsell Flow */
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .flow-item {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px 25px;
+            text-align: center;
+            min-width: 140px;
+        }
+        .flow-item .step {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .flow-item .name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        .flow-item .price {
+            font-size: 16px;
+            font-weight: 800;
+            color: #6366f1;
+        }
+        .flow-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 14px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .flow-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(99,102,241,0.4);
+        }
+        .flow-arrow {
+            font-size: 24px;
+            color: #6366f1;
+        }
+
+        /* Countries */
+        .countries-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .country-tag {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .country-tag .flag {
+            font-size: 18px;
+        }
+
+        /* Languages */
+        .lang-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .lang-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+        .lang-card .flag {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .lang-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .lang-card p {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Keywords */
+        .keywords-section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+        }
+        .keywords-section h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .keywords-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .kw {
+            background: #f5f5f5;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #444;
+            font-weight: 500;
+        }
+
+        /* Ad Copy */
+        .adcopy-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        .adcopy-card .type {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #6366f1;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .adcopy-card .headline {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .adcopy-card .body {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Email Swipes */
+        .email-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .email-subject {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            color: #fff;
+            padding: 18px 25px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .email-body {
+            padding: 25px;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+            border-left: 4px solid #6366f1;
+            padding: 25px 30px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+        }
+        .info-box strong {
+            color: #1a1a1a;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+        }
+        .cta-email {
+            display: inline-block;
+            background: #fff;
+            color: #6366f1;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .cta-email:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #888;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .commission-grid {
+                grid-template-columns: 1fr;
+            }
+            .comm-card.featured {
+                transform: none;
+            }
+            .lang-cards {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 15px 50px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .hero-badge {
+                font-size: 12px;
+                padding: 6px 16px;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .section-heading {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+            .section-title {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+            .container {
+                padding: 0 15px;
+            }
+            .pages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .page-thumb {
+                height: 150px;
+            }
+            .page-info {
+                padding: 20px;
+            }
+            .page-info h3 {
+                font-size: 18px;
+            }
+            .flow-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+                font-size: 18px;
+            }
+            .flow-item {
+                width: 100%;
+                padding: 15px 20px;
+            }
+            .commission-grid {
+                gap: 15px;
+            }
+            .comm-card {
+                padding: 25px 20px;
+            }
+            .comm-value {
+                font-size: 36px;
+            }
+            .info-box {
+                padding: 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+            .section-heading {
+                font-size: 20px;
+            }
+            .page-thumb {
+                height: 130px;
+            }
+            .page-link {
+                width: 100%;
+                justify-content: center;
+            }
+            .comm-value {
+                font-size: 32px;
+            }
+            .comm-label {
+                font-size: 11px;
+            }
+            .cta-final h2 {
+                font-size: 22px !important;
+            }
+            .cta-final p {
+                font-size: 13px !important;
+            }
+            .cta-final a {
+                padding: 12px 25px !important;
+                font-size: 13px !important;
+            }
+        }
+
+        /* Mobile responsive grids */
+        @media (max-width: 768px) {
+            .email-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+            .email-grid > div > div:first-child p {
+                font-size: 13px !important;
+            }
+            .email-grid > div > div:last-child {
+                padding: 15px !important;
+                font-size: 12px !important;
+            }
+            /* Ad Copy Grids */
+            .section > .container > div[style*="grid-template-columns: repeat(2"] {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+            /* Countries Grid */
+            .section > .container > div[style*="grid-template-columns: repeat(auto-fit"] {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+            /* Benefits Grid */
+            .section > .container > div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+            /* Languages Grid */
+            .section > .container > div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+            /* Keywords Grid */
+            .section > .container > div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+            /* Meta Ads Grid */
+            .section > .container > div[style*="grid-template-columns: repeat(2, 1fr)"][style*="gap: 30px"] {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            /* Front/Back End Commission */
+            .section-dark > .container > div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Universal mobile grid fixes */
+        @media (max-width: 700px) {
+            .mob-1col {
+                grid-template-columns: 1fr !important;
+            }
+            .mob-stack {
+                flex-direction: column !important;
+            }
+        }
+
+        /* Link Generator */
+        .generator-section {
+            background: linear-gradient(135deg, #eef2ff, #fff);
+            border-bottom: 1px solid #eee;
+        }
+        .generator-card {
+            background: #fff;
+            border: 2px solid #6366f1;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+        }
+        .generator-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .generator-card h3::before {
+            content: '';
+            width: 6px;
+            height: 28px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            border-radius: 3px;
+        }
+        .network-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .network-tab {
+            flex: 1;
+            padding: 18px 20px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            background: #fff;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .network-tab:hover {
+            border-color: #6366f1;
+        }
+        .network-tab.active {
+            border-color: #6366f1;
+            background: linear-gradient(135deg, #eef2ff, #fff);
+        }
+        .network-tab span {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .network-tab small {
+            font-size: 12px;
+            color: #888;
+        }
+        .gen-form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .gen-form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .gen-form-group input,
+        .gen-form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        .gen-form-group input:focus,
+        .gen-form-group select:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        .gen-btn {
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            color: #fff;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gen-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+        }
+        .gen-output {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid #28a745;
+            border-radius: 12px;
+            display: none;
+        }
+        .gen-output.show {
+            display: block;
+        }
+        .gen-output-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #155724;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .gen-output-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .gen-output input {
+            flex: 1;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #fff;
+            font-size: 14px;
+            font-family: monospace;
+            color: #155724;
+        }
+        .copy-btn {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .copy-btn:hover {
+            background: #218838;
+        }
+        @media (max-width: 768px) {
+            .gen-form-grid {
+                grid-template-columns: 1fr;
+            }
+            .network-tabs {
+                flex-direction: column;
+            }
+            .gen-output-row {
+                flex-direction: column;
+            }
+            .gen-output input {
+                width: 100%;
+            }
+            .copy-btn {
+                width: 100%;
+            }
+            /* Product Features Grid - Mobile */
+            div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 18px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="images/logo-111.webp" alt="Clima Pest Guard" decoding="async">
+            </div>
+            <h1>Affiliate Partner Portal</h1>
+            <p>High-converting mosquito season offer with premium payouts</p>
+            <div class="hero-badge">$80 - $90 CPA</div>
+        </div>
+    </div>
+
+    <!-- Product Features -->
+    <div class="section" style="background: #fff; padding-top: 50px; padding-bottom: 50px;">
+        <div class="container">
+            <p class="section-title" style="color: #6366f1; text-align: center;">About The Product</p>
+            <h2 class="section-heading" style="text-align: center; margin-bottom: 50px;">Clima Pest Guard Features</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; max-width: 700px; margin: 0 auto;">
+                <!-- Feature 1 -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="min-width: 56px; width: 56px; height: 56px; background: linear-gradient(135deg, #6366f1, #ec4899); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <div style="color: #6366f1; font-size: 16px; font-weight: 700; line-height: 1.3;">Kills Mosquitoes Instantly</div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="min-width: 56px; width: 56px; height: 56px; background: linear-gradient(135deg, #312e81, #1e1b4b); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2C7.03 2 3 6.03 3 11c0 3.56 2.06 6.62 5.05 8.06 0.35 0.17 0.73 0.28 1.12 0.34 0.65 0.1 1.32 0.1 1.96 0l0.75-0.14c0.39-0.06 0.77-0.17 1.12-0.34 2.99-1.44 5.05-4.5 5.05-8.06 0-4.97-4.03-8.97-9-8.97z"></path>
+                        </svg>
+                    </div>
+                    <div style="color: #312e81; font-size: 16px; font-weight: 700; line-height: 1.3;">No Chemicals or Mess</div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="min-width: 56px; width: 56px; height: 56px; background: linear-gradient(135deg, #312e81, #1e1b4b); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                        </svg>
+                    </div>
+                    <div style="color: #312e81; font-size: 16px; font-weight: 700; line-height: 1.3;">360° Bug Zapping Power</div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="min-width: 56px; width: 56px; height: 56px; background: linear-gradient(135deg, #312e81, #1e1b4b); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect>
+                            <line x1="23" y1="13" x2="19" y2="13"></line>
+                        </svg>
+                    </div>
+                    <div style="color: #312e81; font-size: 16px; font-weight: 700; line-height: 1.3;">USB Rechargeable & Portable</div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="min-width: 56px; width: 56px; height: 56px; background: linear-gradient(135deg, #312e81, #1e1b4b); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div style="color: #312e81; font-size: 16px; font-weight: 700; line-height: 1.3;">Safe for Kids, Pets & Environment</div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="min-width: 56px; width: 56px; height: 56px; background: linear-gradient(135deg, #312e81, #1e1b4b); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                        </svg>
+                    </div>
+                    <div style="color: #312e81; font-size: 16px; font-weight: 700; line-height: 1.3;">IPX6 Waterproof for Outdoor Use</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Landing Pages -->
+    <div class="section">
+        <div class="container">
+            <p class="section-title">Funnels</p>
+            <h2 class="section-heading">Landing Pages</h2>
+
+            <div class="pages-grid">
+                <!-- V1 - TSL -->
+                <div class="page-card recommended">
+                    <div class="page-thumb">
+                        <img src="images/compare 1.webp" alt="V1 Landing" decoding="async">
+                        <span class="rec-badge">BEST</span>
+                    </div>
+                    <div class="page-info">
+                        <h3>V1 - TSL Funnel</h3>
+                        <div class="page-meta">
+                            <span>TSL</span>
+                            <span>English</span>
+                        </div>
+                        <p class="page-desc">Best overall converting funnel. Optimized for all traffic sources and demographics.</p>
+                        <a href="v1.html" target="_blank" class="page-link">
+                            Preview Page
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- V2 - TSL -->
+                <div class="page-card">
+                    <div class="page-thumb">
+                        <img src="images/compare 1.webp" alt="V2 Landing" decoding="async">
+                        <span class="rec-badge" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">Meta & Google</span>
+                    </div>
+                    <div class="page-info">
+                        <h3>V2 - TSL Funnel</h3>
+                        <div class="page-meta">
+                            <span>TSL</span>
+                            <span>English</span>
+                        </div>
+                        <p class="page-desc">Highly convertible on Meta and Google Ads. Perfect for paid traffic campaigns.</p>
+                        <a href="v2.html" target="_blank" class="page-link">
+                            Preview Page
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- V3 - TSL -->
+                <div class="page-card">
+                    <div class="page-thumb">
+                        <img src="images/compare 1.webp" alt="V3 Landing" decoding="async">
+                        <span class="rec-badge" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">Email Traffic</span>
+                    </div>
+                    <div class="page-info">
+                        <h3>V3 - TSL Funnel</h3>
+                        <div class="page-meta">
+                            <span>TSL</span>
+                            <span>English</span>
+                        </div>
+                        <p class="page-desc">Optimized for email traffic and Meta retargeting. Great for warm audiences.</p>
+                        <a href="v3.html" target="_blank" class="page-link">
+                            Preview Page
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- DTC - Direct to Checkout -->
+                <div class="page-card">
+                    <div class="page-thumb">
+                        <img src="images/compare 1.webp" alt="DTC Landing" decoding="async">
+                        <span class="rec-badge" style="background: linear-gradient(135deg, #ef4444, #f87171);">DTC</span>
+                    </div>
+                    <div class="page-info">
+                        <h3>DTC - Direct to Checkout</h3>
+                        <div class="page-meta">
+                            <span>Direct</span>
+                            <span>English</span>
+                        </div>
+                        <p class="page-desc">Direct-to-checkout for warm traffic. Skips the landing page and sends users straight to purchase.</p>
+                        <a href="dtc.html" target="_blank" class="page-link">
+                            Preview Page
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bundle Page -->
+                <div class="page-card">
+                    <div class="page-thumb">
+                        <img src="images/compare 1.webp" alt="Bundle Page" decoding="async">
+                        <span class="rec-badge" style="background: linear-gradient(135deg, #10b981, #34d399);">BUNDLE</span>
+                    </div>
+                    <div class="page-info">
+                        <h3>Bundle Page - Checkout</h3>
+                        <div class="page-meta">
+                            <span>Prelander</span>
+                            <span>English</span>
+                        </div>
+                        <p class="page-desc">Clean checkout page with 4 bundle options (1x-4x). Use as a prelander or direct link for any traffic source.</p>
+                        <a href="v4.html" target="_blank" class="page-link">
+                            Preview Page
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>TSL = Two-Step Landing</strong> — Captures interest before showing price. Best for cold traffic.<br>
+                <strong>DTC = Direct to Checkout</strong> — Shows product and price directly. Best for warm/retargeting traffic.<br>
+                <strong>Bundle Page</strong> — Shows all 4 package options with pricing, reviews & trust badges. Perfect as a prelander.
+            </div>
+        </div>
+    </div>
+
+    <!-- Upsell Flow -->
+    <div class="section section-gray">
+        <div class="container">
+            <p class="section-title">Flow</p>
+            <h2 class="section-heading">Upsell Sequence</h2>
+
+            <div class="flow-container">
+                <div class="flow-item">
+                    <div class="step">Upsell 1</div>
+                    <div class="name">Clima Pest Guard (Extra Unit)</div>
+                    <a href="upsell1.html" target="_blank" class="flow-link">Preview</a>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">
+                    <div class="step">Upsell 2</div>
+                    <div class="name">Clima Cooler</div>
+                    <a href="upsell2.html" target="_blank" class="flow-link">Preview</a>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">
+                    <div class="step">Upsell 3</div>
+                    <div class="name">Mosquito Bite Relief Pen</div>
+                    <a href="upsell3.html" target="_blank" class="flow-link">Preview</a>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">
+                    <div class="step">Upsell 4</div>
+                    <div class="name">Smart Fitness Tracker</div>
+                    <a href="upsell4.html" target="_blank" class="flow-link">Preview</a>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">
+                    <div class="step">Upsell 5</div>
+                    <div class="name">Solar Power Bank</div>
+                    <a href="upsell5.html" target="_blank" class="flow-link">Preview</a>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">
+                    <div class="step">Upsell 6</div>
+                    <div class="name">4-Port USB Charger</div>
+                    <a href="upsell6.html" target="_blank" class="flow-link">Preview</a>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item" style="background: linear-gradient(135deg, #10b981, #34d399); border-color: #10b981;">
+                    <div class="step" style="color: rgba(255,255,255,0.8);">Final</div>
+                    <div class="name" style="color: #fff;">Thank You</div>
+                    <a href="thankyou.html" target="_blank" class="flow-link" style="background: #fff; color: #10b981;">Preview</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Commission Structure -->
+    <div class="section section-dark">
+        <div class="container">
+            <p class="section-title">Payouts</p>
+            <h2 class="section-heading">Commission Structure</h2>
+
+            <div class="commission-grid">
+                <div class="comm-card">
+                    <p class="comm-label">Standard CPA</p>
+                    <p class="comm-value">$70</p>
+                    <p class="comm-desc">Per qualified sale</p>
+                </div>
+                <div class="comm-card featured">
+                    <p class="comm-label">Top Affiliates</p>
+                    <p class="comm-value">$70-75</p>
+                    <p class="comm-desc">Based on AOV performance</p>
+                </div>
+                <div class="comm-card">
+                    <p class="comm-label">Payout</p>
+                    <p class="comm-value">Net-7</p>
+                    <p class="comm-desc">Weekly payments</p>
+                </div>
+            </div>
+
+            <div class="ad-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px;">
+                <div class="comm-card">
+                    <p class="comm-label">Front-End</p>
+                    <p class="comm-value">50%</p>
+                    <p class="comm-desc">Main product commission</p>
+                </div>
+                <div class="comm-card">
+                    <p class="comm-label">Back-End</p>
+                    <p class="comm-value">35%</p>
+                    <p class="comm-desc">Upsell commission</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Countries -->
+    <div class="section" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%); color: #fff;">
+        <div class="container">
+            <p class="section-title" style="color: #c4b5fd;">Global Reach</p>
+            <h2 class="section-heading" style="color: #fff;">18 Premium Tier-1 GEOs</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 40px; font-size: 15px;">High GDP countries with strong eCommerce spending & mosquito problems</p>
+
+            <!-- All Countries in Simple Grid -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px;">
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">USA</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Canada</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">UK</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Ireland</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Germany</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Austria</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Switzerland</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">France</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Netherlands</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Belgium</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Sweden</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Norway</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Denmark</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Finland</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Italy</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Spain</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Portugal</span>
+                <span style="padding: 10px 20px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; font-size: 13px;">Australia</span>
+            </div>
+
+            <!-- Benefits -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+                <div style="padding: 25px; background: linear-gradient(135deg, #10b981, #34d399); border-radius: 12px;">
+                    <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 8px; color: #fff;">Lower CPM/CPC</h4>
+                    <p style="font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 500;">Targeted GEOs = Lower ad costs</p>
+                </div>
+                <div style="padding: 25px; background: linear-gradient(135deg, #06b6d4, #22d3ee); border-radius: 12px;">
+                    <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 8px; color: #fff;">Warm Summers</h4>
+                    <p style="font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 500;">Perfect for mosquito products</p>
+                </div>
+                <div style="padding: 25px; background: linear-gradient(135deg, #6366f1, #ec4899); border-radius: 12px;">
+                    <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 8px; color: #fff;">High AOV</h4>
+                    <p style="font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 500;">Premium buyers, high GDP</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Keywords -->
+    <div class="section" style="background: #f0f4ff;">
+        <div class="container">
+            <p class="section-title">Google Ads</p>
+            <h2 class="section-heading">Keyword Research</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 16px;">Copy-paste ready keywords for your Google Ads campaigns</p>
+
+            <!-- High Intent Keywords -->
+            <div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid #e0e0e0;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <div style="width: 10px; height: 10px; background: #6366f1; border-radius: 50%;"></div>
+                    <h4 style="font-size: 16px; font-weight: 700; margin: 0; color: #333;">High Intent Keywords</h4>
+                    <span style="margin-left: auto; background: #6366f1; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;">Higher CPC / Better CVR</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">best mosquito zapper 2026</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">outdoor mosquito killer device</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">electric bug zapper reviews</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">safe mosquito zapper outdoor</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">portable mosquito killer lamp</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">waterproof bug zapper</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">buy mosquito zapper online</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">best bug zapper for patio</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">chemical free mosquito killer</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mosquito zapper 360 coverage</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">electric mosquito trap outdoor</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">uv mosquito killer lamp</span>
+                </div>
+            </div>
+
+            <!-- Low Competition Keywords -->
+            <div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid #e0e0e0;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <div style="width: 10px; height: 10px; background: #10b981; border-radius: 50%;"></div>
+                    <h4 style="font-size: 16px; font-weight: 700; margin: 0; color: #333;">Low Competition Keywords</h4>
+                    <span style="margin-left: auto; background: #10b981; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;">Lower CPC / Easy Wins</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">portable bug zapper outdoor</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mosquito lamp for camping</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">usb mosquito killer</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">bug zapper under 100</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mini mosquito zapper</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mosquito killer for garage</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">affordable mosquito zapper</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">bug zapper for balcony</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mosquito killer for bedroom</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">camping mosquito zapper</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">rv bug zapper</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">backyard mosquito killer</span>
+                </div>
+            </div>
+
+            <!-- Seasonal Keywords -->
+            <div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid #e0e0e0;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <div style="width: 10px; height: 10px; background: #06b6d4; border-radius: 50%;"></div>
+                    <h4 style="font-size: 16px; font-weight: 700; margin: 0; color: #333;">Summer / Seasonal Keywords</h4>
+                    <span style="margin-left: auto; background: #06b6d4; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;">May - Sep Peak</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">summer mosquito protection</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">outdoor bug protection 2026</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mosquito season survival</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">chemical free bug killer</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">summer patio mosquito solution</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">backyard mosquito control</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mosquito zapper summer sale</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">enjoy outdoor summer</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mosquito free backyard</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">outdoor entertaining mosquito solution</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">patio bug control</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">camping mosquito protection</span>
+                </div>
+            </div>
+
+            <!-- Problem/Solution Keywords -->
+            <div style="background: #fff; border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <div style="width: 10px; height: 10px; background: #8b5cf6; border-radius: 50%;"></div>
+                    <h4 style="font-size: 16px; font-weight: 700; margin: 0; color: #333;">Problem/Solution Keywords</h4>
+                    <span style="margin-left: auto; background: #8b5cf6; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;">High Intent</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">how to kill mosquitoes outdoors</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">mosquito bite prevention</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">too many mosquitoes in backyard</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">best way to eliminate mosquitoes</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">patio mosquito problem solution</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">outdoor mosquito control options</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">natural mosquito killer</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">safe mosquito control for pets</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">bug spray vs mosquito zapper</span>
+                    <span style="background: #f5f5f5; padding: 8px 14px; border-radius: 6px; font-size: 13px; color: #333;">instant mosquito elimination</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Copy - Google -->
+    <div class="section" style="background: #fff;">
+        <div class="container">
+            <p class="section-title">Google Ads</p>
+            <h2 class="section-heading">Google Search Ad Copy</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 16px;">High-converting headlines & descriptions for Google Search campaigns</p>
+
+            <div class="ad-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div style="background: #f8f9fa; border-left: 4px solid #4285f4; padding: 25px; border-radius: 0 12px 12px 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: #4285f4; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">AD 1</span>
+                        <span style="color: #888; font-size: 12px;">Chemical-Free Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a0dab; margin: 0 0 10px;">Eliminate Mosquitoes Without Chemicals</p>
+                    <p style="font-size: 14px; color: #545454; line-height: 1.5; margin: 0;">Clima Pest Guard kills mosquitoes in seconds. 1000V zapping power. Safe for kids & pets. No installation needed. 30-day money back guarantee. Free shipping today.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-left: 4px solid #4285f4; padding: 25px; border-radius: 0 12px 12px 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: #4285f4; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">AD 2</span>
+                        <span style="color: #888; font-size: 12px;">Coverage Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a0dab; margin: 0 0 10px;">360° Mosquito Protection Anywhere</p>
+                    <p style="font-size: 14px; color: #545454; line-height: 1.5; margin: 0;">Portable mosquito zapper with full coverage. IPX6 waterproof. Perfect for patio, camping, backyard. Order now - ships free.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-left: 4px solid #4285f4; padding: 25px; border-radius: 0 12px 12px 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: #4285f4; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">AD 3</span>
+                        <span style="color: #888; font-size: 12px;">Safety Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a0dab; margin: 0 0 10px;">Safest Mosquito Zapper for Your Home</p>
+                    <p style="font-size: 14px; color: #545454; line-height: 1.5; margin: 0;">Clima Pest Guard with 360° bug zapping power & IPX6 waterproof. Safe for kids, pets & environment. UV attraction technology. 50,000+ sold. Shop now.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-left: 4px solid #4285f4; padding: 25px; border-radius: 0 12px 12px 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: #4285f4; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">AD 4</span>
+                        <span style="color: #888; font-size: 12px;">Price Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a0dab; margin: 0 0 10px;">Best Mosquito Zapper Under $100</p>
+                    <p style="font-size: 14px; color: #545454; line-height: 1.5; margin: 0;">Premium bug zapper at budget price. Covers 450+ sq ft instantly. Waterproof design. 30-day guarantee. Limited time - 40% OFF + Free shipping.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-left: 4px solid #4285f4; padding: 25px; border-radius: 0 12px 12px 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: #4285f4; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">AD 5</span>
+                        <span style="color: #888; font-size: 12px;">Portability Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a0dab; margin: 0 0 10px;">Portable Mosquito Killer - Take Anywhere</p>
+                    <p style="font-size: 14px; color: #545454; line-height: 1.5; margin: 0;">Compact, lightweight design. Perfect for camping, RV, patio, backyard. Plug in and start zapping. No installation required. Free shipping worldwide.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-left: 4px solid #4285f4; padding: 25px; border-radius: 0 12px 12px 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: #4285f4; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">AD 6</span>
+                        <span style="color: #888; font-size: 12px;">Review Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a0dab; margin: 0 0 10px;">#1 Rated Mosquito Zapper 2026</p>
+                    <p style="font-size: 14px; color: #545454; line-height: 1.5; margin: 0;">50,000+ happy customers. 4.8★ rating. Kills bugs fast, chemical-free. Waterproof & safe. See why everyone's switching to Clima. Order yours today.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Copy - Meta/Facebook -->
+    <div class="section" style="background: linear-gradient(135deg, #eef2ff, #e0e7ff);">
+        <div class="container">
+            <p class="section-title">Meta Ads</p>
+            <h2 class="section-heading">Facebook & Instagram Ad Copy</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 16px;">Scroll-stopping hooks and engaging copy for social media ads</p>
+
+            <div class="ad-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div style="background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">HOOK 1</span>
+                        <span style="color: #888; font-size: 12px;">Curiosity Hook</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">Why 50,000+ People Ditched Bug Spray</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">With mosquitoes ruining outdoor time, smart homeowners discovered the Clima Pest Guard. Kill mosquitoes instantly without chemicals. Safe for kids & pets. Works anywhere - patio, camping, backyard. Get yours before summer hits.</p>
+                </div>
+
+                <div style="background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">HOOK 2</span>
+                        <span style="color: #888; font-size: 12px;">Problem/Solution</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">Tired of Mosquito Bites Ruining Your Summer?</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">Bug spray is toxic and temporary. The Clima Pest Guard changes everything - instant mosquito elimination with 1000V power. Chemical-free & waterproof. Thousands are making the switch. Will you?</p>
+                </div>
+
+                <div style="background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">HOOK 3</span>
+                        <span style="color: #888; font-size: 12px;">Social Proof</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">This $80 Mosquito Zapper Has 50,000+ 5-Star Reviews</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">People can't stop talking about the Clima Pest Guard. "Best purchase I made this summer" - Sarah M. "Killed every mosquito on my patio" - John D. "Finally can enjoy outdoors again" - Lisa K. See what the hype is about.</p>
+                </div>
+
+                <div style="background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">HOOK 4</span>
+                        <span style="color: #888; font-size: 12px;">Fear of Missing Out</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">[ALERT] Last Chance - 40% OFF Ends Tonight</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">The Clima Pest Guard everyone's been talking about is finally back in stock. But at 40% off, it won't last. Already sold 10,000 this week. Kills mosquitoes in seconds. Free shipping. Don't miss out - grab yours NOW!</p>
+                </div>
+
+                <div style="background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">HOOK 5</span>
+                        <span style="color: #888; font-size: 12px;">Story Hook</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">100+ Mosquito Bites Made Me Find This...</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">I couldn't enjoy my backyard anymore. Then I discovered the Clima Pest Guard. Now my patio is mosquito-free every night. No more bites, no more chemicals. This tiny device changed everything. Here's how it works...</p>
+                </div>
+
+                <div style="background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #818cf8); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">HOOK 6</span>
+                        <span style="color: #888; font-size: 12px;">Benefit Stack</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">One Device. Instant Protection. Zero Chemicals.</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">- Kills mosquitoes in seconds<br>- 360° coverage protection<br>- IPX6 waterproof design<br>- Safe for kids & pets<br>- 30-day money back guarantee<br><br>Join 50,000+ happy customers. Free shipping today!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Copy - Native -->
+    <div class="section" style="background: #fff;">
+        <div class="container">
+            <p class="section-title">Native Ads</p>
+            <h2 class="section-heading">Native Ad Headlines & Copy</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 16px;">Curiosity-driven headlines for Taboola, Outbrain & native networks</p>
+
+            <div class="ad-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #ec4899); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">NATIVE 1</span>
+                        <span style="color: #888; font-size: 12px;">Controversy Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">Bug Spray Companies Hate This $80 Device</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">Simple plug-in gadget helps families eliminate mosquitoes without chemicals. See why 50,000+ households made the switch and bug spray companies are furious.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #ec4899); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">NATIVE 2</span>
+                        <span style="color: #888; font-size: 12px;">Discovery Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">Engineer's Invention Eliminates Backyard Mosquitoes</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">A retired engineer created this simple device to kill mosquitoes with 1000V power. Now it's selling out across the country. Here's how it works.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #ec4899); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">NATIVE 3</span>
+                        <span style="color: #888; font-size: 12px;">News Style</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">New Mosquito Zapper Takes America By Storm (50,000 Sold)</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">Americans are ditching bug spray for this portable waterproof device. It kills mosquitoes in seconds and is chemical-free. See why it's selling out.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #ec4899); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">NATIVE 4</span>
+                        <span style="color: #888; font-size: 12px;">Secret Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">The Mosquito Solution Bug Spray Brands Don't Want You To Know</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">Stop spraying toxic chemicals on your skin. This simple trick uses an $80 device to eliminate mosquitoes instantly. Thousands are enjoying mosquito-free summers.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #ec4899); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">NATIVE 5</span>
+                        <span style="color: #888; font-size: 12px;">Comparison Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">Why Smart Homeowners Are Replacing Bug Spray With This</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">Traditional bug spray is toxic and temporary. This new UV zapping technology kills faster, lasts longer, and costs just $80. See the difference.</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
+                        <span style="background: linear-gradient(135deg, #6366f1, #ec4899); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;">NATIVE 6</span>
+                        <span style="color: #888; font-size: 12px;">Viral Angle</span>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px;">This Mosquito Zapper Went Viral And Now It's Selling Out Everywhere</p>
+                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin: 0;">After a video showed this tiny zapper clearing a mosquito-infested patio in seconds, demand exploded. Over 50,000 sold. Check if it's still available in your area.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Swipes -->
+    <div class="section" style="background: #fff;">
+        <div class="container">
+            <p class="section-title">Email Marketing</p>
+            <h2 class="section-heading">Email Swipe Files</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 16px;">Copy, customize & send - high-converting email templates</p>
+
+            <div class="email-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+                <!-- Email 1 -->
+                <div style="background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="background: linear-gradient(135deg, #1e1b4b, #312e81); padding: 15px 18px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 12px; color: #888;">#1</span>
+                            <span style="color: #888; font-size: 11px; font-weight: 600;">SWIPE #1 - INTRO</span>
+                        </div>
+                        <p style="color: #fff; font-size: 14px; font-weight: 600; margin: 0;">Subject: Mosquito season is here - are you protected?</p>
+                    </div>
+                    <div style="padding: 18px; font-size: 13px; color: #444; line-height: 1.7; white-space: pre-line;">Hey {NAME},
+
+Summer is here, and so are those pesky mosquitoes.
+
+The Clima Pest Guard changes everything:
+• Kills mosquitoes in seconds with 1000V power
+• Chemical-free & safe for kids and pets
+• 360° coverage protection
+
+→ [Get Your Clima Pest Guard Here]
+
+{Your Name}
+
+P.S. Price goes up next week!</div>
+                </div>
+
+                <!-- Email 2 -->
+                <div style="background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="background: linear-gradient(135deg, #ec4899, #f472b6); padding: 15px 18px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 12px; color: rgba(255,255,255,0.8);">#2</span>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600;">SWIPE #2 - URGENCY</span>
+                        </div>
+                        <p style="color: #fff; font-size: 14px; font-weight: 600; margin: 0;">Subject: [LAST CHANCE] 50% OFF ends tonight</p>
+                    </div>
+                    <div style="padding: 18px; font-size: 13px; color: #444; line-height: 1.7; white-space: pre-line;">{NAME},
+
+The 40% OFF Clima Pest Guard sale ends at midnight.
+
+What you get:
+• Clima Pest Guard (1000V Zapping Power)
+• FREE Shipping
+• 30-Day Money-Back Guarantee
+
+All for just $80.99
+
+→ [CLAIM YOUR DISCOUNT NOW]
+
+{Your Name}</div>
+                </div>
+
+                <!-- Email 3 -->
+                <div style="background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="background: linear-gradient(135deg, #10b981, #34d399); padding: 15px 18px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 12px; color: rgba(255,255,255,0.8);">#3</span>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600;">SWIPE #3 - SAVINGS</span>
+                        </div>
+                        <p style="color: #fff; font-size: 14px; font-weight: 600; margin: 0;">Subject: How I eliminated 100+ mosquito bites this summer</p>
+                    </div>
+                    <div style="padding: 18px; font-size: 13px; color: #444; line-height: 1.7; white-space: pre-line;">Hey {NAME},
+
+Last summer I couldn't enjoy my backyard - mosquitoes everywhere.
+
+This year? Zero bites.
+
+The secret? I stopped using bug spray.
+
+The Clima Pest Guard kills mosquitoes instantly with 1000V power. Chemical-free & waterproof. Changed my entire summer.
+
+→ [See How It Works]
+
+Join 50,000+ happy customers.
+
+{Your Name}</div>
+                </div>
+
+                <!-- Email 4 -->
+                <div style="background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="background: linear-gradient(135deg, #06b6d4, #22d3ee); padding: 15px 18px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 12px; color: rgba(255,255,255,0.8);">#4</span>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600;">SWIPE #4 - SEASONAL</span>
+                        </div>
+                        <p style="color: #fff; font-size: 14px; font-weight: 600; margin: 0;">Subject: Peak mosquito season - are you protected?</p>
+                    </div>
+                    <div style="padding: 18px; font-size: 13px; color: #444; line-height: 1.7; white-space: pre-line;">{NAME},
+
+Weather alert: Warm humid weather means peak mosquito activity.
+
+Is your patio protected?
+
+The Clima Pest Guard eliminates mosquitoes in seconds. Perfect for patios, camping, backyards.
+
+✓ Portable & waterproof
+✓ No installation needed
+✓ Safe for kids & pets
+
+→ [Get Yours Before Summer Ends]
+
+Enjoy your outdoor time,
+{Your Name}</div>
+                </div>
+
+                <!-- Email 5 -->
+                <div style="background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="background: linear-gradient(135deg, #8b5cf6, #a78bfa); padding: 15px 18px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 12px; color: rgba(255,255,255,0.8);">#5</span>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600;">SWIPE #5 - SOCIAL PROOF</span>
+                        </div>
+                        <p style="color: #fff; font-size: 14px; font-weight: 600; margin: 0;">Subject: 50,000 people can't be wrong...</p>
+                    </div>
+                    <div style="padding: 18px; font-size: 13px; color: #444; line-height: 1.7; white-space: pre-line;">Hey {NAME},
+
+"Best purchase I made this summer" - Sarah M.
+"My patio is finally mosquito-free" - John D.
+"Killed every bug in seconds" - Lisa K.
+
+50,000+ happy customers. 4.8★ average rating.
+
+The Clima Pest Guard is the #1 selling mosquito zapper this season. For good reason.
+
+→ [See Why Everyone's Buying]
+
+{Your Name}</div>
+                </div>
+
+                <!-- Email 6 -->
+                <div style="background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="background: linear-gradient(135deg, #ef4444, #f87171); padding: 15px 18px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 12px; color: rgba(255,255,255,0.8);">#6</span>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600;">SWIPE #6 - SCARCITY</span>
+                        </div>
+                        <p style="color: #fff; font-size: 14px; font-weight: 600; margin: 0;">Subject: [ALERT] Only 47 left in stock</p>
+                    </div>
+                    <div style="padding: 18px; font-size: 13px; color: #444; line-height: 1.7; white-space: pre-line;">{NAME},
+
+We're almost sold out.
+
+Only 47 Clima Pest Guards left at the sale price.
+
+Once they're gone, the price goes back to $320. And we won't get more stock until next season.
+
+If you want one, now's the time.
+
+→ [Claim Yours Before Sold Out]
+
+{Your Name}
+
+P.S. FREE shipping ends tonight too.</div>
+                </div>
+
+                <!-- Email 7 -->
+                <div style="background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="background: linear-gradient(135deg, #14b8a6, #2dd4bf); padding: 15px 18px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 12px; color: rgba(255,255,255,0.8);">#7</span>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600;">SWIPE #7 - GIFT ANGLE</span>
+                        </div>
+                        <p style="color: #fff; font-size: 14px; font-weight: 600; margin: 0;">Subject: The perfect summer gift (under $100)</p>
+                    </div>
+                    <div style="padding: 18px; font-size: 13px; color: #444; line-height: 1.7; white-space: pre-line;">Hey {NAME},
+
+Still looking for the perfect gift?
+
+The Clima Pest Guard is practical, affordable, and everyone loves it.
+
+Perfect for:
+• Parents who love outdoor time
+• Campers and RV enthusiasts
+• Anyone with a patio or backyard
+
+Under $100. Ships FREE. 30-day guarantee.
+
+→ [Order Now - Arrives in 3-5 Days]
+
+{Your Name}</div>
+                </div>
+
+                <!-- Email 8 -->
+                <div style="background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="background: linear-gradient(135deg, #334155, #475569); padding: 15px 18px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 12px; color: rgba(255,255,255,0.8);">#8</span>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600;">SWIPE #8 - PROBLEM/SOLUTION</span>
+                        </div>
+                        <p style="color: #fff; font-size: 14px; font-weight: 600; margin: 0;">Subject: Bug spray is broken (here's why)</p>
+                    </div>
+                    <div style="padding: 18px; font-size: 13px; color: #444; line-height: 1.7; white-space: pre-line;">{NAME},
+
+Bug spray is broken.
+
+You spray toxic chemicals on your skin. It only lasts a few hours. You can't enjoy outdoor time. And the mosquito bites? Relentless.
+
+Smart homeowners discovered the fix: eliminate mosquitoes at the source.
+
+The Clima Pest Guard does exactly that. Plugs into any outlet. Kills mosquitoes instantly. Chemical-free & safe.
+
+→ [Fix Your Mosquito Problem]
+
+{Your Name}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Meta/FB Ads -->
+    <div class="section" style="background: linear-gradient(135deg, #0f0c29, #1e1b4b);">
+        <div class="container">
+            <p class="section-title" style="color: #c4b5fd;">Video Creatives</p>
+            <h2 class="section-heading" style="color: #fff;">Meta / Facebook Ads</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 40px; font-size: 16px;">Get access to our video ad library for maximum conversions</p>
+
+            <div class="ad-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 35px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #6366f1, #ec4899); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 20px; font-weight: 700;">VIDEO</span>
+                        </div>
+                        <h4 style="color: #fff; font-size: 20px; font-weight: 700; margin: 0;">Video Creatives</h4>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8);">
+                            <span style="color: #27ae60;">✓</span> 15-second story ads
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8);">
+                            <span style="color: #27ae60;">✓</span> 30-second feed videos
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8);">
+                            <span style="color: #27ae60;">✓</span> 60-second explainer videos
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8);">
+                            <span style="color: #27ae60;">✓</span> UGC-style testimonials
+                        </div>
+                    </div>
+                    <p style="color: #ec4899; font-size: 13px; margin-top: 20px;">Contact affiliate manager for access</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 35px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 20px; font-weight: 700;">TARGET</span>
+                        </div>
+                        <h4 style="color: #fff; font-size: 20px; font-weight: 700; margin: 0;">Best Targeting</h4>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8);">
+                            <span style="color: #3498db;">●</span> Age: 35-65+
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8);">
+                            <span style="color: #3498db;">●</span> Interests: Home improvement, Energy saving
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8);">
+                            <span style="color: #3498db;">●</span> Warm climate / Southern & Coastal states
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8);">
+                            <span style="color: #3498db;">●</span> Homeowners
+                        </div>
+                    </div>
+                    <p style="color: #3498db; font-size: 13px; margin-top: 20px;">Best months: April - September</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link Generator -->
+    <div class="section generator-section">
+        <div class="container">
+            <p class="section-title">Get Started</p>
+            <h2 class="section-heading">Generate Your Affiliate Link</h2>
+
+            <div class="generator-card">
+                <h3>Link Generator</h3>
+
+                <div class="network-tabs">
+                    <button class="network-tab active" id="tabDigistore" onclick="selectNetwork('digistore')">
+                        <span>Digistore24</span>
+                        <small>European Network</small>
+                    </button>
+                    <button class="network-tab" id="tabBuygoods" onclick="selectNetwork('buygoods')">
+                        <span>BuyGoods</span>
+                        <small>US Network</small>
+                    </button>
+                </div>
+
+                <div class="gen-form-grid">
+                    <div class="gen-form-group" id="digistoreIdGroup">
+                        <label>Digistore24 Affiliate ID</label>
+                        <input type="text" id="digistoreId" placeholder="Enter your Digistore ID">
+                    </div>
+                    <div class="gen-form-group" id="buygoodsIdGroup" style="display: none;">
+                        <label>BuyGoods Affiliate ID</label>
+                        <input type="text" id="buygoodsId" placeholder="Enter your BuyGoods ID">
+                    </div>
+                    <div class="gen-form-group">
+                        <label>Select Landing Page</label>
+                        <select id="landingPage">
+                            <option value="v1">V1 - TSL Funnel (Best CVR)</option>
+                            <option value="v2">V2 - TSL Funnel (Meta & Google)</option>
+                            <option value="v3">V3 - TSL Funnel (Email Traffic)</option>
+                            <option value="dtc">DTC - Direct to Checkout</option>
+                            <option value="v4">Bundle Page - Checkout</option>
+                        </select>
+                    </div>
+                    <div class="gen-form-group">
+                        <label>Tracking ID (Optional)</label>
+                        <input type="text" id="trackingId" placeholder="e.g., fb_campaign1">
+                    </div>
+                </div>
+                <button type="button" class="gen-btn" onclick="generateLink()">Generate My Link</button>
+
+                <div class="gen-output" id="outputBox">
+                    <div class="gen-output-label">Your Affiliate Link</div>
+                    <div class="gen-output-row">
+                        <input type="text" id="generatedLink" readonly>
+                        <button type="button" class="copy-btn" onclick="copyLink()">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-final" style="background: linear-gradient(135deg, #6366f1, #ec4899); padding: 50px 20px; text-align: center;">
+        <div style="max-width: 500px; margin: 0 auto;">
+            <h2 style="font-size: 28px; font-weight: 800; color: #fff; margin: 0 0 10px;">Ready to Start Earning?</h2>
+            <p style="font-size: 15px; color: rgba(255,255,255,0.9); margin: 0 0 20px;">Get tracking links, creatives & dedicated support</p>
+            <a href="mailto:affiliates@climaofficial.com" style="display: inline-block; background: #fff; color: #6366f1; padding: 14px 35px; border-radius: 50px; font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">affiliates@climaofficial.com</a>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; margin-top: 15px;">Response time: 2-4 hours</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); padding: 40px 20px; text-align: center;">
+        <div style="display: inline-block; background: #fff; padding: 12px 20px; border-radius: 10px; margin-bottom: 15px;">
+            <img src="images/logo-111.webp" alt="Clima Pest Guard" style="height: 30px; display: block;" decoding="async">
+        </div>
+        <p style="color: #666; font-size: 14px; margin: 0;">© 2026 Clima Pest Guard | Affiliate Partner Portal</p>
+    </footer>
+
+    <!-- Mobile Responsive Overrides -->
+    <style>
+        /* Mobile - 768px and below */
+        @media screen and (max-width: 768px) {
+            /* All grids to single column */
+            .ad-grid,
+            .email-grid,
+            div[style*="grid-template-columns: repeat(2"],
+            div[style*="grid-template-columns: repeat(3"],
+            div[style*="grid-template-columns: repeat(auto"] {
+                display: block !important;
+            }
+            .ad-grid > div,
+            .email-grid > div,
+            div[style*="grid-template-columns"] > div {
+                margin-bottom: 15px !important;
+                width: 100% !important;
+            }
+
+            /* Padding fixes */
+            div[style*="padding: 35px"],
+            div[style*="padding: 30px"] {
+                padding: 18px !important;
+            }
+            div[style*="padding: 25px"] {
+                padding: 15px !important;
+            }
+
+            /* Font sizes */
+            h4[style*="font-size: 22px"],
+            h4[style*="font-size: 20px"] {
+                font-size: 16px !important;
+            }
+            p[style*="font-size: 17px"] {
+                font-size: 14px !important;
+            }
+            p[style*="font-size: 16px"],
+            p[style*="font-size: 15px"] {
+                font-size: 13px !important;
+            }
+
+            /* Countries pills smaller */
+            div[style*="flex-wrap: wrap"][style*="justify-content: center"] > span {
+                padding: 8px 14px !important;
+                font-size: 12px !important;
+            }
+
+            /* CTA */
+            .cta-final {
+                padding: 35px 15px !important;
+            }
+            .cta-final h2 {
+                font-size: 20px !important;
+            }
+            .cta-final p {
+                font-size: 13px !important;
+            }
+            .cta-final a {
+                padding: 12px 20px !important;
+                font-size: 13px !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Hero */
+            .hero {
+                padding: 25px 12px 35px !important;
+            }
+            .hero img {
+                height: 30px !important;
+            }
+            .hero h1 {
+                font-size: 20px !important;
+            }
+            .hero p {
+                font-size: 12px !important;
+            }
+            .hero-badge {
+                font-size: 10px !important;
+                padding: 5px 12px !important;
+            }
+
+            /* Sections */
+            .section {
+                padding: 25px 0 !important;
+            }
+            .section-heading {
+                font-size: 17px !important;
+            }
+            .section-title {
+                font-size: 9px !important;
+            }
+            .container {
+                padding: 0 10px !important;
+            }
+
+            /* Landing pages */
+            .page-card {
+                margin-bottom: 12px !important;
+            }
+            .page-thumb {
+                height: 100px !important;
+            }
+            .page-info {
+                padding: 12px !important;
+            }
+            .page-info h3 {
+                font-size: 15px !important;
+            }
+            .page-info p,
+            .page-desc {
+                font-size: 11px !important;
+            }
+            .page-link {
+                padding: 8px 12px !important;
+                font-size: 11px !important;
+            }
+
+            /* Upsell flow */
+            .flow-item {
+                padding: 10px 12px !important;
+                font-size: 12px !important;
+            }
+            .flow-arrow {
+                font-size: 14px !important;
+            }
+
+            /* Commission */
+            .comm-card {
+                padding: 15px 12px !important;
+            }
+            .comm-value {
+                font-size: 26px !important;
+            }
+            .comm-label {
+                font-size: 9px !important;
+            }
+            .info-box {
+                padding: 12px !important;
+                font-size: 11px !important;
+            }
+
+            /* Countries pills */
+            div[style*="flex-wrap: wrap"][style*="justify-content: center"] > span {
+                padding: 6px 10px !important;
+                font-size: 10px !important;
+            }
+
+            /* Benefits */
+            div[style*="padding: 20px"][style*="background: rgba(255,255,255,0.1)"] {
+                padding: 12px !important;
+            }
+            div[style*="padding: 20px"][style*="background: rgba(255,255,255,0.1)"] h4 {
+                font-size: 12px !important;
+            }
+            div[style*="padding: 20px"][style*="background: rgba(255,255,255,0.1)"] p {
+                font-size: 10px !important;
+            }
+
+            /* Keywords */
+            div[style*="flex-wrap: wrap; gap: 8px"] > span {
+                padding: 5px 8px !important;
+                font-size: 10px !important;
+            }
+
+            /* Ad copy cards */
+            .ad-grid > div {
+                padding: 12px !important;
+                margin-bottom: 10px !important;
+            }
+            .ad-grid > div p {
+                font-size: 12px !important;
+            }
+
+            /* Email swipes */
+            .email-grid > div {
+                margin-bottom: 10px !important;
+            }
+            .email-grid > div > div:first-child {
+                padding: 10px 12px !important;
+            }
+            .email-grid > div > div:first-child p {
+                font-size: 11px !important;
+            }
+            .email-grid > div > div:last-child {
+                padding: 12px !important;
+                font-size: 11px !important;
+            }
+
+            /* Meta video section */
+            div[style*="width: 60px"][style*="height: 60px"] {
+                width: 40px !important;
+                height: 40px !important;
+            }
+
+            /* CTA */
+            .cta-final {
+                padding: 25px 12px !important;
+            }
+            .cta-final h2 {
+                font-size: 18px !important;
+            }
+            .cta-final a {
+                padding: 10px 15px !important;
+                font-size: 12px !important;
+            }
+
+            /* Footer */
+            footer {
+                padding: 20px 12px !important;
+            }
+            footer img {
+                height: 22px !important;
+            }
+            footer p {
+                font-size: 11px !important;
+            }
+        }
+    </style>
+
+    <script>
+        let selectedNetwork = 'digistore';
+
+        function selectNetwork(network) {
+            selectedNetwork = network;
+            document.getElementById('tabDigistore').classList.remove('active');
+            document.getElementById('tabBuygoods').classList.remove('active');
+
+            if (network === 'digistore') {
+                document.getElementById('tabDigistore').classList.add('active');
+                document.getElementById('digistoreIdGroup').style.display = 'block';
+                document.getElementById('buygoodsIdGroup').style.display = 'none';
+            } else {
+                document.getElementById('tabBuygoods').classList.add('active');
+                document.getElementById('digistoreIdGroup').style.display = 'none';
+                document.getElementById('buygoodsIdGroup').style.display = 'block';
+            }
+            document.getElementById('outputBox').classList.remove('show');
+        }
+
+        function generateLink() {
+            const page = document.getElementById('landingPage').value;
+            const tracking = document.getElementById('trackingId').value;
+            let affId, link;
+
+            if (selectedNetwork === 'digistore') {
+                affId = document.getElementById('digistoreId').value;
+                if (!affId) { alert('Please enter your Digistore24 Affiliate ID'); return; }
+                link = `https://dg.climaoffical.com/pest-guard/${page}.html?aff=${affId}`;
+            } else {
+                affId = document.getElementById('buygoodsId').value;
+                if (!affId) { alert('Please enter your BuyGoods Affiliate ID'); return; }
+                link = `https://bg.climaoffical.com/pest-guard/${page}.html?aff_id=${affId}`;
+            }
+            if (tracking) link += `&tid=${tracking}`;
+
+            document.getElementById('generatedLink').value = link;
+            document.getElementById('outputBox').classList.add('show');
+        }
+
+        function copyLink() {
+            const link = document.getElementById('generatedLink');
+            link.select();
+            document.execCommand('copy');
+            const btn = event.target;
+            btn.innerText = 'Copied!';
+            setTimeout(() => btn.innerText = 'Copy Link', 2000);
+        }
+    </script>
+
+</body>
+</html>

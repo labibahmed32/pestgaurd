@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shipping & Delivery | Clima Pest Guard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --primary: #2563eb;
+  --secondary: #0f172a;
+  --accent: #22c55e;
+  --bg: #f1f5f9;
+  --text: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: var(--text);
+}
+
+.shipping-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.shipping-card {
+  background: #ffffff;
+  max-width: 900px;
+  width: 100%;
+  padding: 48px 40px;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* Header */
+.shipping-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.shipping-header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.shipping-header p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #64748b;
+}
+
+/* Section */
+.shipping-section {
+  margin-bottom: 28px;
+}
+
+.shipping-section h2 {
+  font-size: 20px;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.shipping-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* Highlight Boxes */
+.highlight-box {
+  background: #f8fafc;
+  border-left: 5px solid var(--primary);
+  padding: 18px 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.highlight-box strong {
+  color: var(--secondary);
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.contact-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.contact-box h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.contact-box p,
+.contact-box a {
+  font-size: 15px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-box a {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Footer */
+.shipping-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .shipping-card {
+    padding: 36px 22px;
+  }
+
+  .shipping-header h1 {
+    font-size: 26px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="shipping-wrapper">
+  <div class="shipping-card">
+
+    <div class="shipping-header">
+      <h1>Shipping & Delivery</h1>
+      <p>Fast, reliable, and secure delivery to your doorstep</p>
+    </div>
+
+    <div class="shipping-section">
+      <h2>USA Shipping</h2>
+      <div class="highlight-box">
+        <p>
+          All orders within the United States are processed and shipped
+          within <strong>2 business days</strong> via <strong>USPS</strong>.
+        </p>
+        <p>
+          Once shipped, your order will typically be delivered within
+          <strong>4 to 5 business days</strong>. In some cases, delivery
+          may take up to <strong>7 business days</strong>, depending on
+          your location.
+        </p>
+      </div>
+    </div>
+
+    <div class="shipping-section">
+      <h2>International Shipping</h2>
+      <div class="highlight-box">
+        <p>
+          International orders are shipped within
+          <strong>3 to 4 business days</strong> via <strong>DHL</strong>.
+        </p>
+        <p>
+          Delivery time for international orders is usually
+          <strong>7 to 10 business days</strong>. Please note that customs
+          clearance or local regulations may cause occasional delays.
+        </p>
+      </div>
+    </div>
+
+    <div class="shipping-section">
+      <h2>Need Help?</h2>
+      <p>
+        If you have any questions regarding your order or shipping status,
+        feel free to contact our support team.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>Email Support</h3>
+          <a href="mailto:support@climaoffical.com">
+            support@climaoffical.com
+          </a>
+        </div>
+
+        <div class="contact-box">
+          <h3>Phone Support</h3>
+          <p>
+            +1 (888) 456-7890
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shipping-footer">
+      © 2026 Clima Pest Guard. All rights reserved.
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

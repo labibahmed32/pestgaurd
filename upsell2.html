@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer - Clima Cooler</title>
+    <link rel="icon" type="image/webp" href="images/fav.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" as="image" href="images/cooler-2.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { height: auto; overflow-y: scroll; overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; background: #fff; color: #333; line-height: 1.6; min-height: 100%; overflow-x: hidden; }
+
+        /* ===== PROGRESS BAR (Chevron Style) ===== */
+        .progress-section {
+            background: #f8f9fa;
+            padding: 18px 16px 14px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .progress-track {
+            max-width: 520px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+        }
+        .pt-step {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 10px 14px 10px 22px;
+            position: relative;
+            background: #e9ecef;
+            color: #888;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+        }
+        .pt-step:first-child {
+            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 0 50%);
+            border-radius: 6px 0 0 6px;
+            padding-left: 16px;
+        }
+        .pt-step:last-child {
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 14px 50%);
+            border-radius: 0 6px 6px 0;
+            padding-right: 16px;
+        }
+        .pt-step.done { background: #27ae60; color: #fff; }
+        .pt-step.active { background: linear-gradient(135deg, #5dade2, #3498db); color: #fff; font-weight: 700; }
+        .pt-icon { font-size: 13px; line-height: 1; flex-shrink: 0; }
+        .pt-label { font-size: 11px; font-weight: inherit; letter-spacing: 0.5px; white-space: nowrap; }
+
+        /* ===== OFFER HEADER BANNER ===== */
+        .offer-header {
+            background: #fff;
+            text-align: center;
+            padding: 26px 20px 22px;
+        }
+        .offer-header h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .offer-header h2 span { color: #3498db; }
+        .offer-header p {
+            font-size: 14px;
+            color: #777;
+            font-weight: 400;
+        }
+
+        /* ===== FEATURE ICONS ROW ===== */
+        .feature-icons {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto 10px;
+            padding: 0 16px 18px;
+        }
+        .fi-item {
+            text-align: center;
+            flex: 1;
+            max-width: 140px;
+        }
+        .fi-item img {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 6px;
+        }
+        .fi-item span {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.3;
+        }
+
+        /* ===== MAIN PRODUCT SECTION ===== */
+        .product-section {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            padding: 48px 60px 20px;
+            border: 3px dashed #3498db;
+        }
+        .product-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        /* Left — Product Image Slider */
+        .prod-left {
+            width: 40%;
+            position: relative;
+            text-align: center;
+        }
+        .save-sticker {
+            display: none;
+        }
+        .save-sticker::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            border-top: 6px solid #2471a3;
+            border-left: 6px solid transparent;
+        }
+        .save-sticker .ss-num { font-size: 28px; font-weight: 900; line-height: 1; }
+        .save-sticker .ss-text { font-size: 15px; font-weight: 700; text-transform: uppercase; line-height: 1; }
+
+        /* Glide Slider */
+        .cooler-slider { position: relative; }
+        .cooler-slider .glide__slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cooler-slider .glide__slide img {
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .cooler-slider .glide__arrows {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            padding: 0 4px;
+        }
+        .cooler-slider .glide__arrow {
+            pointer-events: all;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+        .cooler-slider .glide__arrow:hover { background: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+        .cooler-slider .glide__bullets {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .cooler-slider .glide__bullet {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .cooler-slider .glide__bullet--active { background: #3498db; transform: scale(1.2); }
+
+        /* Thumbnail strip */
+        .cooler-thumbs {
+            display: flex;
+            gap: 6px;
+            margin-top: 10px;
+            overflow-x: auto;
+            padding: 4px 0;
+            scrollbar-width: none;
+        }
+        .cooler-thumbs::-webkit-scrollbar { display: none; }
+        .cooler-thumb {
+            width: 52px;
+            height: 52px;
+            border-radius: 6px;
+            border: 2px solid #e0e0e0;
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: border-color 0.2s;
+        }
+        .cooler-thumb.active { border-color: #3498db; }
+        .cooler-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Right — Details */
+        .prod-right { width: 60%; }
+        .prod-name { font-size: 24px; font-weight: 800; color: #222; margin-bottom: 4px; }
+        .prod-tagline { font-size: 13px; color: #3498db; font-weight: 600; margin-bottom: 10px; }
+
+        /* Stars */
+        .stars { display: flex; align-items: center; gap: 3px; margin-bottom: 16px; }
+        .stars i { color: #f5a623; font-size: 14px; }
+        .stars span { font-size: 12px; color: #999; margin-left: 6px; }
+
+        /* Package Tabs */
+        .pkg-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .pkg-tab {
+            flex: 1;
+            padding: 12px 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #f9f9f9;
+            position: relative;
+        }
+        .pkg-tab:hover { border-color: #aaa; }
+        .pkg-tab.active {
+            border-color: #3498db;
+            background: #f0f8ff;
+            box-shadow: 0 2px 10px rgba(25,118,210,0.15);
+        }
+        .pkg-tab-name { font-size: 14px; font-weight: 700; color: #333; margin-bottom: 2px; }
+        .pkg-tab-price { font-size: 22px; font-weight: 900; color: #3498db; }
+        .pkg-tab-old { font-size: 12px; color: #aaa; text-decoration: line-through; }
+        .pkg-tab-badge {
+            position: absolute;
+            top: -10px;
+            right: -6px;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Pricing */
+        .pricing-line { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+        .price-old { font-size: 20px; color: #aaa; text-decoration: line-through; font-weight: 500; }
+        .price-now { font-size: 38px; font-weight: 900; color: #222; }
+
+        /* Value Breakdown */
+        .value-breakdown {
+            background: #f0f8ff;
+            border: 1px solid #d4e6f1;
+            border-radius: 10px;
+            padding: 16px 22px;
+            margin-bottom: 18px;
+            width: calc(100% + 20px);
+            margin-left: -10px;
+        }
+        .vb-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #555;
+            padding: 5px 0;
+            border-bottom: 1px solid #d6eaf8;
+        }
+        .vb-item:last-of-type { border-bottom: none; }
+        .vb-item i { color: #3498db; margin-right: 8px; font-size: 13px; width: 18px; text-align: center; }
+        .vb-item span { font-weight: 700; color: #333; }
+        .vb-item span s { color: #bbb; font-weight: 400; margin-right: 4px; }
+        .vb-total {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            padding-top: 10px;
+            margin-top: 6px;
+            border-top: 2px dashed #aed6f1;
+        }
+        .vb-total s { color: #bbb; }
+        .vb-total strong { color: #3498db; font-size: 16px; }
+
+        /* Description */
+        .prod-desc { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 18px; }
+
+        /* Warranty Bonus */
+        .warranty-bonus {
+            background: #fff;
+            border: 3px dashed #3498db;
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-top: 22px;
+            text-align: left;
+        }
+        .wb-text { font-size: 13px; color: #555; line-height: 1.6; }
+        .wb-text strong { color: #333; }
+
+        /* Price Compare */
+        .price-compare { font-size: 17px; color: #555; text-align: center; margin-bottom: 16px; font-weight: 500; }
+        .price-compare s { color: #aaa; font-size: 17px; }
+        .price-compare strong { color: #3498db; font-weight: 900; font-size: 19px; }
+
+        /* CTA Button */
+        .cta-area { text-align: center; margin-top: 6px; }
+        .cta-btn {
+            display: block;
+            background: linear-gradient(180deg, #5dade2, #2980b9);
+            color: #fff;
+            font-size: 22px;
+            font-weight: 800;
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 15px rgba(25,118,210,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            line-height: 1.3;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(25,118,210,0.4); }
+        .cta-sub { font-size: 13px; color: #666; margin-top: 10px; }
+
+        /* Payment Icons */
+        .payment-icons { text-align: center; margin-top: 8px; }
+        .payment-icons img { max-width: 240px; height: auto; }
+
+        /* ===== NO THANKS ===== */
+        .no-thanks { text-align: center; padding: 4px 20px 0; margin-top: 2px; }
+        .no-thanks a { font-size: 14px; color: #888; text-decoration: underline; cursor: pointer; font-style: italic; transition: color 0.2s; }
+        .no-thanks a:hover { color: #666; }
+
+        /* ===== TRUST BADGES BAR ===== */
+        .trust-bar {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 22px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+        .tb-item { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 600; color: #333; white-space: nowrap; }
+        .tb-icon {
+            width: 32px; height: 32px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; color: #fff; flex-shrink: 0;
+        }
+        .tb-icon.blue { background: #3498db; }
+        .tb-icon.green { background: #27ae60; }
+        .tb-icon.orange { background: #e67e22; }
+        .tb-icon.teal { background: #16a085; }
+
+        /* ===== NEED HELP ===== */
+        .need-help { max-width: 800px; margin: 0 auto; padding: 28px 32px; text-align: center; font-size: 14px; color: #666; line-height: 1.7; }
+        .need-help strong { color: #333; font-weight: 700; }
+        .need-help a { color: #3498db; font-weight: 600; text-decoration: none; }
+        .need-help a:hover { text-decoration: underline; }
+
+        /* ===== FOOTER ===== */
+        .footer { background: #1a1a2e; text-align: center; padding: 32px 20px 24px; margin-top: 10px; }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+        .footer-links a { color: #aab; text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-email { margin-bottom: 14px; }
+        .footer-email a { color: #7b8cde; text-decoration: none; font-size: 13px; font-weight: 500; }
+        .footer-email a:hover { text-decoration: underline; }
+        .footer-copy { font-size: 11px; color: #556; }
+
+        /* ========= MOBILE ========= */
+        @media (max-width: 750px) {
+            /* Progress Bar */
+            .progress-section { padding: 10px 6px 8px; }
+            .pt-step { padding: 7px 6px 7px 14px; font-size: 10px; }
+            .pt-step:first-child { padding-left: 8px; }
+            .pt-step:last-child { padding-right: 8px; }
+            .pt-label { font-size: 8px; letter-spacing: 0.2px; }
+            .pt-icon { font-size: 10px; }
+
+            /* Offer Header */
+            .offer-header { padding: 14px 14px 10px; }
+            .offer-header h2 { font-size: 17px; line-height: 1.3; }
+            .offer-header p { font-size: 12px; line-height: 1.5; }
+
+            /* Feature Icons */
+            .feature-icons { gap: 8px; padding: 0 8px 12px; }
+            .fi-item { max-width: 80px; }
+            .fi-item img { width: 30px; height: 30px; margin-bottom: 4px; }
+            .fi-item span { font-size: 8px; letter-spacing: 0; }
+
+            /* Product Section */
+            .product-section { margin: 6px 8px; padding: 16px 12px; border-radius: 10px; overflow: hidden; border-width: 2px; }
+            .product-row { flex-direction: column; gap: 16px; align-items: center; }
+
+            /* Slider */
+            .prod-left { width: 100%; }
+            .cooler-slider .glide__slide img { max-width: 100%; border-radius: 6px; }
+            .cooler-slider .glide__arrow { width: 30px; height: 30px; font-size: 12px; }
+            .cooler-slider .glide__bullets { margin-top: 8px; gap: 5px; }
+            .cooler-slider .glide__bullet { width: 7px; height: 7px; }
+
+            /* Thumbnails */
+            .cooler-thumbs { gap: 5px; margin-top: 8px; }
+            .cooler-thumb { width: 42px; height: 42px; border-radius: 5px; }
+
+            /* Right Details */
+            .prod-right { width: 100%; text-align: center; }
+            .prod-name { font-size: 19px; margin-bottom: 2px; }
+            .prod-name span { font-size: 11px !important; padding: 2px 7px !important; margin-left: 4px !important; }
+            .prod-tagline { font-size: 11px; margin-bottom: 8px; }
+
+            /* Stars */
+            .stars { justify-content: center; margin-bottom: 12px; }
+            .stars i { font-size: 13px; }
+            .stars span { font-size: 11px; }
+
+            /* Package Tabs */
+            .pkg-tabs { gap: 8px; margin-bottom: 12px; }
+            .pkg-tab { padding: 10px 8px; border-radius: 8px; }
+            .pkg-tab-name { font-size: 13px; }
+            .pkg-tab-price { font-size: 20px; }
+            .pkg-tab-old { font-size: 11px; }
+            .pkg-tab-badge { font-size: 8px; padding: 2px 6px; top: -8px; right: -4px; }
+
+            /* Pricing */
+            .pricing-line { justify-content: center; margin-bottom: 12px; gap: 10px; }
+            .price-now { font-size: 30px; }
+            .price-old { font-size: 16px; }
+
+            /* Value Breakdown */
+            .value-breakdown { padding: 12px 10px; width: 100%; margin-left: 0; margin-bottom: 14px; }
+            .vb-item { font-size: 12px; gap: 4px; padding: 4px 0; }
+            .vb-item i { margin-right: 4px; font-size: 11px; width: 14px; flex-shrink: 0; }
+            .vb-item span { margin-left: auto; white-space: nowrap; font-size: 11px; flex-shrink: 0; }
+            .vb-total { font-size: 12px; padding-top: 8px; margin-top: 4px; }
+            .vb-total strong { font-size: 14px; }
+
+            /* Description */
+            .prod-desc { font-size: 12px; line-height: 1.6; margin-bottom: 14px; text-align: left; padding: 0 2px; }
+
+            /* Warranty Bonus */
+            .warranty-bonus { padding: 14px 12px; margin-top: 16px; text-align: left; border-width: 2px; border-radius: 10px; }
+            .wb-text { font-size: 11px; line-height: 1.5; }
+
+            /* Price Compare */
+            .price-compare { font-size: 14px; margin-bottom: 12px; }
+            .price-compare s { font-size: 14px; }
+            .price-compare strong { font-size: 16px; }
+
+            /* CTA */
+            .cta-btn { font-size: 16px; padding: 14px 20px; width: 100%; border-radius: 8px; }
+            .cta-sub { font-size: 11px; margin-top: 8px; }
+
+            /* Payment */
+            .payment-icons { margin-top: 6px; }
+            .payment-icons img { max-width: 200px; }
+
+            /* No Thanks */
+            .no-thanks { padding: 4px 14px 0; }
+            .no-thanks a { font-size: 11px; }
+
+            /* Trust Bar */
+            .trust-bar { flex-wrap: wrap; gap: 10px 20px; padding: 16px 12px; }
+            .tb-item { font-size: 11px; gap: 6px; }
+            .tb-icon { width: 24px; height: 24px; font-size: 11px; }
+
+            /* Need Help */
+            .need-help { padding: 18px 14px; font-size: 12px; line-height: 1.6; }
+
+            /* Footer */
+            .footer { padding: 24px 14px 18px; }
+            .footer-links { gap: 14px; margin-bottom: 12px; }
+            .footer-links a { font-size: 12px; }
+            .footer-email a { font-size: 12px; }
+            .footer-copy { font-size: 10px; }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 380px) {
+            .offer-header h2 { font-size: 15px; }
+            .offer-header p { font-size: 11px; }
+            .fi-item img { width: 26px; height: 26px; }
+            .fi-item span { font-size: 7px; }
+            .product-section { margin: 4px 6px; padding: 14px 10px; }
+            .prod-name { font-size: 17px; }
+            .prod-name span { font-size: 10px !important; }
+            .pkg-tab-name { font-size: 12px; }
+            .pkg-tab-price { font-size: 18px; }
+            .price-now { font-size: 26px; }
+            .price-old { font-size: 15px; }
+            .vb-item { font-size: 11px; }
+            .vb-item span { font-size: 10px; }
+            .vb-total { font-size: 11px; }
+            .vb-total strong { font-size: 13px; }
+            .cta-btn { font-size: 15px; padding: 13px 16px; }
+            .price-compare { font-size: 13px; }
+            .price-compare strong { font-size: 15px; }
+            .trust-bar { gap: 8px 16px; }
+            .tb-item { font-size: 10px; }
+            .tb-icon { width: 22px; height: 22px; font-size: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-section">
+        <div class="progress-track">
+            <div class="pt-step done">
+                <span class="pt-icon">&#10003;</span>
+                <span class="pt-label">Order Submitted</span>
+            </div>
+            <div class="pt-step active">
+                <span class="pt-icon">&#127384;</span>
+                <span class="pt-label">Special Offer</span>
+            </div>
+            <div class="pt-step">
+                <span class="pt-icon">3</span>
+                <span class="pt-label">Order Receipt</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== OFFER HEADER ===== -->
+    <div class="offer-header">
+        <h2><span>Wait!</span> The Heat Wave &amp; Mosquitoes Are Coming!</h2>
+        <p>Cool Down Any Room in Minutes with Clima Cooler - Our Unique Technology Cools Your Environment Instantly Without Breaking the Bank</p>
+    </div>
+
+    <!-- ===== FEATURE ICONS ROW ===== -->
+    <div class="feature-icons">
+        <div class="fi-item">
+            <img src="images/1-INSTANT-AIR-COOLING-1.svg" alt="Instant Air Cooling" loading="eager">
+            <span>Instant Air Cooling</span>
+        </div>
+        <div class="fi-item">
+            <img src="images/2-EFFECTIVE-AIR-PURIFICATION-1.svg" alt="Effective Air Purification" loading="eager">
+            <span>Effective Air Purification</span>
+        </div>
+        <div class="fi-item">
+            <img src="images/3-30-DAY-MONEY-BACK-GUARANTEE-4.svg" alt="30-Day Money Back Guarantee" loading="eager">
+            <span>30-Day Money Back Guarantee</span>
+        </div>
+        <div class="fi-item">
+            <img src="images/4-OPTIMAL-HUMIDITY-CONTROL-1.svg" alt="Optimal Humidity Control" loading="eager">
+            <span>Optimal Humidity Control</span>
+        </div>
+    </div>
+
+    <!-- ===== PRODUCT SECTION ===== -->
+    <div class="product-section">
+        <div class="product-row">
+
+            <!-- Left — Product Image Slider -->
+            <div class="prod-left">
+                <div class="save-sticker">
+                    <span class="ss-num">67%</span>
+                    <span class="ss-text">OFF</span>
+                </div>
+
+                <div class="cooler-slider glide" id="coolerGlide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide"><img src="images/cooler-2.webp" alt="Clima Cooler" loading="eager" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-3.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-4.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-5.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-6.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-7.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-8.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-9.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-10.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-11.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                            <li class="glide__slide"><img src="images/cooler-12.webp" alt="Clima Cooler" loading="lazy" decoding="async"></li>
+                        </ul>
+                    </div>
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="glide__bullets" data-glide-el="controls[nav]">
+                        <button class="glide__bullet" data-glide-dir="=0"></button>
+                        <button class="glide__bullet" data-glide-dir="=1"></button>
+                        <button class="glide__bullet" data-glide-dir="=2"></button>
+                        <button class="glide__bullet" data-glide-dir="=3"></button>
+                        <button class="glide__bullet" data-glide-dir="=4"></button>
+                        <button class="glide__bullet" data-glide-dir="=5"></button>
+                        <button class="glide__bullet" data-glide-dir="=6"></button>
+                        <button class="glide__bullet" data-glide-dir="=7"></button>
+                        <button class="glide__bullet" data-glide-dir="=8"></button>
+                        <button class="glide__bullet" data-glide-dir="=9"></button>
+                        <button class="glide__bullet" data-glide-dir="=10"></button>
+                    </div>
+                </div>
+
+                <!-- Thumbnails -->
+                <div class="cooler-thumbs" id="coolerThumbs">
+                    <div class="cooler-thumb active" data-index="0"><img src="images/cooler-2.webp" alt="Thumb 1" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="1"><img src="images/cooler-3.webp" alt="Thumb 2" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="2"><img src="images/cooler-4.webp" alt="Thumb 3" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="3"><img src="images/cooler-5.webp" alt="Thumb 4" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="4"><img src="images/cooler-6.webp" alt="Thumb 5" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="5"><img src="images/cooler-7.webp" alt="Thumb 6" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="6"><img src="images/cooler-8.webp" alt="Thumb 7" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="7"><img src="images/cooler-9.webp" alt="Thumb 8" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="8"><img src="images/cooler-10.webp" alt="Thumb 9" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="9"><img src="images/cooler-11.webp" alt="Thumb 10" loading="lazy"></div>
+                    <div class="cooler-thumb" data-index="10"><img src="images/cooler-12.webp" alt="Thumb 11" loading="lazy"></div>
+                </div>
+
+                <!-- Warranty Bonus -->
+                <div class="warranty-bonus">
+                    <div class="wb-text">
+                        <strong>BONUS:</strong> Order today and get a <strong>FREE 2-Year Extended Warranty</strong> on your Clima Cooler. That's double the coverage at no extra cost, a <strong>$14.99 value, FREE!</strong>
+                        <br><br>
+                        <strong>+</strong> Didn't extend your Clima Pest Guard warranty during purchase? No worries, we'll include a <strong>FREE Extended Warranty</strong> on all your Pest Guard devices too!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right — Details -->
+            <div class="prod-right">
+
+                <h2 class="prod-name">Clima Cooler <span style="background:#e74c3c;color:#fff;font-size:14px;font-weight:800;padding:3px 10px;border-radius:4px;vertical-align:middle;margin-left:6px;">67% OFF</span></h2>
+                <p class="prod-tagline">Designed to Keep You Cool - Prepare for the Summer Heat</p>
+
+                <!-- Stars -->
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-stroke"></i>
+                    <span>3,912 Reviews</span>
+                </div>
+
+                <!-- Package Tabs -->
+                <div class="pkg-tabs">
+                    <div class="pkg-tab active" data-pkg="1" onclick="selectPkg(1)">
+                        <div class="pkg-tab-name">1x Cooler</div>
+                        <div class="pkg-tab-old">$59.99</div>
+                        <div class="pkg-tab-price">$19.99</div>
+                    </div>
+                    <div class="pkg-tab" data-pkg="2" onclick="selectPkg(2)">
+                        <span class="pkg-tab-badge">Best Deal</span>
+                        <div class="pkg-tab-name">2x Coolers</div>
+                        <div class="pkg-tab-old">$119.98</div>
+                        <div class="pkg-tab-price">$29.99</div>
+                    </div>
+                </div>
+
+                <!-- Price -->
+                <div class="pricing-line">
+                    <span class="price-old" id="priceOld">$59.99</span>
+                    <span class="price-now" id="priceNow">$19.99</span>
+                </div>
+
+                <!-- Value Breakdown for 1x -->
+                <div class="value-breakdown" id="vb1">
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> 1x Clima Cooler <span><s>$59.99</s> $19.99</span></div>
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> FREE Shipping &amp; Handling <span><s>$9.99</s> FREE</span></div>
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> FREE 2-Year Extended Warranty <span><s>$14.99</s> FREE</span></div>
+                    <div class="vb-total">Retail Value: <s>$84.97</s> &nbsp; You Pay: <strong>$19.99 only!</strong></div>
+                </div>
+
+                <!-- Value Breakdown for 2x -->
+                <div class="value-breakdown" id="vb2" style="display:none;">
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> 2x Clima Coolers <span><s>$119.98</s> $29.99</span></div>
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> FREE Shipping &amp; Handling <span><s>$9.99</s> FREE</span></div>
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> FREE 2-Year Extended Warranty <span><s>$14.99</s> FREE</span></div>
+                    <div class="vb-total">Retail Value: <s>$144.96</s> &nbsp; You Pay: <strong>$29.99 only!</strong></div>
+                </div>
+
+                <!-- Description -->
+                <p class="prod-desc">
+                    The heating wave is here and mosquitoes are everywhere. The Clima Cooler chills any room in minutes, filters out air impurities, runs 100% noise-free, and is ultra energy-efficient. With innovative cooling technology that won't break your bank, this is the perfect solution to stay cool all summer. Includes <strong>FREE shipping</strong> and a <strong>2-Year Warranty</strong>.
+                </p>
+
+                <!-- Price Compare -->
+                <div class="price-compare" id="priceCompare">
+                    Regular Price <s>$59.99</s> &nbsp; Today Only <strong>$19.99</strong>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-area">
+                    <a href="#" id="ctaBtn" class="cta-btn">Yes, Add 1x Clima Cooler To My Order!</a>
+                    <div class="cta-sub">FREE shipping - we'll ship it out with your order.</div>
+                </div>
+
+                <!-- Payment Icons -->
+                <div class="payment-icons">
+                    <img src="images/creadit-card.webp" alt="Payment Methods" loading="eager" decoding="async">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- No Thanks -->
+        <div class="no-thanks">
+            <a href="#">No thanks, I don't need cooling this summer. Skip this deal.</a>
+        </div>
+
+    </div>
+
+    <!-- Trust Badges Bar -->
+    <div class="trust-bar">
+        <div class="tb-item">
+            <div class="tb-icon green"><i class="fas fa-rotate-left"></i></div>
+            30-Day Returns
+        </div>
+        <div class="tb-item">
+            <div class="tb-icon blue"><i class="fas fa-shield-halved"></i></div>
+            2-Year Warranty
+        </div>
+        <div class="tb-item">
+            <div class="tb-icon orange"><i class="fas fa-lock"></i></div>
+            Secure Checkout
+        </div>
+        <div class="tb-item">
+            <div class="tb-icon teal"><i class="fas fa-headset"></i></div>
+            24hr Support
+        </div>
+    </div>
+
+    <!-- Need Help Section -->
+    <div class="need-help">
+        <strong>Need Help?</strong> If you're having trouble placing an order, need a replacement, or have any questions about your purchase, our support team is here to help. Simply email us at <a href="mailto:support@climaoffical.com">support@climaoffical.com</a> and we'll get back to you as soon as possible.
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="shipping.html">Shipping</a>
+            <a href="return.html">Returns</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-email">
+            <a href="mailto:support@climaoffical.com">support@climaoffical.com</a>
+        </div>
+        <div class="footer-copy">&copy; 2026 Clima. All Rights Reserved.</div>
+    </footer>
+
+    <!-- Glide.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var glide = new Glide('#coolerGlide', {
+            type: 'carousel',
+            perView: 1,
+            gap: 0,
+            autoplay: 4000,
+            hoverpause: true,
+            animationDuration: 400
+        });
+
+        var thumbs = document.querySelectorAll('.cooler-thumb');
+
+        var thumbContainer = document.getElementById('coolerThumbs');
+        function setActiveThumb(index) {
+            thumbs.forEach(function(t) { t.classList.remove('active'); });
+            if (thumbs[index]) {
+                thumbs[index].classList.add('active');
+                var scrollLeft = thumbs[index].offsetLeft - thumbContainer.offsetWidth / 2 + thumbs[index].offsetWidth / 2;
+                thumbContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+            }
+        }
+
+        thumbs.forEach(function(thumb) {
+            thumb.addEventListener('click', function() {
+                var idx = parseInt(this.getAttribute('data-index'));
+                glide.go('=' + idx);
+                setActiveThumb(idx);
+            });
+        });
+
+        glide.on('run', function() {
+            setActiveThumb(glide.index);
+        });
+
+        glide.mount();
+    });
+
+    function selectPkg(pkg) {
+        document.querySelectorAll('.pkg-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelector('.pkg-tab[data-pkg="' + pkg + '"]').classList.add('active');
+
+        var priceOld = document.getElementById('priceOld');
+        var priceNow = document.getElementById('priceNow');
+        var vb1 = document.getElementById('vb1');
+        var vb2 = document.getElementById('vb2');
+        var priceCompare = document.getElementById('priceCompare');
+        var ctaBtn = document.getElementById('ctaBtn');
+
+        if (pkg === 1) {
+            priceOld.textContent = '$59.99';
+            priceNow.textContent = '$19.99';
+            vb1.style.display = 'block';
+            vb2.style.display = 'none';
+            priceCompare.innerHTML = 'Regular Price <s>$59.99</s> &nbsp; Today Only <strong>$19.99</strong>';
+            ctaBtn.textContent = 'Yes, Add 1x Clima Cooler To My Order!';
+        } else {
+            priceOld.textContent = '$119.98';
+            priceNow.textContent = '$29.99';
+            vb1.style.display = 'none';
+            vb2.style.display = 'block';
+            priceCompare.innerHTML = 'Regular Price <s>$119.98</s> &nbsp; Today Only <strong>$29.99</strong>';
+            ctaBtn.textContent = 'Yes, Add 2x Clima Coolers To My Order!';
+        }
+    }
+    </script>
+
+</body>
+</html>

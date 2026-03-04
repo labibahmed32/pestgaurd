@@ -1,0 +1,291 @@
+body {
+  margin: 0px;
+}
+
+.wrapper {
+  margin-left: 369px;
+  margin-right: 369px;
+  padding-left: 30px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  background: #ffffff;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+header img {
+  height: 32px;
+}
+
+/* shipping and delivery */
+.page-title {
+  margin: auto;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+p strong {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+ol {
+  padding-inline-start: 30px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  counter-reset: item;
+}
+
+li {
+  display: block;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4f4f4f;
+  padding-left: 10px;
+}
+
+li::before {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 10px;
+  text-align: right;
+  color: #4f4f4f;
+  content: counters(item, ".") ". ";
+  counter-increment: item;
+}
+
+li.menu-item {
+  margin-bottom: 16px;
+}
+
+li strong {
+  font-weight: 700;
+}
+
+li a {
+  color: #2f80ed;
+}
+
+/* Returns&Refunds */
+ol li ol {
+  padding-inline-start: 25px;
+  margin-top: 16px;
+  margin-bottom: 0px;
+}
+
+/* Affiliate */
+h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  text-transform: capitalize;
+  color: #000000;
+  margin-bottom: 24px;
+  margin-block-start: 32px;
+  margin-block-end: 0px;
+}
+
+h3 strong {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 30px;
+  color: #4F4F4F;
+}
+
+p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: #4f4f4f;
+}
+
+p a {
+  color: #2f80ed;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+  border: 1px solid;
+  text-indent: 0;
+}
+
+table {
+  border: none;
+}
+
+figure {
+  margin-inline-end: -10px !important;
+  padding-right: 10px;
+}
+
+td {
+  padding: 0.5em;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .wrapper {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 0px;
+  }
+  .page-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  header img {
+    height: 32px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wrapper {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 0px;
+  }
+  header {
+    height: 56px;
+  }
+  header img {
+    height: 24px;
+  }
+  .page-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  p strong {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  li {
+    font-size: 14px;
+    padding-right: 10px;
+  }
+  ol {
+    gap: 10px;
+  }
+  ol li ol {
+    padding-inline-start: 15px;
+    margin-top: 10px;
+  }
+  figure {
+    margin-block-start: 0em !important;
+    margin-block-end: 0em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: -30px !important;
+    padding-right: 10px;
+  }
+  table {
+    display: block;
+    overflow: scroll;
+    overflow-x: auto;
+  }
+  li a strong {
+    padding-right: 10px;
+    word-break: break-all;
+  }
+}
+.product-sec {
+     background: #f8f8f8;
+     padding: 60px 10px;
+     text-align: center 
+}
+ .mw-product {
+     background: #fff;
+     border-radius: 40px;
+     padding: 60px 10px 30px;
+     border: 6px solid #eaf0f6;
+     margin-bottom: 10px 
+}
+ .mw-most-popular {
+     border: 10px solid #3baa43 
+}
+ .mw-package-title-most-popular {
+     font-size: 23px;
+     font-weight: 600;
+     background: #3baa43;
+     padding: 15px 0;
+     border-radius: 40px;
+     margin: -95px auto 30px;
+     color: #fff;
+     max-width: 290px 
+}
+ .mp-star-icon {
+     background: url(../files/most-popular-star.webp) top 5px center no-repeat;
+     padding: 0 40px 
+}
+ .product-img {
+     margin: 0 auto 
+}
+ .mw-package-title {
+     font-size: 26px;
+     font-weight: 700 
+}
+ .mw-package-sub {
+     font-size: 16px;
+     line-height: 18px;
+     font-weight: 600;
+     background: #f1f1f1;
+     padding: 2px;
+     border-radius: 30px;
+     max-width: 300px;
+     margin: 0 auto 
+}
+ .mw-package-price {
+     font-size: 42px;
+     font-weight: 700;
+     color: #39a943 
+}
+ .mw-package-price span {
+     color: #4d4d4d;
+     text-decoration: line-through 
+}
+ .mw-package-free-shipping {
+     font-size: 15px;
+     font-weight: 700;
+     margin-top: 10px 
+}
+ .free-shipping-icon {
+     background: url(../files/free-shipping-icon.png) right no-repeat;
+     padding: 10px 40px 8px 0 
+/*# sourceMappingURL=style.css.map */

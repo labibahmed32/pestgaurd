@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer - Clima Pest Guard</title>
+    <link rel="icon" type="image/webp" href="images/fav.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" as="image" href="images/image1.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { height: auto; overflow-y: scroll; overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; background: #fff; color: #333; line-height: 1.6; min-height: 100%; overflow-x: hidden; }
+
+        /* ===== PROGRESS BAR (Chevron Style) ===== */
+        .progress-section {
+            background: #f8f9fa;
+            padding: 18px 16px 14px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .progress-track {
+            max-width: 520px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+        }
+        .pt-step {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 10px 14px 10px 22px;
+            position: relative;
+            background: #e9ecef;
+            color: #888;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+        }
+        .pt-step:first-child {
+            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 0 50%);
+            border-radius: 6px 0 0 6px;
+            padding-left: 16px;
+        }
+        .pt-step:last-child {
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 14px 50%);
+            border-radius: 0 6px 6px 0;
+            padding-right: 16px;
+        }
+        .pt-step.done {
+            background: #27ae60;
+            color: #fff;
+        }
+        .pt-step.active {
+            background: linear-gradient(135deg, #6dd400, #5bbf00);
+            color: #fff;
+            font-weight: 700;
+        }
+        .pt-icon {
+            font-size: 13px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .pt-label {
+            font-size: 11px;
+            font-weight: inherit;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        /* ===== OFFER HEADER BANNER ===== */
+        .offer-header {
+            background: #fff;
+            text-align: center;
+            padding: 26px 20px 22px;
+        }
+        .offer-header h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .offer-header h2 span { color: #e74c3c; }
+        .offer-header p {
+            font-size: 14px;
+            color: #777;
+            font-weight: 400;
+        }
+
+        /* ===== MAIN PRODUCT SECTION ===== */
+        .product-section {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            padding: 48px 60px 20px;
+            border: 3px dashed #111;
+            position: relative;
+        }
+
+        .product-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        /* Left — Product Image */
+        .prod-left {
+            width: 40%;
+            position: relative;
+            text-align: center;
+        }
+        .save-sticker {
+            position: absolute;
+            top: 10px;
+            left: -6px;
+            background: #e74c3c;
+            color: #fff;
+            padding: 9px 20px 9px 16px;
+            border-radius: 0 8px 8px 0;
+            z-index: 3;
+            box-shadow: 0 3px 10px rgba(231,76,60,0.3);
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+        .save-sticker::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            border-top: 6px solid #a93226;
+            border-left: 6px solid transparent;
+        }
+        .save-sticker .ss-num {
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .save-sticker .ss-text {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .prod-left img {
+            width: 100%;
+            max-width: 340px;
+        }
+
+        /* Right — Details */
+        .prod-right {
+            width: 60%;
+        }
+        .prod-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 6px;
+        }
+
+        /* Stars */
+        .stars {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
+        .stars i { color: #f5a623; font-size: 14px; }
+        .stars span { font-size: 12px; color: #999; margin-left: 6px; }
+
+        /* Pricing */
+        .pricing-line {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .price-old {
+            font-size: 20px;
+            color: #aaa;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+        .price-now {
+            font-size: 38px;
+            font-weight: 900;
+            color: #222;
+        }
+
+        /* Value Breakdown */
+        .value-breakdown {
+            background: #f9fafb;
+            border: 1px solid #e8ecf1;
+            border-radius: 10px;
+            padding: 16px 22px;
+            margin-bottom: 18px;
+            width: calc(100% + 20px);
+            margin-left: -10px;
+        }
+        .vb-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #555;
+            padding: 5px 0;
+            border-bottom: 1px solid #eef0f4;
+        }
+        .vb-item:last-of-type { border-bottom: none; }
+        .vb-item i { color: #27ae60; margin-right: 8px; font-size: 13px; width: 18px; text-align: center; }
+        .vb-item span { font-weight: 700; color: #333; }
+        .vb-item span s { color: #bbb; font-weight: 400; margin-right: 4px; }
+        .vb-item span s + *:not(s) { color: #27ae60; }
+        .vb-total {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            padding-top: 10px;
+            margin-top: 6px;
+            border-top: 2px dashed #ddd;
+        }
+        .vb-total s { color: #bbb; }
+        .vb-total strong { color: #e74c3c; font-size: 16px; }
+
+        /* Description */
+        .prod-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        /* Warranty Bonus */
+        .warranty-bonus {
+            background: #fff;
+            border: 3px dashed #111;
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-top: 22px;
+            text-align: left;
+        }
+        .wb-text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .wb-text strong { color: #333; }
+
+        /* Price Compare */
+        .price-compare {
+            font-size: 17px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+        .price-compare s { color: #aaa; font-size: 17px; }
+        .price-compare strong { color: #c0392b; font-weight: 900; font-size: 19px; }
+
+        /* CTA Button */
+        .cta-area {
+            text-align: center;
+            margin-top: 6px;
+        }
+        .cta-btn {
+            display: block;
+            background: linear-gradient(180deg, #e74c3c, #c0392b);
+            color: #fff;
+            font-size: 22px;
+            font-weight: 800;
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 15px rgba(192,57,43,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            line-height: 1.3;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(192,57,43,0.4);
+        }
+        .cta-sub {
+            font-size: 13px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Payment Icons */
+        .payment-icons {
+            text-align: center;
+            margin-top: 8px;
+        }
+        .payment-icons img {
+            max-width: 240px;
+            height: auto;
+        }
+        .pi-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 28px;
+            color: #888;
+        }
+
+        /* ===== NO THANKS ===== */
+        .no-thanks {
+            text-align: center;
+            padding: 4px 20px 0;
+            margin-top: 2px;
+        }
+        .no-thanks a {
+            font-size: 14px;
+            color: #888;
+            text-decoration: underline;
+            cursor: pointer;
+            font-style: italic;
+            transition: color 0.2s;
+        }
+        .no-thanks a:hover { color: #555; }
+        .no-thanks a:hover { color: #666; }
+
+        /* ===== TRUST BADGES BAR ===== */
+        .trust-bar {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 22px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+        .tb-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+        }
+        .tb-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .tb-icon.blue { background: #34495e; }
+        .tb-icon.green { background: #27ae60; }
+        .tb-icon.orange { background: #e67e22; }
+        .tb-icon.teal { background: #16a085; }
+
+        /* ===== NEED HELP SECTION ===== */
+        .need-help {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 28px 32px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+        }
+        .need-help strong {
+            color: #333;
+            font-weight: 700;
+        }
+        .need-help a {
+            color: #2c5aa0;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .need-help a:hover { text-decoration: underline; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #1a1a2e;
+            text-align: center;
+            padding: 32px 20px 24px;
+            margin-top: 10px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #aab;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: #fff; }
+        .footer-email {
+            margin-bottom: 14px;
+        }
+        .footer-email a {
+            color: #7b8cde;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .footer-email a:hover { text-decoration: underline; }
+        .footer-copy {
+            font-size: 11px;
+            color: #556;
+        }
+
+        /* ========= MOBILE ========= */
+        @media (max-width: 750px) {
+            .progress-section { padding: 12px 8px 10px; }
+            .pt-step { padding: 8px 8px 8px 16px; font-size: 10px; }
+            .pt-step:first-child { padding-left: 10px; }
+            .pt-step:last-child { padding-right: 10px; }
+            .pt-label { font-size: 9px; letter-spacing: 0.3px; }
+            .pt-icon { font-size: 11px; }
+
+            .offer-header { padding: 10px 16px 8px; }
+            .offer-header h2 { font-size: 18px; }
+            .offer-header p { font-size: 13px; }
+
+            .product-section { margin: 8px 12px; padding: 20px 14px; border-radius: 10px; overflow: visible; }
+
+
+            .product-row {
+                flex-direction: column;
+                gap: 22px;
+                align-items: center;
+            }
+
+            .prod-left { width: 100%; }
+            .prod-left img { max-width: 260px; }
+            .save-sticker { top: 8px; left: -4px; padding: 8px 16px 8px 12px; }
+            .save-sticker .ss-num { font-size: 24px; }
+            .save-sticker .ss-text { font-size: 13px; }
+
+            .prod-right { width: 100%; text-align: center; }
+            .prod-name { font-size: 20px; }
+            .stars { justify-content: center; }
+            .pricing-line { justify-content: center; }
+            .price-now { font-size: 32px; }
+            .price-old { font-size: 18px; }
+            .value-breakdown { padding: 14px 12px; width: 100%; margin-left: 0; }
+            .vb-item {
+                font-size: 12px;
+                gap: 4px;
+            }
+            .vb-item i { margin-right: 3px; font-size: 12px; width: 14px; flex-shrink: 0; }
+            .vb-item span { margin-left: auto; white-space: nowrap; font-size: 12px; flex-shrink: 0; }
+            .vb-total { font-size: 13px; }
+            .vb-total strong { font-size: 15px; }
+            .prod-desc { font-size: 13px; }
+            .warranty-bonus { flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 18px 16px; margin-top: 22px; }
+            .wb-text { font-size: 12px; }
+
+            .cta-btn {
+                font-size: 18px;
+                padding: 16px 24px;
+                width: 100%;
+            }
+
+            .trust-bar { flex-wrap: wrap; gap: 16px 28px; padding: 18px 16px; justify-content: center; }
+            .tb-item { font-size: 12px; gap: 7px; }
+            .tb-icon { width: 26px; height: 26px; font-size: 12px; }
+            .need-help { padding: 22px 18px; font-size: 13px; }
+
+            .no-thanks a { font-size: 12px; }
+        }
+
+        @media (max-width: 400px) {
+            .vb-item { font-size: 11px; padding: 5px 0; }
+            .vb-item i { font-size: 11px; margin-right: 2px; width: 13px; }
+            .vb-item span { font-size: 11px; }
+            .value-breakdown { padding: 12px 10px; }
+            .vb-total { font-size: 12px; }
+            .vb-total strong { font-size: 14px; }
+            .price-compare { font-size: 15px; }
+            .price-compare s { font-size: 15px; }
+            .price-compare strong { font-size: 17px; }
+            .cta-btn { font-size: 16px; padding: 14px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-section">
+        <div class="progress-track">
+            <div class="pt-step done">
+                <span class="pt-icon">✓</span>
+                <span class="pt-label">Order Submitted</span>
+            </div>
+            <div class="pt-step active">
+                <span class="pt-icon">🎁</span>
+                <span class="pt-label">Special Offer</span>
+            </div>
+            <div class="pt-step">
+                <span class="pt-icon">3</span>
+                <span class="pt-label">Order Receipt</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== OFFER HEADER ===== -->
+    <div class="offer-header">
+        <h2><span>Wait!</span> Your order is complete. Here's your exclusive bonus!</h2>
+        <p>Add an extra Pest Guard to your order at a huge discount + get FREE extended warranty on all your devices!</p>
+    </div>
+
+    <!-- ===== PRODUCT SECTION ===== -->
+    <div class="product-section">
+        <div class="product-row">
+
+            <!-- Left — Product Image -->
+            <div class="prod-left">
+                <div class="save-sticker">
+                    <span class="ss-num">75%</span>
+                    <span class="ss-text">OFF</span>
+                </div>
+                <img src="images/image1.webp" alt="Clima Pest Guard" loading="eager" fetchpriority="high" decoding="async">
+
+                <!-- Warranty Bonus -->
+                <div class="warranty-bonus">
+                    <div class="wb-text">
+                        <strong>BONUS:</strong> Buy this today and get a FREE extra 1-year warranty on ALL Pest Guards in your order. Every unit gets 2 full years of coverage. That's a <strong>$14.99 value per unit, FREE!</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right — Details -->
+            <div class="prod-right">
+
+                <h2 class="prod-name">Clima Pest Guard</h2>
+
+                <!-- Stars -->
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-stroke"></i>
+                    <span>4,823 Reviews</span>
+                </div>
+
+                <!-- Price -->
+                <div class="pricing-line">
+                    <span class="price-old">$104.97</span>
+                    <span class="price-now">$29.99</span>
+                </div>
+
+                <!-- Value Breakdown -->
+                <div class="value-breakdown">
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> 1x Clima Pest Guard <span><s>$79.99</s> $29.99</span></div>
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> FREE Shipping & Handling <span><s>$9.99</s> FREE</span></div>
+                    <div class="vb-item"><i class="fas fa-check-circle"></i> FREE 2-Year Extended Warranty <span><s>$14.99</s> FREE</span></div>
+                    <div class="vb-total">Retail Value: <s>$104.97</s> &nbsp; You Pay: <strong>$29.99 only!</strong></div>
+                </div>
+
+                <!-- Description -->
+                <p class="prod-desc">
+                    One Pest Guard covers one room. Whether you ordered 1, 2, 3, or 4 units, adding one more means full coverage for every corner of your home. The price you paid earlier had a smaller discount, but <strong>this page is exclusively for you</strong> because you're a loyal new customer. As a thank you, we're giving you a <strong>huge discount</strong> on 1 more Clima Pest Guard for just <strong>$29.99</strong>. Plus, you'll get a <strong>FREE 1-Year Extended Warranty</strong> on this unit and on all your other Pest Guards too, even if you didn't purchase the warranty earlier. That's <strong>2 full years</strong> of total coverage plus <strong>FREE shipping</strong>.
+                </p>
+
+                <!-- Price Compare -->
+                <div class="price-compare">
+                    Regular Price <s>$104.97</s> &nbsp; Today Price <strong>$29.99</strong>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-area">
+                    <a href="#" class="cta-btn">Yes, Add This To My Order</a>
+                    <div class="cta-sub">We will ship it out to you free in same package.</div>
+                </div>
+
+                <!-- Payment Icons -->
+                <div class="payment-icons">
+                    <img src="images/creadit-card.webp" alt="Payment Methods" loading="eager" decoding="async">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- No Thanks -->
+        <div class="no-thanks">
+            <a href="#">No thanks, I'll pay full price next time if I change my mind. Skip this deal.</a>
+        </div>
+
+    </div>
+
+    <!-- Trust Badges Bar -->
+    <div class="trust-bar">
+        <div class="tb-item">
+            <div class="tb-icon green"><i class="fas fa-rotate-left"></i></div>
+            30-Day Returns
+        </div>
+        <div class="tb-item">
+            <div class="tb-icon blue"><i class="fas fa-shield-halved"></i></div>
+            Warranty Included
+        </div>
+        <div class="tb-item">
+            <div class="tb-icon orange"><i class="fas fa-lock"></i></div>
+            Secure Checkout
+        </div>
+        <div class="tb-item">
+            <div class="tb-icon teal"><i class="fas fa-headset"></i></div>
+            24hr Support
+        </div>
+    </div>
+
+    <!-- Need Help Section -->
+    <div class="need-help">
+        <strong>Need Help?</strong> If you're having trouble placing an order, need a replacement, or have any questions about your purchase, our support team is here to help. Simply email us at <a href="mailto:support@climaoffical.com">support@climaoffical.com</a> and we'll get back to you as soon as possible.
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="shipping.html">Shipping</a>
+            <a href="return.html">Returns</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-email">
+            <a href="mailto:support@climaoffical.com">support@climaoffical.com</a>
+        </div>
+        <div class="footer-copy">&copy; 2026 Clima Pest Guard. All Rights Reserved.</div>
+    </footer>
+
+
+</body>
+</html>

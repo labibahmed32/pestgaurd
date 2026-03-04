@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Secure Checkout - Clima Pest Guard</title>
+    <link rel="icon" type="image/webp" href="images/fav.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{overflow-x:hidden;-webkit-text-size-adjust:100%}
+        body{font-family:'Poppins',sans-serif;background:#e8e8e8;color:#333;line-height:1.5}
+        img{max-width:100%;height:auto}
+
+        /* ========== HEADER ========== */
+        .hdr{background:#fff;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #e0e0e0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+        .hdr-l{display:flex;align-items:center;gap:14px}
+        .hdr-l img{height:36px}
+        .hdr-l .sep{width:1px;height:32px;background:#ccc}
+        .hdr-l span{color:#2c3e50;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
+        .hdr-r{display:flex;align-items:center;gap:12px}
+        .hdr-r .phone{color:#2c3e50;font-size:13px;font-weight:600}
+        .hdr-r .phone i{margin-right:4px;color:#3498db}
+        .hdr-r .guar{display:flex;align-items:center;gap:8px}
+        .hdr-r .guar img{height:42px}
+        .hdr-r .guar span{color:#444;font-size:11px;font-weight:600;line-height:1.3}
+
+        /* ========== PROGRESS BAR ========== */
+        .prog{background:#fff;padding:24px 20px 18px;border-bottom:2px solid #ddd}
+        .prog-track{max-width:760px;margin:0 auto;display:flex;align-items:center}
+        .prog-step{display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2}
+        .prog-num{width:48px;height:48px;border-radius:50%;background:#6b6b6b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800}
+        .prog-step.on .prog-num{background:#2c3e50;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+        .prog-txt{font-size:12px;color:#777;font-weight:600;text-align:center}
+        .prog-step.on .prog-txt{color:#2c3e50;font-weight:700}
+        .prog-line{flex:1;height:3px;background:#3498db;margin:0 6px;margin-top:-24px;z-index:1}
+
+        /* ========== OFFER BANNER ========== */
+        .obanner{background:#eaeaea;padding:28px 20px 20px;text-align:center}
+        .obanner h2{font-size:19px;font-weight:800;color:#2c3e50;text-transform:uppercase;letter-spacing:.3px;margin-bottom:14px}
+        .obanner h2 span{color:#e74c3c}
+        .disc-bar{max-width:580px;margin:0 auto;background:#d5f5d5;border-radius:30px;padding:11px 24px;display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:#27ae60}
+        .disc-bar i{font-size:22px}
+
+        /* ========== MAIN AREA ========== */
+        .main{max-width:1440px;margin:0 auto;padding:0 24px 40px}
+        .step-row{display:flex;justify-content:space-between;padding:18px 4px 6px}
+        .step-h{font-size:15px;font-weight:800;color:#333;text-transform:uppercase;letter-spacing:.5px}
+        .grid{display:flex;gap:28px;align-items:flex-start}
+        .left{flex:1;min-width:0}
+        .right{width:400px;flex-shrink:0;position:sticky;top:16px}
+
+        /* ========== PRICING CARD ========== */
+        .pc{background:#fff;border:2px solid #e0e0e0;border-radius:10px;margin-bottom:12px;cursor:pointer;transition:all .2s ease;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.05);position:relative}
+        .pc:hover{border-color:#3b7ddd;box-shadow:0 3px 14px rgba(59,125,221,.13)}
+        .pc.sel{border:2px solid #3b7ddd;box-shadow:0 3px 18px rgba(59,125,221,.18)}
+
+        /* Card top bar */
+        .pc-top{background:#2d2d2d;color:#fff;padding:8px 16px;display:flex;align-items:center;justify-content:space-between}
+        .pc-top-l{display:flex;align-items:center;gap:10px}
+        .pc-top-l h3{font-size:14px;font-weight:700;letter-spacing:.3px}
+        .sv-badge{background:#27ae60;color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:3px;letter-spacing:.3px}
+        .pc-top-r{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;opacity:.85}
+        .pc-top-r i{font-size:13px}
+
+        /* Card body — two columns always visible */
+        .pc-body{display:flex;align-items:stretch;padding:10px 12px;gap:0;position:relative}
+        .pc-chk{position:absolute;top:8px;left:8px;width:26px;height:26px;background:#3b7ddd;color:#fff;border-radius:5px;display:none;align-items:center;justify-content:center;font-size:14px;z-index:6}
+        .pc.sel .pc-chk{display:flex}
+
+        /* Left column — image | info | button in one row */
+        .pc-col-l{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+
+        /* Product images */
+        .pc-img{width:200px;flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:4px;background:none;border-radius:0;padding:0;position:relative}
+        .pc-img img{flex:1 1 0;min-width:0;max-height:145px;object-fit:contain;transition:transform .3s}
+        .pc:hover .pc-img img{transform:scale(1.04)}
+        .pc-qty{display:none}
+
+        /* Info — two columns: price left, action right */
+        .pc-info{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:flex-start;gap:0 16px}
+        .pc-bundle{flex:1 1 100%;font-size:19px;font-weight:900;color:#222;margin-bottom:2px}
+        .pc-price-side{flex:1;min-width:0}
+        .pc-only{font-size:13px;color:#27ae60;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+        .pc-price-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+        .pc-price{font-size:42px;font-weight:900;color:#222;line-height:1.1}
+        .pc-price sub{font-size:17px;font-weight:500;color:#888;bottom:0}
+        .pc-off{display:none}
+        .pc-orig{font-size:16px;color:#c0392b;font-style:italic;margin:2px 0 1px}
+        .pc-orig s{text-decoration:line-through}
+        .pc-action{display:none}
+        .pc-you-save{font-size:14px;color:#27ae60;font-weight:700;display:inline-flex;align-items:center;gap:4px;background:#eafbea;padding:3px 10px;border-radius:4px}
+        .pc-you-save i{font-size:12px}
+
+        /* Right column — features ALWAYS visible */
+        .pc-col-r{flex:0 0 230px;padding:6px 0 6px 12px;margin-left:10px;border-left:2px solid #eee;display:flex;flex-direction:column;justify-content:center}
+
+        /* Feature list */
+        .pc-feats-grid{display:flex;flex-direction:column;gap:0;padding:0}
+        .pc-f{font-size:12.5px;color:#333;font-weight:500;padding:3px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.35}
+        .pc-f i{color:#27ae60;font-size:14px;margin-top:1px;flex-shrink:0}
+
+        /* FREE 2-Year Warranty banner (3x/4x) */
+        .pc-war-free{background:linear-gradient(135deg,#e67e22,#f39c12);color:#fff;padding:7px 12px;border-radius:6px;font-size:13px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:7px;letter-spacing:.3px;white-space:nowrap}
+        .pc-war-free i{font-size:15px}
+
+        /* Customer favorite label (4x) */
+        .pc-fav-label{font-size:10px;color:#888;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:4px}
+        .pc-fav-label i{font-size:11px;color:#f39c12}
+
+        /* Card footer — orig, save, total + button */
+        .pc-foot{background:#fafafa;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #eee}
+        .pc-foot-left{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+        .pc-foot-left .pc-orig{font-size:15px;color:#c0392b;font-style:italic;letter-spacing:.3px}
+        .pc-foot-left .pc-you-save{font-size:15px;color:#27ae60;font-weight:700;display:inline-flex;align-items:center;gap:5px;background:#eafbea;padding:5px 14px;border-radius:5px;letter-spacing:.3px}
+        .pc-foot-left .pc-you-save i{font-size:13px}
+        .pc-foot-left .pc-total{font-size:20px;color:#222;font-weight:800;letter-spacing:.3px}
+        .pc-foot .pc-btn{padding:10px 28px;border:2px solid #3b7ddd;background:#fff;color:#3b7ddd;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;transition:all .2s;border-radius:8px;letter-spacing:.3px;text-align:center;flex-shrink:0}
+        .pc-foot .pc-btn:hover{background:#3b7ddd;color:#fff;box-shadow:0 3px 10px rgba(59,125,221,.25)}
+        .pc.sel .pc-foot .pc-btn{background:#3b7ddd;border-color:#3b7ddd;color:#fff;box-shadow:0 3px 10px rgba(59,125,221,.25)}
+
+        /* ========== ORDER SUMMARY ========== */
+        .os{background:#fff;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+        .os-img{display:none}
+        .os-hdr{background:#444;color:#fff;padding:11px 18px;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700}
+        .os-hdr i{font-size:17px}
+        .os-tbl{padding:0 18px 8px}
+        .os-r{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #eee;font-size:13px;color:#555}
+        .os-r:last-child{border-bottom:none}
+        .os-r.tot{border-top:2px solid #333;border-bottom:none;padding:12px 0;font-size:15px;font-weight:800;color:#333}
+        .os-r .lbl{font-style:italic}
+        .os-r .val{font-weight:700;color:#333}
+
+        /* Warranty row in order summary */
+        .os-warranty{background:#f0faf0;border-radius:6px;padding:10px 12px!important;margin:6px 0}
+        .os-warranty.free{background:#eafbea}
+        .war-chk{display:flex;align-items:center;gap:8px;cursor:pointer;font-style:normal;font-size:13px;font-weight:600;color:#333;user-select:none}
+        .war-chk input{display:none}
+        .war-box{width:18px;height:18px;border:2px solid #3b7ddd;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+        .war-chk input:checked~.war-box{background:#3b7ddd;border-color:#3b7ddd}
+        .war-chk input:checked~.war-box::after{content:'\2713';color:#fff;font-size:12px;font-weight:700}
+        .war-free-tag{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#27ae60;font-style:normal}
+        .war-free-tag i{font-size:14px}
+        .os-warranty .val.free-val{color:#27ae60;font-weight:800}
+
+        /* Buy Now button */
+        .os-buy-btn{display:block;background:linear-gradient(135deg,#3b7ddd,#2563eb);color:#fff;text-align:center;padding:14px 20px;font-size:16px;font-weight:800;font-family:inherit;text-decoration:none;letter-spacing:.5px;transition:all .2s;cursor:pointer}
+        .os-buy-btn:hover{background:linear-gradient(135deg,#2563eb,#1d4ed8);box-shadow:0 4px 16px rgba(37,99,235,.35)}
+        .os-buy-btn i{margin-right:6px;font-size:14px}
+
+        /* ========== REVIEWS ========== */
+        .rev-sec{max-width:1100px;margin:0 auto;padding:40px 16px}
+        .rev-h{text-align:center;font-size:21px;font-weight:800;color:#2c3e50;text-transform:uppercase;letter-spacing:.5px;margin-bottom:24px}
+        .rev{background:#fff;border-radius:8px;padding:22px 24px;margin-bottom:14px;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+        .rev-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+        .rev-av{width:42px;height:42px;border-radius:50%;background:#ddd;overflow:hidden;flex-shrink:0}
+        .rev-av img{width:100%;height:100%;object-fit:cover}
+        .rev-name{font-size:14px;font-weight:700;color:#c0392b}
+        .rev-ver{font-size:12px;color:#3498db;font-weight:600}
+        .rev-ver i{font-size:10px;margin-right:2px}
+        .rev-stars{margin-left:auto;color:#f5a623;font-size:15px;display:flex;gap:1px}
+        .rev-div{border:none;border-top:2px dashed #eee;margin-bottom:12px}
+        .rev-txt{font-size:13px;color:#555;line-height:1.7;font-style:italic}
+
+        /* ========== TRUST BADGES ========== */
+        .trust-sec{padding:0;margin-top:14px}
+        .tb{background:#fff;color:#333;border-radius:10px;padding:16px 18px;margin-bottom:8px;display:flex;align-items:center;gap:14px;border:1px solid #e0e0e0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+        .tb-ico{width:54px;height:54px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+        .tb-ico img{max-width:50px;max-height:50px}
+        .tb-txt{flex:1}
+        .tb h4{font-size:15px;font-weight:900;text-transform:uppercase;margin-bottom:3px;letter-spacing:.5px;color:#222}
+        .tb p{font-size:11.5px;line-height:1.5;color:#555}
+        .tb .chk span{display:block;font-size:12px;font-weight:700;line-height:1.7;color:#333}
+        .tb .chk span::before{content:"\2705 "}
+
+        /* ========== FAQ ========== */
+        .faq-sec{max-width:820px;margin:0 auto;padding:10px 16px 50px}
+        .faq-h{text-align:center;font-size:26px;font-weight:800;color:#222;margin-bottom:28px;letter-spacing:.3px}
+        .faq-h span{color:#3498db}
+        .faq-i{margin-bottom:8px}
+        .faq-q{background:#fafafa;padding:16px 22px;cursor:pointer;font-size:16px;font-weight:600;color:#333;display:grid;grid-template-columns:1fr max-content;align-items:center;gap:8px;transition:all .2s;border:1px solid #e0e0e0;border-radius:8px}
+        .faq-q:hover{background:#e8f4fd;border-color:#3498db}
+        .faq-q.open{background:#e8f4fd;border-color:#3498db;border-radius:8px 8px 0 0}
+        .faq-q .faq-icon{width:28px;height:28px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0}
+        .faq-q .faq-icon svg{width:16px;height:16px;transition:transform .3s}
+        .faq-q .faq-icon .faq-vline{transition:transform .15s ease-in-out .15s;transform-origin:center}
+        .faq-q.open .faq-icon{background:#3498db}
+        .faq-q.open .faq-icon svg rect{fill:#fff}
+        .faq-q.open .faq-icon .faq-vline{transform:rotate(90deg) translate(1px,1px)}
+        .faq-a{display:none;padding:16px 22px;font-size:14px;color:#666;line-height:1.8;background:#fff;border:1px solid #e0e0e0;border-top:none;border-radius:0 0 8px 8px}
+        .faq-a.show{display:block}
+
+        /* ========== FOOTER ========== */
+        .footer{background:#000;margin-top:16px}
+        .footer__sep{max-width:1132px;width:100%;padding:0 16px;margin:0 auto}
+        .footer__sep-line{background:rgba(79,79,79,.5);width:100%;height:1px}
+        .footer__inner{max-width:1132px;width:100%;padding:20px 24px;margin:0 auto;display:grid;grid-template-columns:minmax(300px,454px) minmax(min-content,max-content) minmax(min-content,max-content) minmax(min-content,max-content);column-gap:80px}
+        .footer__logo-box{text-align:center;padding:20px 10px}
+        .footer__logo-box img{width:200px;max-width:80%;height:auto;margin-bottom:15px}
+        .footer__logo-box p{font-size:14px;line-height:1.6;color:#bdbdbd;max-width:600px;margin:0 auto}
+        .footer__logo-box em{display:block;margin-top:8px;font-size:13px;color:#999}
+        .footer__col{position:relative}
+        .footer__col h3{font-size:18px;font-weight:700;line-height:24px;text-transform:uppercase;color:#fff;padding:25px 0}
+        .footer__col h3.static{padding-bottom:16px}
+        .footer__col ul{list-style:none;display:flex;flex-direction:column;margin-top:16px}
+        .footer__col ul li{display:flex;align-items:center;font-size:14px;line-height:24px;color:#bdbdbd}
+        .footer__col ul li:not(:first-child){margin-top:8px}
+        .footer__col ul li a{color:#bdbdbd;text-decoration:none;transition:color .2s}
+        .footer__col ul li a:hover{color:#fff}
+        .footer__col .care-list{align-items:flex-start;margin-left:8px;margin-top:0}
+        .footer__col .care-list li{color:#fff}
+        .footer__care-icon{width:20px;height:20px;margin-right:8px;background:#fff;display:inline-block;mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
+        .footer__help{display:flex;justify-content:center;margin-bottom:25px}
+        .footer__ribbon{background:#fff;width:100%}
+        .footer__ribbon-inner{display:flex;justify-content:space-between;align-items:center;max-width:1132px;width:100%;padding:12px 16px;margin:0 auto}
+        .footer__ribbon-inner span{font-size:14px;color:#333}
+        .footer__ribbon-inner img{width:306px;height:32px}
+
+        /* ========== RESPONSIVE — TABLET ========== */
+        @media(max-width:991px){
+            .grid{flex-direction:column}
+            .right{width:100%;position:static}
+            .step-row .step-h:last-child{display:none}
+            .main{max-width:100%;padding:0 12px 30px}
+            .pc-col-r{flex:0 0 190px;padding:6px 0 6px 10px;margin-left:10px}
+            .pc-img{width:150px}
+            .pc.popular{transform:scale(1.02)}
+            .pc-price{font-size:34px}
+            .pc-foot-left{gap:16px}
+            .pc-foot .pc-btn{padding:10px 20px;font-size:13px}
+            .footer__inner{grid-template-columns:1fr 1fr!important;gap:30px!important}
+        }
+
+        /* ========== RESPONSIVE — MOBILE ========== */
+        @media(max-width:768px){
+            .hdr{padding:10px 14px}
+            .hdr-l img{height:28px}
+            .hdr-l span{font-size:12px;letter-spacing:.8px}
+            .hdr-r .phone{display:none}
+            .hdr-r .guar span{display:none}
+            .hdr-r .guar img{height:34px}
+            .prog{padding:16px 8px 12px}
+            .prog-num{width:36px;height:36px;font-size:16px}
+            .prog-txt{font-size:9px}
+            .obanner{padding:16px 10px 12px}
+            .obanner h2{font-size:14px}
+            .disc-bar{font-size:12px;padding:9px 16px}
+            .main{padding:0;margin:0}
+            .step-h{font-size:13px}
+            .step-row{padding:14px 8px 6px}
+
+            /* ===== MOBILE CARDS ===== */
+            .pc{border-radius:0;margin-bottom:6px;border-left:none;border-right:none;box-shadow:0 1px 6px rgba(0,0,0,.05);overflow:hidden}
+            .pc.sel{border-color:#3b7ddd;box-shadow:0 2px 12px rgba(59,125,221,.12)}
+            .pc.popular{transform:none;margin-top:0;margin-bottom:6px}
+            .pc-top{padding:6px 10px}
+            .pc-top-l h3{font-size:11px}
+            .sv-badge{font-size:8px;padding:2px 6px}
+            .pc-top-r{font-size:8px}
+            .pc-top-r i{font-size:10px}
+
+            /* Body — wraps on mobile */
+            .pc-body{padding:12px 10px;gap:8px;flex-wrap:wrap}
+            .pc-chk{width:18px;height:18px;font-size:10px;top:4px;left:4px}
+
+            /* Image + Info stacked center */
+            .pc-col-l{flex:1 1 100%;display:flex;flex-direction:column;align-items:center;gap:8px}
+            .pc-img{width:auto;flex-shrink:0}
+            .pc-img img{max-height:120px;max-width:120px;object-fit:contain}
+            .pc-qty{display:none}
+            .pc-info{flex:none;width:100%;text-align:center}
+            .pc-bundle{font-size:15px;margin-bottom:2px;justify-content:center;flex-wrap:wrap}
+            .pc-bundle span{font-size:8px!important;padding:2px 6px!important;margin-left:4px!important}
+            .pc-only{font-size:9px}
+            .pc-price-row{gap:6px;justify-content:center}
+            .pc-price{font-size:32px}
+            .pc-price sub{font-size:12px}
+            .pc-action{display:none}
+
+            /* Features — full width below */
+            .pc-col-r{flex:1 1 100%;border-left:none;border-top:1px dashed #ddd;margin-left:0;margin-top:4px;padding:8px 4px 4px}
+            .pc-feats-grid{display:flex;flex-direction:column;gap:0}
+            .pc-f{font-size:11.5px;padding:3px 0;word-wrap:break-word}
+            .pc-f i{font-size:12px}
+            .pc-war-free{font-size:11px;padding:5px 8px;white-space:nowrap;justify-content:center}
+            .pc-war-free i{font-size:12px}
+
+            /* Card footer — stacked on mobile */
+            .pc-foot{flex-direction:column;gap:8px;padding:10px 12px;align-items:center}
+            .pc-foot-left{justify-content:center;gap:10px;flex-wrap:wrap}
+            .pc-foot-left .pc-orig{font-size:12px}
+            .pc-foot-left .pc-you-save{font-size:12px;padding:3px 8px}
+            .pc-foot-left .pc-you-save i{font-size:10px}
+            .pc-foot-left .pc-total{font-size:17px}
+            .pc-foot .pc-btn{padding:11px 36px;font-size:14px;width:auto;max-width:100%}
+
+            .os-img img{max-width:150px}
+            .os-warranty{padding:8px 10px!important;margin:4px 0}
+            .war-chk{font-size:12px;gap:6px}
+            .war-box{width:16px;height:16px}
+            .war-free-tag{font-size:12px}
+            .war-free-tag i{font-size:12px}
+            .os-buy-btn{padding:12px 16px;font-size:15px}
+            .rev-sec{padding:24px 6px}
+            .rev-h{font-size:16px}
+            .rev{padding:14px;border-radius:10px}
+            .rev-top{flex-wrap:wrap}
+            .rev-stars{margin-left:0}
+            .rev-txt{font-size:12px}
+            .trust-sec{margin-top:10px}
+            .tb{padding:12px 12px;gap:10px;border-radius:10px}
+            .tb-ico{width:40px;height:40px}
+            .tb-ico img{max-width:38px;max-height:38px}
+            .tb h4{font-size:12px}
+            .tb p{font-size:10px}
+            /* FAQ mobile */
+            .faq-sec{padding:0 6px 30px}
+            .faq-h{font-size:18px}
+            .faq-q{font-size:13px;padding:12px 14px;border-radius:6px}
+            .faq-q .faq-icon{width:24px;height:24px}
+            .faq-q .faq-icon svg{width:14px;height:14px}
+            .faq-a{padding:12px 14px;font-size:13px}
+
+            /* Footer mobile */
+            .footer__inner{display:flex!important;flex-direction:column!important;padding:0 15px!important}
+            .footer__logo-box{padding:20px 15px!important}
+            .footer__logo-box p{font-size:13px!important}
+            .footer__col{width:100%!important;text-align:center!important;padding:16px 0!important;border-bottom:1px solid rgba(255,255,255,.1)}
+            .footer__col h3{text-align:center!important;font-size:16px!important;padding:10px 0!important}
+            .footer__col ul{align-items:center;margin-top:8px}
+            .footer__help{justify-content:center!important}
+            .footer__col .care-list{align-items:center!important}
+            .footer__ribbon-inner{flex-direction:column!important;align-items:center!important;gap:10px!important}
+            .footer__ribbon-inner img{max-width:200px!important;height:auto!important}
+            .footer__ribbon-inner span{text-align:center;font-size:12px}
+        }
+
+        /* ========== RESPONSIVE — SMALL MOBILE ========== */
+        @media(max-width:420px){
+            .prog-txt{font-size:7px}
+            .prog-num{width:28px;height:28px;font-size:12px}
+            .obanner h2{font-size:11px}
+            .disc-bar{font-size:9px;padding:6px 10px;gap:5px}
+            .step-h{font-size:11px}
+            .pc{margin-bottom:5px}
+            .pc-top{padding:5px 8px}
+            .pc-top-l h3{font-size:10px}
+            .sv-badge{font-size:7px;padding:1px 4px}
+            .pc-body{padding:8px 6px;gap:6px}
+            .pc-chk{width:16px;height:16px;font-size:8px;top:3px;left:3px}
+            .pc-img img{max-height:100px;max-width:100px}
+            .pc-bundle{font-size:13px}
+            .pc-bundle span{font-size:7px!important;padding:1px 4px!important}
+            .pc-only{font-size:8px}
+            .pc-price{font-size:26px}
+            .pc-price sub{font-size:10px}
+            .pc-f{font-size:10.5px}
+            .pc-f i{font-size:11px}
+            .pc-war-free{font-size:10px;padding:4px 6px}
+            .pc-foot{padding:8px 10px;gap:6px}
+            .pc-foot-left{gap:8px}
+            .pc-foot-left .pc-orig{font-size:10px}
+            .pc-foot-left .pc-you-save{font-size:10px;padding:2px 6px}
+            .pc-foot-left .pc-total{font-size:15px}
+            .pc-foot .pc-btn{padding:9px 24px;font-size:12px}
+            .faq-q{font-size:12px;padding:10px 12px}
+            .faq-a{padding:10px 12px;font-size:12px}
+            .footer__logo-box img{width:150px!important}
+            .footer__logo-box p{font-size:12px!important}
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+    <div class="hdr-l">
+        <img src="images/logo-111.webp" alt="Clima">
+        <div class="sep"></div>
+        <span>Secure Checkout</span>
+    </div>
+    <div class="hdr-r">
+        <div class="phone"><i class="fas fa-phone"></i> Questions? Call Us</div>
+        <div class="guar">
+            <img src="images/guarantee.svg" alt="Guarantee">
+            <span>30 day 100% Money<br>Back Guarantee</span>
+        </div>
+    </div>
+</header>
+
+<!-- PROGRESS -->
+<div class="prog">
+    <div class="prog-track">
+        <div class="prog-step on"><div class="prog-num">1</div><div class="prog-txt">Select Quantity</div></div>
+        <div class="prog-line"></div>
+        <div class="prog-step"><div class="prog-num">2</div><div class="prog-txt">Shipping Information</div></div>
+        <div class="prog-line"></div>
+        <div class="prog-step"><div class="prog-num">3</div><div class="prog-txt">Payment Info</div></div>
+        <div class="prog-line"></div>
+        <div class="prog-step"><div class="prog-num">4</div><div class="prog-txt">Place Order</div></div>
+    </div>
+</div>
+
+<!-- OFFER BANNER -->
+<div class="obanner">
+    <h2>Special Offer: Clima Pest Guard Is Available With A <span>50% Discount!</span></h2>
+    <div class="disc-bar"><i class="fas fa-check-circle"></i> Your 50% Discount Has Been Applied!</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+    <div class="step-row">
+        <div class="step-h">Step 1: Select Package</div>
+        <div class="step-h">Step 2: Payment Option</div>
+    </div>
+
+    <div class="grid">
+        <!-- LEFT: Cards -->
+        <div class="left">
+
+            <!-- ====== 1x ====== -->
+            <div class="pc" onclick="selectPkg(1)">
+                <div class="pc-top">
+                    <div class="pc-top-l"><h3>1x Clima Pest Guard</h3><span class="sv-badge">SAVE 50%</span></div>
+                    <div class="pc-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-chk"><i class="fas fa-check"></i></div>
+                    <div class="pc-col-l">
+                        <div class="pc-img"><img src="images/1.webp" alt="Pest Guard"></div>
+                        <div class="pc-info">
+                            <div class="pc-bundle">Alpha Bundle</div>
+                            <div class="pc-price-side">
+                                <div class="pc-only">Only</div>
+                                <div class="pc-price-row"><span class="pc-price">$59.99<sub>/each</sub></span><span class="pc-off">-50%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-col-r">
+                        <div class="pc-feats-grid">
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> <strong>1 Year FREE Warranty</strong></div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> $9.99 USA Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Quick Coverage Up To 150 Sq Ft</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Ideal For Bedrooms &amp; Offices</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <div class="pc-foot-left">
+                        <span class="pc-orig"><s>Orig $119.99</s></span>
+                        <span class="pc-you-save"><i class="fas fa-tag"></i> Save $60.00</span>
+                        <span class="pc-total">Total: $69.98</span>
+                    </div>
+                    <button class="pc-btn" id="btn1">Select Package</button>
+                </div>
+            </div>
+
+            <!-- ====== 2x ====== -->
+            <div class="pc" onclick="selectPkg(2)">
+                <div class="pc-top">
+                    <div class="pc-top-l"><h3>2x Clima Pest Guards</h3><span class="sv-badge">SAVE 54%</span></div>
+                    <div class="pc-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-chk"><i class="fas fa-check"></i></div>
+                    <div class="pc-col-l">
+                        <div class="pc-img"><img src="images/1.webp" alt="Pest Guard"><img src="images/1.webp" alt="Pest Guard"><span class="pc-qty">&times;2</span></div>
+                        <div class="pc-info">
+                            <div class="pc-bundle">Double Room Bundle</div>
+                            <div class="pc-price-side">
+                                <div class="pc-only">Only</div>
+                                <div class="pc-price-row"><span class="pc-price">$54.99<sub>/each</sub></span><span class="pc-off">-54%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-col-r">
+                        <div class="pc-feats-grid">
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> <strong>1 Year FREE Warranty</strong></div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> FREE USA Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> 360&deg; Zapping Technology</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Cover Two Rooms At Once</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Bedroom + Living Room Coverage</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Save On Pest Control Costs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <div class="pc-foot-left">
+                        <span class="pc-orig"><s>Orig $239.99</s></span>
+                        <span class="pc-you-save"><i class="fas fa-tag"></i> Save $130.00</span>
+                        <span class="pc-total">Total: $109.99</span>
+                    </div>
+                    <button class="pc-btn" id="btn2">Select Package</button>
+                </div>
+            </div>
+
+            <!-- ====== 3x ====== -->
+            <div class="pc" onclick="selectPkg(3)">
+                <div class="pc-top">
+                    <div class="pc-top-l"><h3>3x Clima Pest Guards</h3><span class="sv-badge">SAVE 61%</span></div>
+                    <div class="pc-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-chk"><i class="fas fa-check"></i></div>
+                    <div class="pc-col-l">
+                        <div class="pc-img"><img src="images/3.webp" alt="3x Pest Guard"></div>
+                        <div class="pc-info">
+                            <div class="pc-bundle">Family Pack <span style="background:#e67e22;color:#fff;font-size:11px;padding:3px 10px;border-radius:4px;font-weight:800;margin-left:6px;vertical-align:middle">MOST POPULAR</span></div>
+                            <div class="pc-price-side">
+                                <div class="pc-only">Only</div>
+                                <div class="pc-price-row"><span class="pc-price">$46.66<sub>/each</sub></span><span class="pc-off">-61%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-col-r">
+                        <div class="pc-war-free"><i class="fas fa-gift"></i> FREE Extended Warranty</div>
+                        <div class="pc-feats-grid">
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> FREE USA Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> 360&deg; Zapping Technology</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Cover Three Rooms</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Bedroom, Office &amp; Living Room</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Save On Pest Control vs. Sprays</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <div class="pc-foot-left">
+                        <span class="pc-orig"><s>Orig $359.99</s></span>
+                        <span class="pc-you-save"><i class="fas fa-tag"></i> Save $220.00</span>
+                        <span class="pc-total">Total: $139.99</span>
+                    </div>
+                    <button class="pc-btn" id="btn3">Select Package</button>
+                </div>
+            </div>
+
+            <!-- ====== 4x ====== -->
+            <div class="pc" onclick="selectPkg(4)">
+                <div class="pc-top">
+                    <div class="pc-top-l"><h3>4x Clima Pest Guards</h3><span class="sv-badge">SAVE 69%</span></div>
+                    <div class="pc-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-chk"><i class="fas fa-check"></i></div>
+                    <div class="pc-col-l">
+                        <div class="pc-img"><img src="images/4.webp" alt="4x Pest Guard"></div>
+                        <div class="pc-info">
+                            <div class="pc-bundle">Whole Home Bundle <span style="background:#c0392b;color:#fff;font-size:11px;padding:3px 10px;border-radius:4px;font-weight:800;margin-left:6px;vertical-align:middle">BEST VALUE</span></div>
+                            <div class="pc-price-side">
+                                <div class="pc-only">Only</div>
+                                <div class="pc-price-row"><span class="pc-price">$37.50<sub>/each</sub></span><span class="pc-off">-69%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-col-r">
+                        <div class="pc-war-free"><i class="fas fa-gift"></i> FREE Extended Warranty</div>
+                        <div class="pc-feats-grid">
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> FREE USA Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> FREE Same Day Priority Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> 360&deg; Zapping Technology</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Cover Four Rooms At Once</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Whole Home Protection</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Save On Pest Control vs. Sprays</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <div class="pc-foot-left">
+                        <span class="pc-orig"><s>Orig $479.99</s></span>
+                        <span class="pc-you-save"><i class="fas fa-tag"></i> Save $330.00</span>
+                        <span class="pc-total">Total: $149.99</span>
+                    </div>
+                    <button class="pc-btn" id="btn4">Select Package</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT: Order Summary + Trust Badges -->
+        <div class="right">
+            <div class="os">
+                <div class="os-img"><img id="osImg" src="images/1.webp" alt="Product"></div>
+                <div class="os-hdr"><i class="fas fa-cart-shopping"></i> Order Summary</div>
+                <div class="os-tbl">
+                    <div class="os-r"><span class="lbl" id="osItem">No package selected</span><span class="val" id="osPrice">--</span></div>
+                    <div class="os-r"><span class="lbl">Shipping:</span><span class="val" id="osShip">--</span></div>
+                    <div class="os-r"><span class="lbl">Shipping Method:</span><span class="val" id="osMethod">--</span></div>
+                    <div class="os-r os-warranty" id="osWarrantyRow" style="display:none">
+                        <span class="lbl" id="osWarrantyLabel">
+                            <label class="war-chk" id="warChkLabel"><input type="checkbox" id="warChk" onchange="toggleWarranty()"><span class="war-box"></span> <i class="fas fa-shield-halved" style="color:#3b7ddd;margin-right:2px"></i> Extended Warranty</label>
+                        </span>
+                        <span class="val" id="osWarrantyVal">+$14.99</span>
+                    </div>
+                    <div class="os-r tot"><span>Today's Total:</span><span class="val" id="osTotal">$0.00</span></div>
+                </div>
+                <a href="#" id="buyBtn" class="os-buy-btn"><i class="fas fa-lock"></i> Confirm &amp; Continue To Payment</a>
+            </div>
+
+            <!-- TRUST BADGES -->
+            <div class="trust-sec">
+                <div class="tb">
+                    <div class="tb-ico"><img src="images/guarantee.png" alt="Guarantee"></div>
+                    <div class="tb-txt"><h4>Satisfaction Guarantee</h4><div class="chk"><span>No Hidden Fees</span><span>30-DAY MONEY BACK GUARANTEE</span></div></div>
+                </div>
+                <div class="tb">
+                    <div class="tb-ico"><img src="images/60-day.png" alt="60-Day"></div>
+                    <div class="tb-txt"><h4>30-Day Money Back Guarantee</h4><p>If you are unsatisfied for any reason within 30 days, simply contact our customer care center for a full refund of your initial order. Happy shopping!</p></div>
+                </div>
+                <div class="tb">
+                    <div class="tb-ico"><img src="images/lock.png" alt="Lock"></div>
+                    <div class="tb-txt"><h4>Shop With Confidence</h4><p>Clima Pest Guard is Safe &amp; Secure Guaranteed! You'll pay nothing if unauthorized charges are made to your credit card as a result of shopping at Clima.</p></div>
+                </div>
+                <div class="tb">
+                    <div class="tb-ico"><img src="images/shield.png" alt="Shield"></div>
+                    <div class="tb-txt"><h4>Your Privacy Is Important</h4><p>All information is encrypted and transmitted without risk using a Secure Socket Layer (SSL) protocol.</p></div>
+                </div>
+                <div class="tb">
+                    <div class="tb-ico"><img src="images/us-flag.png" alt="USA"></div>
+                    <div class="tb-txt"><h4>American Owned</h4><p>Clima is proud to be an American-owned company.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- REVIEWS -->
+<div class="rev-sec">
+    <h2 class="rev-h">What Customers Say About Clima Pest Guard</h2>
+    <div class="rev">
+        <div class="rev-top">
+            <div class="rev-av"><img src="images/review1.webp" alt="Amy"></div>
+            <div><div class="rev-name">Amy C.</div><div class="rev-ver"><i class="fas fa-check-circle"></i> Verified Review</div></div>
+            <div class="rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
+        <hr class="rev-div">
+        <p class="rev-txt">Great for small spaces, and so easy to move around to each room if needed. I bought 2 and put one in my bedroom and one in the living room. No more mosquitoes!</p>
+    </div>
+    <div class="rev">
+        <div class="rev-top">
+            <div class="rev-av"><img src="images/review3.webp" alt="Jack"></div>
+            <div><div class="rev-name">Jack J.</div><div class="rev-ver"><i class="fas fa-check-circle"></i> Verified Review</div></div>
+            <div class="rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
+        <hr class="rev-div">
+        <p class="rev-txt">I was skeptical at first but this thing actually works! Within the first night I could see dead mosquitoes around it. Chemical-free and safe for my kids. Highly recommend.</p>
+    </div>
+    <div class="rev">
+        <div class="rev-top">
+            <div class="rev-av"><img src="images/review5.webp" alt="Sarah"></div>
+            <div><div class="rev-name">Sarah M.</div><div class="rev-ver"><i class="fas fa-check-circle"></i> Verified Review</div></div>
+            <div class="rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+        </div>
+        <hr class="rev-div">
+        <p class="rev-txt">Bought the family pack and covered my whole house. The 360-degree zapping is no joke, it catches everything. Super quiet too, doesn't disturb sleep at all.</p>
+    </div>
+    <div class="rev">
+        <div class="rev-top">
+            <div class="rev-av"><img src="images/review7.webp" alt="David"></div>
+            <div><div class="rev-name">David R.</div><div class="rev-ver"><i class="fas fa-check-circle"></i> Verified Review</div></div>
+            <div class="rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
+        <hr class="rev-div">
+        <p class="rev-txt">Best purchase I've made this year. The pest guard works like a charm and the build quality is excellent. Got the 4-pack deal and it was totally worth it.</p>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-sec" id="faq">
+    <h2 class="faq-h">Frequently Asked <span>Questions</span></h2>
+
+    <div class="faq-i">
+        <div class="faq-q" onclick="toggleFaq(this)">How does Clima Pest Guard work?<div class="faq-icon"><svg height="24" viewBox="0 0 24 24" width="24"><rect fill="#888" height="2" width="14" x="4" y="11"></rect><rect class="faq-vline" fill="#888" height="14" width="2" x="10" y="5"></rect></svg></div></div>
+        <div class="faq-a">Clima Pest Guard uses advanced UV technology to attract mosquitoes and zaps them instantly with a 360° electric grid, keeping your space bug-free without any chemicals.</div>
+    </div>
+
+    <div class="faq-i">
+        <div class="faq-q" onclick="toggleFaq(this)">Is Clima Pest Guard safe to use around kids and pets?<div class="faq-icon"><svg height="24" viewBox="0 0 24 24" width="24"><rect fill="#888" height="2" width="14" x="4" y="11"></rect><rect class="faq-vline" fill="#888" height="14" width="2" x="10" y="5"></rect></svg></div></div>
+        <div class="faq-a">Absolutely. It is 100% chemical-free and features a protective outer casing that prevents accidental contact with the grid, making it safe for families.</div>
+    </div>
+
+    <div class="faq-i">
+        <div class="faq-q" onclick="toggleFaq(this)">Is Clima Pest Guard portable?<div class="faq-icon"><svg height="24" viewBox="0 0 24 24" width="24"><rect fill="#888" height="2" width="14" x="4" y="11"></rect><rect class="faq-vline" fill="#888" height="14" width="2" x="10" y="5"></rect></svg></div></div>
+        <div class="faq-a">Yes! It is completely wireless and USB rechargeable. You can easily take it from your bedroom to the patio, camping trips, or anywhere you need protection.</div>
+    </div>
+
+    <div class="faq-i">
+        <div class="faq-q" onclick="toggleFaq(this)">Does it make any noise?<div class="faq-icon"><svg height="24" viewBox="0 0 24 24" width="24"><rect fill="#888" height="2" width="14" x="4" y="11"></rect><rect class="faq-vline" fill="#888" height="14" width="2" x="10" y="5"></rect></svg></div></div>
+        <div class="faq-a">Not at all. Clima Pest Guard operates silently, allowing you to sleep peacefully or enjoy outdoor conversations without any annoying buzzing sounds.</div>
+    </div>
+
+    <div class="faq-i">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I clean the device?<div class="faq-icon"><svg height="24" viewBox="0 0 24 24" width="24"><rect fill="#888" height="2" width="14" x="4" y="11"></rect><rect class="faq-vline" fill="#888" height="14" width="2" x="10" y="5"></rect></svg></div></div>
+        <div class="faq-a">Cleaning is effortless. The device is designed to be mess-free; simply shake out the debris or use the included small brush to clear the grid quickly.</div>
+    </div>
+
+    <div class="faq-i">
+        <div class="faq-q" onclick="toggleFaq(this)">Does it require batteries?<div class="faq-icon"><svg height="24" viewBox="0 0 24 24" width="24"><rect fill="#888" height="2" width="14" x="4" y="11"></rect><rect class="faq-vline" fill="#888" height="14" width="2" x="10" y="5"></rect></svg></div></div>
+        <div class="faq-a">No, it comes with a built-in rechargeable battery and a USB charging cable, so you don't need to keep buying disposable batteries.</div>
+    </div>
+
+    <div class="faq-i">
+        <div class="faq-q" onclick="toggleFaq(this)">How long will it take for my order to arrive?<div class="faq-icon"><svg height="24" viewBox="0 0 24 24" width="24"><rect fill="#888" height="2" width="14" x="4" y="11"></rect><rect class="faq-vline" fill="#888" height="14" width="2" x="10" y="5"></rect></svg></div></div>
+        <div class="faq-a">All orders will be shipped UPS within 48 hours after order confirmation. Please allow 5-7 business days for standard delivery. You will receive an email confirmation with your tracking number.</div>
+    </div>
+
+    <div class="faq-i">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the warranty policy?<div class="faq-icon"><svg height="24" viewBox="0 0 24 24" width="24"><rect fill="#888" height="2" width="14" x="4" y="11"></rect><rect class="faq-vline" fill="#888" height="14" width="2" x="10" y="5"></rect></svg></div></div>
+        <div class="faq-a">Every Clima Pest Guard comes with a 1-Year Warranty. Packages of 3x and 4x include a FREE Extended Warranty. For 1x and 2x packages, you can add Extended Warranty at checkout for $14.99.</div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__sep"><div class="footer__sep-line"></div></div>
+    <div class="footer__inner">
+        <div class="footer__logo-box">
+            <img src="images/logo-111.webp" alt="Clima Pest Guard Logo">
+            <p>CLIMA Pest Guard is a compact, portable, and energy efficient pest repeller that keeps your home free from mosquitoes, flies, rodents, and other pests instantly. Perfect for bedrooms, living rooms, kitchens, offices, and more — no chemicals, sprays, or messy traps required.</p>
+            <em>Individual results may vary based on room size and usage.</em>
+        </div>
+        <div class="footer__col">
+            <h3>Information</h3>
+            <ul>
+                <li><a href="terms.html" target="_blank">Terms &amp; Conditions</a></li>
+                <li><a href="privacy.html" target="_blank">Privacy Policy</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h3>Order</h3>
+            <ul>
+                <li><a href="shipping.html" target="_blank">Shipping &amp; Delivery</a></li>
+                <li><a href="return.html" target="_blank">Returns &amp; Refunds</a></li>
+                <li><a href="contact.html" target="_blank">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h3 class="static">Customer Care</h3>
+            <div class="footer__help">
+                <ul class="care-list">
+                    <li><i class="fas fa-envelope" style="color:#fff;margin-right:8px;font-size:16px"></i><a href="mailto:support@climaoffical.com" style="color:#fff">Send Us An Email</a></li>
+                    <li><i class="fas fa-phone" style="color:#fff;margin-right:8px;font-size:16px"></i><a href="tel:(302) 200-3480" style="color:#fff">(302) 200-3480</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__ribbon">
+        <div class="footer__ribbon-inner">
+            <span>&copy; 2026 CLIMA Pest Guard | All Rights Reserved</span>
+            <img src="images/creadit-card.webp" alt="Payment Methods">
+        </div>
+    </div>
+</footer>
+
+<script>
+var pkgs={
+    1:{item:'1x Clima Pest Guard',price:59.99,ship:9.99,method:'UPS Ground',img:'images/1.webp',link:'#buy-1',linkWar:'#buy-1-warranty'},
+    2:{item:'2x Clima Pest Guards',price:109.99,ship:0,method:'FREE Shipping',img:'images/2.webp',link:'#buy-2',linkWar:'#buy-2-warranty'},
+    3:{item:'3x Clima Pest Guards',price:139.99,ship:0,method:'FREE Shipping',img:'images/3.webp',link:'#buy-3',linkWar:'#buy-3'},
+    4:{item:'4x Clima Pest Guards',price:149.99,ship:0,method:'FREE Priority',img:'images/4.webp',link:'#buy-4',linkWar:'#buy-4'}
+};
+var btnLabels=['btn1','btn2','btn3','btn4'];
+var curPkg=0;
+var warrantyPrice=14.99;
+
+function updateBuyLink(){
+    var btn=document.getElementById('buyBtn');
+    if(curPkg===0){btn.href='#';return;}
+    var p=pkgs[curPkg];
+    if(curPkg>=3){
+        btn.href=p.link;
+    }else{
+        var chk=document.getElementById('warChk');
+        btn.href=(chk&&chk.checked)?p.linkWar:p.link;
+    }
+}
+
+function selectPkg(n){
+    var cards=document.querySelectorAll('.pc');
+    var wasSelected=cards[n-1].classList.contains('sel');
+
+    cards.forEach(function(c,i){
+        c.classList.remove('sel');
+        document.getElementById(btnLabels[i]).textContent='Select Package';
+    });
+
+    if(wasSelected){
+        curPkg=0;
+        document.getElementById('osItem').textContent='No package selected';
+        document.getElementById('osPrice').textContent='--';
+        document.getElementById('osShip').textContent='--';
+        document.getElementById('osMethod').textContent='--';
+        document.getElementById('osTotal').textContent='$0.00';
+        document.getElementById('osWarrantyRow').style.display='none';
+        updateBuyLink();
+        return;
+    }
+
+    cards[n-1].classList.add('sel');
+    document.getElementById(btnLabels[n-1]).textContent='Selected';
+    curPkg=n;
+
+    var p=pkgs[n];
+    document.getElementById('osItem').textContent=p.item;
+    document.getElementById('osPrice').textContent='$ '+p.price.toFixed(2);
+    document.getElementById('osShip').textContent=p.ship>0?'$'+p.ship.toFixed(2):'FREE';
+    document.getElementById('osMethod').textContent=p.method;
+    document.getElementById('osImg').src=p.img;
+
+    // Warranty logic
+    var warRow=document.getElementById('osWarrantyRow');
+    var warLabel=document.getElementById('osWarrantyLabel');
+    var warVal=document.getElementById('osWarrantyVal');
+    warRow.style.display='flex';
+
+    if(n>=3){
+        // 3x/4x — FREE extended warranty included
+        warRow.classList.add('free');
+        warLabel.innerHTML='<span class="war-free-tag"><i class="fas fa-shield-halved"></i> Extended Warranty (Included)</span>';
+        warVal.textContent='FREE';
+        warVal.classList.add('free-val');
+        document.getElementById('osTotal').textContent='$'+(p.price+p.ship).toFixed(2);
+    }else{
+        // 1x/2x — checkbox to add extended warranty $14.99
+        warRow.classList.remove('free');
+        warLabel.innerHTML='<label class="war-chk" id="warChkLabel"><input type="checkbox" id="warChk" onchange="toggleWarranty()"><span class="war-box"></span> <i class="fas fa-shield-halved" style="color:#3b7ddd;margin-right:2px"></i> Extended Warranty</label>';
+        warVal.textContent='+$'+warrantyPrice.toFixed(2);
+        warVal.classList.remove('free-val');
+        document.getElementById('warChk').checked=false;
+        document.getElementById('osTotal').textContent='$'+(p.price+p.ship).toFixed(2);
+    }
+    updateBuyLink();
+}
+
+function toggleWarranty(){
+    if(curPkg===0||curPkg>=3) return;
+    var chk=document.getElementById('warChk');
+    var p=pkgs[curPkg];
+    var total=p.price+p.ship;
+    if(chk.checked) total+=warrantyPrice;
+    document.getElementById('osTotal').textContent='$'+total.toFixed(2);
+    updateBuyLink();
+}
+
+// Init — no package selected on load
+(function(){
+    var warRow=document.getElementById('osWarrantyRow');
+    warRow.style.display='none';
+    updateBuyLink();
+})();
+
+function toggleFaq(el){
+    var a=el.nextElementSibling;
+    var open=a.classList.contains('show');
+    document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('show')});
+    document.querySelectorAll('.faq-q').forEach(function(x){x.classList.remove('open')});
+    if(!open){a.classList.add('show');el.classList.add('open')}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us | Clima Pest Guard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --primary: #1f6bff;
+  --secondary: #0f172a;
+  --accent: #22c55e;
+  --bg: #f4f7fb;
+  --text: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: var(--text);
+}
+
+/* Wrapper */
+.contact-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Card */
+.contact-card {
+  background: #ffffff;
+  max-width: 900px;
+  width: 100%;
+  padding: 48px 40px;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* Header */
+.contact-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.contact-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.contact-header p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #64748b;
+}
+
+/* Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+/* Info boxes */
+.info-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px rgba(31,107,255,0.15);
+}
+
+.info-box h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.info-box p,
+.info-box a {
+  font-size: 15px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.info-box a {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Full width sections */
+.full-box {
+  grid-column: span 2;
+  text-align: center;
+}
+
+/* Website badge */
+.website-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Address */
+.address {
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Footer note */
+.contact-footer {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 36px 22px;
+  }
+
+  .contact-header h1 {
+    font-size: 26px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-box {
+    grid-column: span 1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="contact-wrapper">
+  <div class="contact-card">
+
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p>Have any questions or concerns? Our team is here to help.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="info-box">
+        <h3>Email</h3>
+        <a href="mailto:support@climaoffical.com">
+          support@climaoffical.com
+        </a>
+      </div>
+
+      <div class="info-box">
+        <h3>Phone</h3>
+        <a href="tel:3022003480">
+          (302) 200-3480
+        </a>
+      </div>
+
+      <div class="info-box full-box">
+        <h3>Official Website</h3>
+        <div class="website-badge">
+          getClimapestguard.com
+        </div>
+      </div>
+
+      <div class="info-box full-box">
+        <h3>Return Address</h3>
+        <p class="address">
+          3601 N Dixie Hwy Bay 14<br>
+          Boca Raton, FL 33431
+        </p>
+      </div>
+
+    </div>
+
+    <div class="contact-footer">
+      © 2026 Clima Pest Guard. All rights reserved.
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

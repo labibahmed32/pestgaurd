@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(while read f)",
+      "Bash(do)",
+      "Bash(if [ -f \"$f\" ])",
+      "Bash(then echo \"EXISTS: $f\")",
+      "Bash(else echo \"MISSING: $f\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(ls \"g:/ECOM OFFERS ZIPS/pest gaurd/upsell\"*.html)",
+      "Bash(ls \"g:/ECOM OFFERS ZIPS/pest gaurd/\"*.html)",
+      "Bash(ls \"g:/ECOM OFFERS ZIPS/pest gaurd/\"*.HTML)",
+      "Bash(ls -la \"g:/ECOM OFFERS ZIPS/pest gaurd/images/enjoy12\"*)",
+      "Bash(ls -la \"g:/ECOM OFFERS ZIPS/pest gaurd/images/1st\"*)",
+      "Bash(ls -la \"g:/ECOM OFFERS ZIPS/pest gaurd/v3/images/1st\"*)",
+      "Bash(npm install sharp)",
+      "Bash(node -e \":*)",
+      "Bash(tr '}' '\\\\n')",
+      "Bash(ls -la \"g:/ECOM OFFERS ZIPS/pest gaurd/images/\"*.jfif)",
+      "Bash(where python)",
+      "Bash(\"C:/Users/PMLS/AppData/Local/Microsoft/WindowsApps/python.exe\" -c \"from PIL import Image; print\\(''Pillow available''\\)\")",
+      "Bash(where ffmpeg)",
+      "Bash(tr '{' '\\\\n{')"
+    ]
+  }
+}

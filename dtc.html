@@ -1,0 +1,3926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Multi-Language Translation System -->
+    <script>
+        // Translation strings for all languages
+        const translations = {
+            en: {
+                // Language Switcher
+                langName: 'English',
+
+                // Urgency Bar
+                attention: 'Attention:',
+                discountUntil: 'This discount will only be available until',
+
+                // Hero Section
+                heroTitle: 'Claim Your Discounted Clima Pest Guard',
+                heroSubtitle: 'Now While Supplies Last!',
+                minutes: 'Minutes',
+                seconds: 'Seconds',
+
+                // Pricing Section
+                ratedAvg: 'Rated an average of 4.7 out of 5',
+                howMany: 'Choose Your Pest Guard Deal By Coverage Area',
+                chooseSize: 'Select the Best Package for Your Space',
+                twoHeaters: 'TWO CLIMA PEST GUARDS',
+                threeHeaters: 'THREE CLIMA PEST GUARDS',
+                fourHeaters: 'FOUR CLIMA PEST GUARDS',
+                smallRooms: 'MEDIUM ROOMS (300 SQ. FT.)',
+                mediumRooms: 'LARGE ROOMS (450 SQ. FT.)',
+                largeRooms: 'LARGE SPACES (400+ SQ. FT.)',
+                youSave: 'You Save',
+                perHeater: '/unit',
+                bestValue: '/unit (Best Value)',
+                selectPackage: 'SELECT PACKAGE',
+                selectBestDeal: 'SELECT BEST DEAL',
+                mostPopular: 'MOST POPULAR',
+                shippingFee: '$19.99 Shipping Fee Across the USA!',
+                freeShipping: 'Free Shipping Across the USA!',
+                internationalOrders: 'International Orders? Standard Rates Apply.',
+
+                // Confidence Section
+                buyConfidence: "Buy With Confidence - It's 100% Risk-Free!",
+                confidenceText: "If you aren't satisfied, we offer a 30-day money-back guarantee. Send your package back and get a full refund, no questions asked.",
+
+                // Coupon Section
+                americaNo1: "AMERICA's #1 Mosquito Zapper",
+                upTo75Off: 'UP TO 69% OFF FOR A LIMITED TIME ONLY!',
+                limitedDeal: 'This limited-time deal is in high demand and stock keeps selling out.',
+                inStock: 'In stock and ready to ship',
+                getDiscount: 'GET 69% OFF DISCOUNT NOW!',
+                tryToday: 'Try it today with a 30-Day Money Back Guarantee!',
+
+                // Expert Section
+                meetExpert: 'Meet Our Expert,',
+                hvacTech: 'Pest Control Specialist',
+                expertText: "After working with different pest control solutions for years, I can confirm that chemical sprays and zappers are not for everyone. That's why I'm proud to recommend the Clima Pest Guard. It's portable, safe, chemical-free, and eliminates mosquitoes instantly. It's indispensable for anyone who wants to enjoy their home and outdoor spaces without annoying bugs.",
+                expertName: '- Kevin Grant',
+
+                // Results Reviews
+                resultsTitle: 'Let the Results Speak for Themselves',
+                resultsSubtitle: 'Discover Why People are Choosing Clima Pest Guard',
+                resultsDesc: "Hundreds of happy customers agree that chemical sprays and traditional bug zappers just don't cut it. Clima Pest Guard is here to change the game with its safe, chemical-free, and highly effective mosquito elimination technology.",
+
+                // Review names
+                reviewLiam: 'Daniel',
+                reviewLiamText: "I couldn't believe how fast Clima Pest Guard eliminated mosquitoes from our patio. Just turn it on and within seconds the mosquitoes are gone! No chemicals, no mess. We can finally enjoy our evenings outdoors without getting bitten!",
+                reviewSophie: 'Samantha',
+                reviewSophieText: "Clima Pest Guard works silently and safely without any harmful chemicals. I love that it's completely safe for my kids and pets. The mosquitoes are gone and my family is protected! It's the best investment we've made for our home.",
+                reviewRachel: 'Marcus',
+                reviewRachelText: "I love how portable Clima Pest Guard is! I can take it anywhere - camping, backyard BBQs, even inside. The 360° coverage means mosquitoes don't stand a chance. Plus, it's USB rechargeable so I never have to worry about batteries!",
+
+                // Trustpilot Reviews
+                trustTitle: 'Thousands of Happy Clima Pest Guard Users',
+                trustSubtitle: 'Check out these reviews from happy Clima Pest Guard customers around the world!',
+                reviews: 'reviews',
+                recommendText: 'of reviewers would recommend<br>this product to a friend',
+                results: 'Results',
+                quality: 'Quality',
+                satisfaction: 'Satisfaction',
+                verifiedCustomer: 'Verified customer',
+                recommendProduct: 'I recommend this product',
+                wasHelpful: 'Was this review helpful?',
+
+                // Trust reviews
+                review1Title: 'No more mosquito bites!',
+                review1Text: "Living in Florida means dealing with mosquitoes year-round. This pest guard has been a game changer! I place it on my patio and we can finally enjoy evenings outside without being eaten alive. Worth every penny!",
+                review1Date: '3 days ago',
+                review2Title: 'Best sleep ever',
+                review2Text: "Those annoying buzzing sounds at night used to drive me crazy! Since getting the Clima Pest Guard, I sleep peacefully through the night. It's completely silent and works like magic. No more mosquitoes in my bedroom!",
+                review2Date: '4 days ago',
+                review3Title: 'Perfect for camping',
+                review3Text: "I bought a couple of these for our family camping trips. They're so portable and the USB charging is super convenient. Our campsite is now mosquito-free and we can actually enjoy the outdoors. Highly recommend!",
+                review3Date: '6 days ago',
+                review4Title: 'Safe for my babies',
+                review4Text: "As a mom, I was worried about using chemical sprays around my kids. This pest guard is 100% chemical-free and works instantly. My children can play in the backyard without getting bitten. Best purchase ever!",
+                review4Date: '1 week ago',
+                review5Title: 'Works better than sprays!',
+                review5Text: "I've tried every mosquito spray and candle out there. Nothing worked until I got the Clima Pest Guard. It covers a huge area and eliminates mosquitoes in seconds. No smell, no mess, just results!",
+                review5Date: '1 week ago',
+
+                // Comparison Section
+                compTitle: 'The Ultimate Mosquito Eliminator',
+                compSubtitle: 'No Other Pest Control Compares',
+                compDesc: "Clima Pest Guard is all you need for a mosquito-free environment. It's compact enough for any space, but powerful enough to eliminate mosquitoes in seconds. Enjoy bug-free living instantly!",
+                compVs: 'Clima Pest Guard vs Chemical Sprays',
+                regularHeaters: 'Chemical Sprays',
+                compactPortable: 'Compact & Portable',
+                instantHeating: 'Instant Results',
+                energyEfficient: '360° Coverage',
+                safeOperation: 'Chemical-Free',
+                whisperQuiet: 'Silent Operation',
+                easyToUse: 'Easy to Use',
+                ecoFriendly: 'Safe for Kids & Pets',
+
+                // Footer
+                footerDesc: 'Clima Pest Guard is a revolutionary mosquito elimination solution that fits all homes and outdoor spaces. Enjoy chemical-free, portable, and effective pest control to protect your family.',
+                footerDisclaimer: 'Individual results may vary due to a variety of factors and are not ensured.',
+                information: 'Information',
+                termsConditions: 'Terms & Conditions',
+                privacyPolicy: 'Privacy Policy',
+                affiliate: 'Affiliate',
+                order: 'Order',
+                shippingDelivery: 'Shipping & Delivery',
+                returnsRefunds: 'Returns & Refunds',
+                contact: 'Contact',
+                customerCare: 'Customer Care',
+                copyright: '© 2026 Clima Pest Guard | All Rights Reserved'
+            },
+            es: {
+                // Language Switcher
+                langName: 'Espanol',
+
+                // Urgency Bar
+                attention: 'Atencion:',
+                discountUntil: 'Este descuento solo estara disponible hasta',
+
+                // Hero Section
+                heroTitle: 'Reclama Tu Clima Pest Guard Con Descuento',
+                heroSubtitle: '¡Ahora Mientras Duren Las Existencias!',
+                minutes: 'Minutos',
+                seconds: 'Segundos',
+
+                // Pricing Section
+                ratedAvg: 'Calificado con un promedio de 4.7 de 5',
+                howMany: 'Elige Tu Oferta de Pest Guard Por Metros Cuadrados',
+                chooseSize: 'Selecciona el Mejor Paquete Para Tu Espacio',
+                twoHeaters: 'DOS CLIMA PEST GUARDS',
+                threeHeaters: 'TRES CLIMA PEST GUARDS',
+                fourHeaters: 'CUATRO CLIMA PEST GUARDS',
+                smallRooms: 'ESPACIOS MEDIANOS (28 M²)',
+                mediumRooms: 'ESPACIOS GRANDES (42 M²)',
+                largeRooms: 'ESPACIOS MUY GRANDES (37+ M²)',
+                youSave: 'Ahorras',
+                perHeater: '/unidad',
+                bestValue: '/unidad (Mejor Valor)',
+                selectPackage: 'SELECCIONAR PAQUETE',
+                selectBestDeal: 'SELECCIONAR MEJOR OFERTA',
+                mostPopular: 'MAS POPULAR',
+                shippingFee: '¡$19.99 de Envio en Todo EE.UU.!',
+                freeShipping: '¡Disfruta Envio Gratis en Todo EE.UU.!',
+                internationalOrders: '¿Pedidos Internacionales? Se Aplican Tarifas Estandar.',
+
+                // Confidence Section
+                buyConfidence: '¡Compra Con Confianza - 100% Sin Riesgo!',
+                confidenceText: 'Si no estas satisfecho, ofrecemos una garantia de devolucion de dinero de 30 dias. Envia tu paquete de vuelta y obtén un reembolso completo, sin preguntas.',
+
+                // Coupon Section
+                americaNo1: 'El Eliminador de Mosquitos #1 de AMERICA',
+                upTo75Off: '¡HASTA 40% DE DESCUENTO POR TIEMPO LIMITADO!',
+                limitedDeal: 'Esta oferta por tiempo limitado tiene alta demanda y el stock sigue agotandose.',
+                inStock: 'En stock y listo para enviar',
+                getDiscount: '¡OBTÉN 40% DE DESCUENTO AHORA!',
+                tryToday: '¡Pruebalo hoy con una Garantia de Devolucion de 30 Dias!',
+
+                // Expert Section
+                meetExpert: 'Conoce a Nuestro Experto,',
+                hvacTech: 'Especialista en Control de Plagas',
+                expertText: 'Despues de trabajar con diferentes soluciones de control de plagas durante anos, puedo confirmar que los sprays quimicos no son para todos. Por eso estoy orgulloso de recomendar el Clima Pest Guard. Es portatil, seguro, sin quimicos y elimina los mosquitos al instante. Es indispensable para cualquiera que quiera disfrutar de su hogar sin insectos molestos.',
+                expertName: '- Kevin Grant',
+
+                // Results Reviews
+                resultsTitle: 'Deja Que Los Resultados Hablen Por Si Mismos',
+                resultsSubtitle: 'Descubre Por Que La Gente Elige Clima Pest Guard',
+                resultsDesc: 'Cientos de clientes satisfechos estan de acuerdo en que los sprays quimicos y los repelentes tradicionales simplemente no funcionan. Clima Pest Guard esta aqui para cambiar el juego con su tecnologia segura, sin quimicos y altamente efectiva.',
+
+                // Review names
+                reviewLiam: 'Daniel',
+                reviewLiamText: 'No podia creer lo rapido que Clima Pest Guard elimino los mosquitos de nuestro patio. ¡Solo encenderlo y en segundos los mosquitos desaparecen! Sin quimicos, sin desorden. ¡Por fin podemos disfrutar nuestras noches al aire libre sin picaduras!',
+                reviewSophie: 'Samantha',
+                reviewSophieText: 'Clima Pest Guard funciona silenciosa y seguramente sin ningun quimico danino. Me encanta que es completamente seguro para mis hijos y mascotas. ¡Los mosquitos se fueron y mi familia esta protegida! Es la mejor inversion que hemos hecho para nuestro hogar.',
+                reviewRachel: 'Marcus',
+                reviewRachelText: '¡Me encanta lo portatil que es Clima Pest Guard! Puedo llevarlo a cualquier parte - camping, BBQs en el jardin, incluso adentro. La cobertura de 360° significa que los mosquitos no tienen oportunidad. ¡Ademas, es recargable por USB asi que nunca tengo que preocuparme por las baterias!',
+
+                // Trustpilot Reviews
+                trustTitle: 'Miles de Usuarios Felices de Clima Pest Guard',
+                trustSubtitle: '¡Mira estas resenas de clientes felices de Clima Pest Guard de todo el mundo!',
+                reviews: 'resenas',
+                recommendText: 'de los evaluadores recomendarian<br>este producto a un amigo',
+                results: 'Resultados',
+                quality: 'Calidad',
+                satisfaction: 'Satisfaccion',
+                verifiedCustomer: 'Cliente verificado',
+                recommendProduct: 'Recomiendo este producto',
+                wasHelpful: '¿Fue util esta resena?',
+
+                // Trust reviews
+                review1Title: '¡Sin mas picaduras de mosquitos!',
+                review1Text: 'Vivir en Florida significa lidiar con mosquitos todo el ano. ¡Este pest guard ha sido un cambio total! Lo pongo en mi patio y por fin podemos disfrutar las noches afuera sin ser devorados. ¡Vale cada centavo!',
+                review1Date: 'hace 3 dias',
+                review2Title: 'El mejor sueno',
+                review2Text: '¡Esos molestos zumbidos por la noche me volvian loco! Desde que tengo el Clima Pest Guard, duermo tranquilo toda la noche. Es completamente silencioso y funciona como magia. ¡No mas mosquitos en mi habitacion!',
+                review2Date: 'hace 4 dias',
+                review3Title: 'Perfecto para acampar',
+                review3Text: 'Compre un par de estos para nuestros viajes de camping familiar. Son muy portatiles y la carga USB es super conveniente. Nuestro campamento ahora esta libre de mosquitos y podemos disfrutar del aire libre. ¡Muy recomendado!',
+                review3Date: 'hace 6 dias',
+                review4Title: 'Seguro para mis bebes',
+                review4Text: 'Como mama, me preocupaba usar sprays quimicos cerca de mis hijos. Este pest guard es 100% sin quimicos y funciona al instante. Mis hijos pueden jugar en el jardin sin picaduras. ¡La mejor compra!',
+                review4Date: 'hace 1 semana',
+                review5Title: '¡Funciona mejor que los sprays!',
+                review5Text: 'He probado todos los sprays y velas anti-mosquitos. Nada funciono hasta que consegui el Clima Pest Guard. Cubre un area enorme y elimina mosquitos en segundos. ¡Sin olor, sin desorden, solo resultados!',
+                review5Date: 'hace 1 semana',
+
+                // Comparison Section
+                compTitle: 'El Eliminador de Mosquitos Definitivo',
+                compSubtitle: 'Ningun Otro Control de Plagas Se Compara',
+                compDesc: 'Clima Pest Guard es todo lo que necesitas para un ambiente libre de mosquitos. Es lo suficientemente compacto para cualquier espacio, pero potente para eliminar mosquitos en segundos. ¡Disfruta de una vida sin insectos al instante!',
+                compVs: 'Clima Pest Guard vs Sprays Quimicos',
+                regularHeaters: 'Sprays Quimicos',
+                compactPortable: 'Compacto y Portatil',
+                instantHeating: 'Resultados Instantaneos',
+                energyEfficient: 'Cobertura 360°',
+                safeOperation: 'Sin Quimicos',
+                whisperQuiet: 'Operacion Silenciosa',
+                easyToUse: 'Facil de Usar',
+                ecoFriendly: 'Seguro para Ninos y Mascotas',
+
+                // Footer
+                footerDesc: 'Clima Pest Guard es una solucion revolucionaria para eliminar mosquitos que se adapta a todos los hogares y espacios exteriores. Disfruta de control de plagas sin quimicos, portatil y efectivo para proteger a tu familia.',
+                footerDisclaimer: 'Los resultados individuales pueden variar debido a una variedad de factores y no estan garantizados.',
+                information: 'Informacion',
+                termsConditions: 'Terminos y Condiciones',
+                privacyPolicy: 'Politica de Privacidad',
+                affiliate: 'Afiliado',
+                order: 'Pedido',
+                shippingDelivery: 'Envio y Entrega',
+                returnsRefunds: 'Devoluciones y Reembolsos',
+                contact: 'Contacto',
+                customerCare: 'Atencion al Cliente',
+                copyright: '© 2026 Clima Pest Guard | Todos Los Derechos Reservados'
+            },
+            de: {
+                // Language Switcher
+                langName: 'Deutsch',
+
+                // Urgency Bar
+                attention: 'Achtung:',
+                discountUntil: 'Dieser Rabatt ist nur verfugbar bis',
+
+                // Hero Section
+                heroTitle: 'Holen Sie Sich Ihren Rabattierten Clima Pest Guard',
+                heroSubtitle: 'Jetzt Solange Der Vorrat Reicht!',
+                minutes: 'Minuten',
+                seconds: 'Sekunden',
+
+                // Pricing Section
+                ratedAvg: 'Durchschnittlich mit 4,7 von 5 bewertet',
+                howMany: 'Wahlen Sie Ihr Pest Guard Angebot Nach Quadratmetern',
+                chooseSize: 'Wahlen Sie Das Beste Paket Fur Ihren Raum',
+                twoHeaters: 'ZWEI CLIMA PEST GUARDS',
+                threeHeaters: 'DREI CLIMA PEST GUARDS',
+                fourHeaters: 'VIER CLIMA PEST GUARDS',
+                smallRooms: 'MITTLERE RAUME (28 M²)',
+                mediumRooms: 'GROSSE RAUME (42 M²)',
+                largeRooms: 'SEHR GROSSE RAUME (37+ M²)',
+                youSave: 'Sie Sparen',
+                perHeater: '/Einheit',
+                bestValue: '/Einheit (Bester Wert)',
+                selectPackage: 'PAKET WAHLEN',
+                selectBestDeal: 'BESTES ANGEBOT WAHLEN',
+                mostPopular: 'AM BELIEBTESTEN',
+                shippingFee: '$19,99 Versandkosten in den USA!',
+                freeShipping: 'Kostenloser Versand in den USA!',
+                internationalOrders: 'Internationale Bestellungen? Standardtarife gelten.',
+
+                // Confidence Section
+                buyConfidence: 'Kaufen Sie Mit Vertrauen - 100% Risikofrei!',
+                confidenceText: 'Wenn Sie nicht zufrieden sind, bieten wir eine 30-tagige Geld-zuruck-Garantie. Senden Sie Ihr Paket zuruck und erhalten Sie eine vollstandige Ruckerstattung, ohne Fragen.',
+
+                // Coupon Section
+                americaNo1: 'AMERIKAs Nr. 1 Mucken-Eliminator',
+                upTo75Off: 'BIS ZU 40% RABATT NUR FUR BEGRENZTE ZEIT!',
+                limitedDeal: 'Dieses zeitlich begrenzte Angebot ist sehr gefragt und der Vorrat ist standig ausverkauft.',
+                inStock: 'Auf Lager und versandbereit',
+                getDiscount: 'JETZT 40% RABATT SICHERN!',
+                tryToday: 'Probieren Sie es heute mit einer 30-Tage-Geld-zuruck-Garantie!',
+
+                // Expert Section
+                meetExpert: 'Lernen Sie Unseren Experten Kennen,',
+                hvacTech: 'Schadlingsbekampfungs-Spezialist',
+                expertText: 'Nach jahrelanger Arbeit mit verschiedenen Schadlingsbekampfungslosungen kann ich bestatigen, dass chemische Sprays nicht fur jeden geeignet sind. Deshalb bin ich stolz darauf, den Clima Pest Guard zu empfehlen. Er ist tragbar, sicher, chemiefrei und eliminiert Mucken sofort. Er ist unverzichtbar fur jeden, der sein Zuhause ohne lastige Insekten geniessen mochte.',
+                expertName: '- Kevin Grant',
+
+                // Results Reviews
+                resultsTitle: 'Lassen Sie Die Ergebnisse Fur Sich Sprechen',
+                resultsSubtitle: 'Entdecken Sie Warum Menschen Den Clima Pest Guard Wahlen',
+                resultsDesc: 'Hunderte zufriedene Kunden stimmen zu, dass chemische Sprays und traditionelle Insektenschutzmittel einfach nicht funktionieren. Clima Pest Guard ist hier, um das Spiel mit seiner sicheren, chemiefreien und hochwirksamen Technologie zu verandern.',
+
+                // Review names
+                reviewLiam: 'Daniel',
+                reviewLiamText: 'Ich konnte nicht glauben, wie schnell Clima Pest Guard Mucken von unserer Terrasse eliminiert hat. Einfach einschalten und in Sekunden sind die Mucken weg! Keine Chemikalien, kein Durcheinander. Wir konnen endlich unsere Abende im Freien ohne Stiche geniessen!',
+                reviewSophie: 'Samantha',
+                reviewSophieText: 'Clima Pest Guard arbeitet leise und sicher ohne schadliche Chemikalien. Ich liebe, dass es vollig sicher fur meine Kinder und Haustiere ist. Die Mucken sind weg und meine Familie ist geschutzt! Es ist die beste Investition, die wir fur unser Zuhause gemacht haben.',
+                reviewRachel: 'Marcus',
+                reviewRachelText: 'Ich liebe, wie tragbar der Clima Pest Guard ist! Ich kann ihn uberall mitnehmen - Camping, Gartengrill, sogar drinnen. Die 360° Abdeckung bedeutet, dass Mucken keine Chance haben. Ausserdem ist er USB-aufladbar, so dass ich mir nie Sorgen um Batterien machen muss!',
+
+                // Trustpilot Reviews
+                trustTitle: 'Tausende Zufriedene Clima Pest Guard Nutzer',
+                trustSubtitle: 'Schauen Sie sich diese Bewertungen von zufriedenen Clima Pest Guard Kunden aus der ganzen Welt an!',
+                reviews: 'Bewertungen',
+                recommendText: 'der Rezensenten wurden dieses<br>Produkt einem Freund empfehlen',
+                results: 'Ergebnisse',
+                quality: 'Qualitat',
+                satisfaction: 'Zufriedenheit',
+                verifiedCustomer: 'Verifizierter Kunde',
+                recommendProduct: 'Ich empfehle dieses Produkt',
+                wasHelpful: 'War diese Bewertung hilfreich?',
+
+                // Trust reviews
+                review1Title: 'Keine Muckenstiche mehr!',
+                review1Text: 'In Florida zu leben bedeutet, das ganze Jahr uber mit Mucken umzugehen. Dieser Pest Guard war ein Wendepunkt! Ich stelle ihn auf meine Terrasse und wir konnen endlich Abende draussen geniessen ohne gebissen zu werden. Jeden Cent wert!',
+                review1Date: 'vor 3 Tagen',
+                review2Title: 'Bester Schlaf uberhaupt',
+                review2Text: 'Diese nervigen Summgerausche nachts haben mich verruckt gemacht! Seit ich den Clima Pest Guard habe, schlafe ich die ganze Nacht ruhig durch. Er ist vollig leise und funktioniert wie Magie. Keine Mucken mehr in meinem Schlafzimmer!',
+                review2Date: 'vor 4 Tagen',
+                review3Title: 'Perfekt zum Campen',
+                review3Text: 'Ich habe ein paar davon fur unsere Familien-Campingtrips gekauft. Sie sind so tragbar und das USB-Laden ist super praktisch. Unser Campingplatz ist jetzt muckenfrei und wir konnen die Natur tatsachlich geniessen. Sehr empfehlenswert!',
+                review3Date: 'vor 6 Tagen',
+                review4Title: 'Sicher fur meine Kinder',
+                review4Text: 'Als Mutter war ich besorgt, chemische Sprays in der Nahe meiner Kinder zu verwenden. Dieser Pest Guard ist 100% chemiefrei und funktioniert sofort. Meine Kinder konnen im Garten spielen ohne gestochen zu werden. Bester Kauf uberhaupt!',
+                review4Date: 'vor 1 Woche',
+                review5Title: 'Funktioniert besser als Sprays!',
+                review5Text: 'Ich habe jeden Muckenspray und jede Kerze ausprobiert. Nichts funktionierte bis ich den Clima Pest Guard bekam. Er deckt eine riesige Flache ab und eliminiert Mucken in Sekunden. Kein Geruch, kein Durcheinander, nur Ergebnisse!',
+                review5Date: 'vor 1 Woche',
+
+                // Comparison Section
+                compTitle: 'Der Ultimative Mucken-Eliminator',
+                compSubtitle: 'Keine Andere Schadlingsbekampfung Vergleicht Sich',
+                compDesc: 'Clima Pest Guard ist alles was Sie fur eine muckenfreie Umgebung brauchen. Kompakt genug fur jeden Raum, aber kraftig genug um Mucken in Sekunden zu eliminieren. Geniessen Sie sofort insektenfreies Leben!',
+                compVs: 'Clima Pest Guard vs Chemische Sprays',
+                regularHeaters: 'Chemische Sprays',
+                compactPortable: 'Kompakt & Tragbar',
+                instantHeating: 'Sofortige Ergebnisse',
+                energyEfficient: '360° Abdeckung',
+                safeOperation: 'Chemiefrei',
+                whisperQuiet: 'Lautloser Betrieb',
+                easyToUse: 'Einfach zu Bedienen',
+                ecoFriendly: 'Sicher fur Kinder & Haustiere',
+
+                // Footer
+                footerDesc: 'Clima Pest Guard ist eine revolutionare Mucken-Eliminierungslosung, die zu allen Haushalten und Aussenraumen passt. Geniessen Sie chemiefreie, tragbare und effektive Schadlingsbekampfung zum Schutz Ihrer Familie.',
+                footerDisclaimer: 'Individuelle Ergebnisse konnen aufgrund verschiedener Faktoren variieren und sind nicht garantiert.',
+                information: 'Information',
+                termsConditions: 'Allgemeine Geschaftsbedingungen',
+                privacyPolicy: 'Datenschutzrichtlinie',
+                affiliate: 'Partner',
+                order: 'Bestellung',
+                shippingDelivery: 'Versand & Lieferung',
+                returnsRefunds: 'Ruckgabe & Erstattung',
+                contact: 'Kontakt',
+                customerCare: 'Kundenbetreuung',
+                copyright: '© 2026 Clima Pest Guard | Alle Rechte Vorbehalten'
+            }
+        };
+
+        // Current language (default English)
+        let currentLang = 'en';
+
+        // Function to apply translations
+        function applyTranslations(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            // Apply translations to all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = t[key];
+                    } else {
+                        el.innerHTML = t[key];
+                    }
+                }
+            });
+
+            // Update language switcher button
+            const langBtn = document.querySelector('.lang-btn .lang-text');
+            if (langBtn) langBtn.textContent = t.langName;
+
+            // Update active state in dropdown
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.remove('active');
+                opt.querySelector('.check').textContent = '';
+            });
+            const activeOption = document.querySelector(`.lang-option[onclick="switchLanguage('${lang}')"]`);
+            if (activeOption) {
+                activeOption.classList.add('active');
+                activeOption.querySelector('.check').textContent = '\u2713';
+            }
+
+            // Update flag in button
+            const flagSpan = document.querySelector('.lang-btn .flag');
+            if (flagSpan) {
+                if (lang === 'en') flagSpan.innerHTML = '&#127468;&#127463;';
+                else if (lang === 'es') flagSpan.innerHTML = '&#127466;&#127480;';
+                else if (lang === 'de') flagSpan.innerHTML = '&#127465;&#127466;';
+            }
+        }
+
+        // Language detection function
+        function detectAndSetLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+
+            // Check if user MANUALLY selected a language (via switcher click)
+            const manualSelection = localStorage.getItem('climaManualLang');
+
+            // If user explicitly chose a language via URL
+            if (urlLang && ['en', 'es', 'de'].includes(urlLang)) {
+                localStorage.setItem('climaManualLang', urlLang);
+                return urlLang;
+            }
+
+            // If user manually selected a language before (via switcher), respect that choice
+            if (manualSelection && ['en', 'es', 'de'].includes(manualSelection)) {
+                return manualSelection;
+            }
+
+            // Country lists
+            const spanishCountries = ['ES', 'MX', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY', 'PR'];
+            const germanCountries = ['DE', 'AT', 'CH', 'LI', 'LU'];
+            const englishCountries = ['US', 'GB', 'CA', 'AU', 'NZ', 'IE', 'ZA', 'JM', 'TT', 'BB', 'BS', 'BZ', 'GY'];
+
+            // IP-based detection
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const countryCode = data.country_code;
+                    let detectedLang = 'en';
+
+                    if (spanishCountries.includes(countryCode)) {
+                        detectedLang = 'es';
+                    } else if (germanCountries.includes(countryCode)) {
+                        detectedLang = 'de';
+                    } else if (!englishCountries.includes(countryCode)) {
+                        // Check browser language for non-listed countries
+                        const browserLang = (navigator.language || navigator.userLanguage).split('-')[0].toLowerCase();
+                        if (browserLang === 'es') detectedLang = 'es';
+                        else if (browserLang === 'de') detectedLang = 'de';
+                    }
+
+                    applyTranslations(detectedLang);
+                })
+                .catch(() => {
+                    // If IP detection fails, check browser language
+                    const browserLang = (navigator.language || navigator.userLanguage).split('-')[0].toLowerCase();
+                    let detectedLang = 'en';
+                    if (browserLang === 'es') detectedLang = 'es';
+                    else if (browserLang === 'de') detectedLang = 'de';
+                    applyTranslations(detectedLang);
+                });
+
+            return 'en'; // Default return while fetching
+        }
+
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', function() {
+            detectAndSetLanguage();
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="index, follow" name="robots"/>
+    <meta content="clima pest guard, pest guard, mosquito killer, bug zapper, mosquito trap, insect killer, pest control, ultrasonic pest repeller, mosquito zapper, fly killer, indoor bug zapper, chemical free pest control, electronic pest repeller, mosquito lamp, outdoor pest killer" name="keywords"/>
+    <title>Clima Pest Guard™ | #1 Mosquito Killer &amp; Bug Zapper - Up to 69% OFF</title>
+    <link rel="icon" type="image/webp" href="images/fav.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Urgency Bar */
+        .urgency-bar {
+            background: #f5c518;
+            color: #0a2540;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .urgency-bar .attention {
+            color: #c0392b;
+            font-weight: 700;
+        }
+
+        /* Hero Offer Section */
+        .hero-offer {
+            background: #1a365d;
+            padding: 30px 20px 45px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-offer h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .hero-offer h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-item span {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .countdown-item small {
+            font-size: 10px;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+        }
+
+        .countdown-separator {
+            font-size: 32px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 300;
+        }
+
+        /* Arrow Down */
+        .arrow-down {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 22px solid #1a365d;
+            z-index: 10;
+        }
+
+        /* ===== PRICING SECTION CSS ===== */
+        #custom-product-sec, #custom-product-sec-bottom { background: linear-gradient(180deg, #eef2f7 0%, #f8f9fb 100%); padding: 60px 10px 40px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: center; box-sizing: border-box; width: 100%; }
+        #custom-product-sec *, #custom-product-sec-bottom * { box-sizing: border-box; }
+
+        /* Header */
+        .cp-happy { color: #e67e22; font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+        .cp-happy i { color: #e67e22; margin-right: 5px; }
+        .cp-rated { color: #888; font-size: 13px; margin-bottom: 15px; }
+        .cp-main-txt { font-size: 32px; font-weight: 900; color: #2c3e50; margin: 0 0 8px; line-height: 1.2; }
+        .cp-sub-txt { color: #7f8c8d; margin-bottom: 25px; font-size: 15px; font-style: italic; }
+
+        /* Timer Box */
+        .cp-timer-box { background: #fff; border-radius: 12px; padding: 18px 25px; max-width: 620px; margin: 0 auto 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
+        .cp-timer-top { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+        .cp-timer-dot { width: 10px; height: 10px; background: #e74c3c; border-radius: 50%; animation: cp-blink 1s infinite; }
+        @keyframes cp-blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        .cp-timer-label { font-size: 13px; font-weight: 700; color: #2c3e50; letter-spacing: 1.5px; text-transform: uppercase; }
+        .cp-stock-badge { background: #fdecea; color: #e74c3c; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+        .cp-countdown { display: flex; align-items: center; justify-content: center; gap: 4px; }
+        .cp-countdown-label { color: #888; font-size: 13px; margin-right: 8px; }
+        .cp-digit { background: #f1f3f5; color: #2c3e50; font-size: 28px; font-weight: 800; width: 42px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .cp-colon { font-size: 24px; font-weight: 700; color: #2c3e50; padding: 0 2px; }
+
+        /* Trust Badges */
+        .cp-trust-row { display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin: 25px 0 15px; }
+        .cp-trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #2c3e50; }
+        .cp-trust-item i { font-size: 18px; }
+        .cp-trust-item .fa-shield-alt { color: #3B5EAA; }
+        .cp-trust-item .fa-leaf { color: #3baa43; }
+        .cp-trust-item .fa-award { color: #3baa43; }
+        .cp-trust-item .fa-truck-fast { color: #3B5EAA; }
+        .cp-guarantee-txt { color: #555; font-size: 14px; max-width: 700px; margin: 0 auto 30px; line-height: 1.5; }
+
+        /* === PRICING CARDS === */
+        .cp-cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; max-width: 100%; padding: 0 5px; margin: 0 auto; }
+        .cp-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px solid #e0e4e8; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; min-width: 0; }
+        .cp-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .cp-card.cp-featured { border: 3px solid #e67e22; box-shadow: 0 5px 25px rgba(230,126,34,0.25); z-index: 2; }
+        .cp-card.cp-featured:hover { transform: translateY(-4px); }
+
+        /* Card Banner */
+        .cp-banner { padding: 10px 8px; color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; text-align: center; white-space: normal; word-wrap: break-word; }
+        .cp-banner-blue, .cp-banner-green, .cp-banner-red { background: linear-gradient(135deg, #3B5EAA, #2d4a8a); }
+        .cp-banner-orange { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+
+        /* Card Body */
+        .cp-card-body { padding: 25px 20px; flex: 1; display: flex; flex-direction: column; align-items: center; }
+        .cp-card-img { height: 220px; object-fit: contain; margin-bottom: 10px; }
+        .cp-card-title { font-size: 22px; font-weight: 900; color: #1a1a2e; margin-top: 0; margin-bottom: 3px; }
+        .cp-card-subtitle { font-size: 14px; color: #888; margin-bottom: 8px; font-style: italic; }
+
+        /* Pricing */
+        .cp-price-old { text-decoration: line-through; color: #c0392b; font-size: 20px; font-weight: 700; margin-bottom: 6px; display: inline-block; background: rgba(231,76,60,0.1); padding: 2px 8px; border-radius: 4px; }
+        .cp-price-new { font-size: 52px; font-weight: 900; color: #1a1a2e; line-height: 1; }
+        .cp-price-new sup { font-size: 24px; top: -18px; }
+        .cp-price-unit { font-size: 14px; color: #888; margin: 6px 0; font-style: italic; }
+        .cp-save-badge { background: #eafaf1; color: #27ae60; font-size: 14px; font-weight: 700; padding: 6px 16px; border-radius: 20px; margin: 10px 0 15px; display: inline-block; }
+
+        /* Features List */
+        .cp-features { list-style: none; padding: 0; margin: 0 0 20px; text-align: left; width: 100%; }
+        .cp-features li { font-size: 15px; color: #333; padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+        .cp-features li i { color: #3baa43; font-size: 15px; margin-top: 3px; flex-shrink: 0; }
+        .cp-chosen { font-size: 10px; color: #888; margin-bottom: 6px; }
+        .cp-chosen i { margin-right: 3px; }
+
+        /* Warranty Checkbox */
+        .cp-warranty { width: 100%; margin: auto 0 8px; padding: 10px 12px; background: #f8f9fa; border: 2px solid #e0e4e8; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+        .cp-warranty:hover { border-color: #3baa43; }
+        .cp-warranty.active { border-color: #3baa43; background: #f0faf0; }
+        .cp-warranty-top { display: flex; align-items: center; gap: 8px; }
+        .cp-warranty-top input[type="checkbox"] { width: 18px; height: 18px; accent-color: #3baa43; cursor: pointer; flex-shrink: 0; }
+        .cp-warranty-top label { font-size: 13px; font-weight: 700; color: #2c3e50; cursor: pointer; line-height: 1.3; }
+        .cp-warranty-top label span { color: #e67e22; font-weight: 800; }
+        .cp-warranty-info { display: none; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #ccc; font-size: 12px; color: #555; line-height: 1.5; }
+        .cp-warranty-info i { color: #3baa43; margin-right: 4px; }
+        .cp-warranty.active .cp-warranty-info { display: block; }
+
+        /* Total Price */
+        .cp-total { width: 100%; text-align: center; margin: 8px 0 12px; padding: 8px; background: #fff8ed; border: 1px dashed #e67e22; border-radius: 8px; display: none; }
+        .cp-total.show { display: block; }
+        .cp-total-label { font-size: 12px; color: #888; }
+        .cp-total-amount { font-size: 22px; font-weight: 900; color: #e67e22; }
+
+        /* CTA Buttons */
+        .cp-cta { width: 100%; padding: 16px 12px; border: none; border-radius: 10px; color: #fff; font-size: 15px; font-weight: 800; text-transform: uppercase; cursor: pointer; letter-spacing: 0.5px; transition: all 0.3s; white-space: normal; text-align: center; margin-top: 8px; flex-shrink: 0; }
+        .cp-features + .cp-cta { margin-top: auto; }
+        .cp-cta:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .cp-cta-blue { background: linear-gradient(135deg, #3B5EAA, #2d4a8a); }
+        .cp-cta-green { background: linear-gradient(135deg, #3baa43, #2e8b34); }
+        .cp-cta-orange { background: linear-gradient(135deg, #e67e22, #d35400); }
+        .cp-cta-red { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+
+        /* Card Footer */
+        .cp-card-footer { padding: 12px 15px; text-align: center; border-top: 1px solid #f0f0f0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .cp-card-footer img { height: 22px; opacity: 0.6; display: block; margin: 0 auto; }
+        .cp-card-footer p { font-size: 11px; color: #aaa; margin: 5px 0 0; text-align: center; }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 991px) {
+            .cp-main-txt { font-size: 24px; }
+            .cp-cards-grid { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+            .cp-card { max-width: 420px; width: 100%; }
+            .cp-card.cp-featured { transform: none; }
+            .cp-card.cp-featured:hover { transform: translateY(-4px); }
+
+            /* Mobile split layout */
+            .cp-card-body { padding: 10px 12px; }
+            .cp-mob-top-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 6px; }
+            .cp-mob-badge { background: #f4f6f8; color: #2c3e50; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px; display: inline-flex; align-items: center; gap: 4px; }
+            .cp-mob-badge i { font-size: 10px; color: #3baa43; }
+            .cp-mob-split { display: flex; align-items: center; width: 100%; margin-bottom: 10px; }
+            .cp-mob-img-side { width: 35%; text-align: center; flex-shrink: 0; }
+            .cp-mob-img-side img { max-height: 120px; }
+            .cp-mob-txt-side { width: 65%; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 0 8px; }
+            .cp-mob-txt-side .cp-price-old { font-size: 17px; margin-bottom: 6px; padding: 1px 6px; align-self: flex-end; }
+            .cp-mob-txt-side .cp-price-new { font-size: 38px; font-weight: 900; margin: 0 0 6px; line-height: 1; align-self: flex-end; }
+            .cp-mob-txt-side .cp-price-new sup { font-size: 18px; top: -14px; }
+            .cp-mob-txt-side .cp-price-unit { font-size: 13px; color: #999; margin: 0 0 5px; font-style: normal; align-self: flex-end; }
+            .cp-mob-txt-side .cp-save-badge { font-size: 13px; padding: 4px 12px; margin: 0; align-self: flex-end; }
+
+            /* Hide desktop-only elements on mobile */
+            .cp-desk-only { display: none !important; }
+            .cp-mob-only { display: block !important; }
+
+            .cp-trust-row { gap: 15px; }
+            .cp-trust-item { font-size: 12px; }
+            .cp-digit { font-size: 22px; width: 34px; height: 42px; }
+            /* 4x Deal Strip mobile */
+            .cp-deal-strip { padding:20px 18px 20px 22px !important; }
+            .cp-deal-inner { flex-direction:column !important; align-items:stretch !important; gap:16px !important; }
+            .cp-deal-left { text-align:center !important; }
+            .cp-deal-left h4 { font-size:19px !important; }
+            .cp-deal-perks { grid-template-columns:1fr !important; gap:6px !important; text-align:left; }
+            .cp-deal-perks span { font-size:13px !important; }
+            .cp-deal-right { text-align:center !important; }
+            .cp-deal-right span:first-child { font-size:30px !important; }
+            .cp-deal-btn { display:block !important; width:100% !important; text-align:center; padding:0 !important; }
+            .cp-deal-btn img { width:100% !important; max-width:320px !important; margin:0 auto !important; }
+        }
+        @media (min-width: 992px) {
+            .cp-mob-only { display: none !important; }
+            .cp-desk-only { display: block !important; }
+            .cp-cards-grid.cp-desk-only { display: grid !important; grid-template-columns: repeat(4, 1fr); gap: 6px; max-width: 100%; }
+        }
+
+        /* Buy With Confidence Section */
+        .confidence-section {
+            background: #e8eef4;
+            padding: 40px 20px;
+        }
+
+        .confidence-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .confidence-badge {
+            flex-shrink: 0;
+        }
+
+        .confidence-badge img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .confidence-content {
+            flex: 1;
+        }
+
+        .confidence-content h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a365d;
+            margin: 0 0 10px;
+            font-style: italic;
+        }
+
+        .confidence-content p {
+            font-size: 15px;
+            color: #555;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .confidence-image {
+            flex-shrink: 0;
+        }
+
+        .confidence-image img {
+            width: 140px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .confidence-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .confidence-badge img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .confidence-image img {
+                width: 120px;
+            }
+        }
+
+        /* Coupon Section */
+        .coupon-section {
+            background: #fff;
+            padding: 60px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coupon-card {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .coupon-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .coupon-image img {
+            width: 100%;
+            max-width: 500px;
+            border: 3px dashed #3B5EAA;
+            border-radius: 15px;
+            padding: 20px;
+            background: #dce8f5;
+        }
+
+        .coupon-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .coupon-flag {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .coupon-flag img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .coupon-flag span {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .coupon-title {
+            font-size: 42px;
+            font-weight: 900;
+            color: #1a1a1a;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .coupon-subtitle {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .coupon-social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            padding: 10px 20px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .coupon-avatars img {
+            height: 28px;
+            width: auto;
+        }
+
+        .coupon-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .coupon-rating img {
+            height: 18px;
+        }
+
+        .coupon-rating span {
+            font-weight: 700;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .coupon-divider {
+            width: 1px;
+            height: 20px;
+            background: #ddd;
+        }
+
+        .coupon-stock {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #27ae60;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .coupon-stock::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #27ae60;
+            border-radius: 50%;
+        }
+
+        .coupon-btn {
+            display: inline-block;
+            background: #3B5EAA;
+            color: #fff;
+            padding: 18px 60px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .coupon-btn:hover {
+            background: #2e4a8a;
+            transform: translateY(-2px);
+        }
+
+        .coupon-guarantee {
+            font-size: 14px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .coupon-guarantee::before,
+        .coupon-guarantee::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: #ddd;
+        }
+
+        @media (max-width: 900px) {
+            .coupon-card {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .coupon-title {
+                font-size: 32px;
+            }
+
+            .coupon-social {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+
+        /* Expert Section */
+        .expert-section {
+            background: #f0f5ff;
+            padding: 60px 20px;
+        }
+
+        .expert-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .expert-content {
+            flex: 1;
+        }
+
+        .expert-content h3 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #3B5EAA;
+            font-style: italic;
+            margin: 0 0 5px;
+        }
+
+        .expert-content .expert-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 25px;
+        }
+
+        .expert-content .expert-text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0 0 20px;
+        }
+
+        .expert-content .expert-name {
+            font-size: 15px;
+            color: #555;
+            margin: 0 0 15px;
+        }
+
+        .expert-content .expert-signature {
+            max-width: 190px;
+            height: auto;
+        }
+
+        .expert-image {
+            flex-shrink: 0;
+        }
+
+        .expert-image img {
+            width: 280px;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .expert-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .expert-content h3 {
+                font-size: 28px;
+            }
+
+            .expert-image {
+                order: -1;
+            }
+
+            .expert-image img {
+                width: 220px;
+            }
+
+            .expert-content .expert-signature {
+                margin: 0 auto;
+            }
+        }
+
+        /* Results Reviews Section */
+        .results-reviews {
+            background: #fff;
+            padding: 70px 20px;
+        }
+
+        .results-reviews .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .results-reviews .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a365d;
+            margin: 0 0 10px;
+        }
+
+        .results-reviews .section-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #3B5EAA;
+            margin: 0 0 15px;
+        }
+
+        .results-reviews .section-divider {
+            width: 80px;
+            height: 4px;
+            background: #e67e22;
+            margin: 0 auto 20px;
+            border-radius: 2px;
+        }
+
+        .results-reviews .section-desc {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .results-reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .results-review-card {
+            background: #f9fafb;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .results-review-card img.review-img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .results-review-content {
+            padding: 25px;
+        }
+
+        .results-review-content h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a365d;
+            margin: 0 0 10px;
+        }
+
+        .results-review-content .stars {
+            margin-bottom: 15px;
+        }
+
+        .results-review-content .stars img {
+            height: 18px;
+        }
+
+        .results-review-content p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 992px) {
+            .results-reviews-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .results-reviews .section-header h2 {
+                font-size: 28px;
+            }
+        }
+
+        /* Trustpilot Reviews Section */
+        .trustpilot-reviews {
+            background: #fff;
+            padding: 70px 20px;
+        }
+
+        .trustpilot-reviews .section-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .trustpilot-reviews .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a365d;
+            margin: 0 0 10px;
+        }
+
+        .trustpilot-reviews .section-header p {
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+
+        .trustpilot-reviews .section-divider {
+            width: 80px;
+            height: 4px;
+            background: #00b67a;
+            margin: 20px auto 40px;
+            border-radius: 2px;
+        }
+
+        .reviews-score-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            flex-wrap: wrap;
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        .reviews-score-col {
+            flex: 1;
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reviews-score-col.rating-col {
+            border-right: 1px solid #eee;
+            padding-right: 30px;
+        }
+
+        .reviews-score-col.bars-col {
+            min-width: 200px;
+            padding: 0 20px;
+        }
+
+        .reviews-score-col.recommend-col {
+            border-left: 1px solid #eee;
+            padding-left: 30px;
+        }
+
+        .rating-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: #1a365d;
+            line-height: 1;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 2px;
+            margin: 10px 0 8px;
+        }
+
+        .rating-stars span {
+            color: #00b67a;
+            font-size: 20px;
+        }
+
+        .rating-count {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .star-bars {
+            width: 100%;
+        }
+
+        .star-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .star-bar-label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            min-width: 30px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .star-bar-label span.star-icon {
+            color: #f39c12;
+            font-size: 12px;
+        }
+
+        .star-bar-track {
+            flex: 1;
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .star-bar-fill {
+            height: 100%;
+            background: #00b67a;
+            border-radius: 5px;
+        }
+
+        .star-bar-count {
+            min-width: 40px;
+            text-align: right;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .recommend-percent {
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .recommend-percent b {
+            color: #00b67a;
+            font-size: 18px;
+        }
+
+        .quality-bars {
+            width: 100%;
+        }
+
+        .quality-bar-row {
+            margin-bottom: 10px;
+        }
+
+        .quality-bar-label {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .quality-bar-track {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .quality-bar-fill {
+            height: 100%;
+            background: #00b67a;
+            border-radius: 5px;
+        }
+
+        .write-review-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .write-review-btn:hover {
+            background: #f8f9fa;
+        }
+
+        /* Review Cards */
+        .trustpilot-cards {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .trustpilot-card {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 30px 0;
+        }
+
+        .trustpilot-card:last-child {
+            border-bottom: none;
+        }
+
+        .trustpilot-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .trustpilot-card-user {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .trustpilot-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .trustpilot-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .trustpilot-avatar-initials {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .trustpilot-user-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin: 0 0 4px;
+        }
+
+        .trustpilot-verified {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #00b67a;
+            font-weight: 600;
+        }
+
+        .trustpilot-recommend {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #333;
+            margin-top: 8px;
+        }
+
+        .trustpilot-recommend span {
+            color: #00b67a;
+        }
+
+        .trustpilot-card-meta {
+            text-align: right;
+        }
+
+        .trustpilot-card-stars {
+            display: flex;
+            gap: 2px;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+        }
+
+        .trustpilot-card-stars span {
+            color: #00b67a;
+            font-size: 18px;
+        }
+
+        .trustpilot-card-stars span.empty {
+            color: #ddd;
+        }
+
+        .trustpilot-card-date {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .trustpilot-card-content h5 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .trustpilot-card-content p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .trustpilot-card-images {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .trustpilot-card-images img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .trustpilot-card-footer {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .trustpilot-helpful {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .trustpilot-helpful span {
+            margin-right: 5px;
+        }
+
+        .trustpilot-helpful-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .trustpilot-reviews .section-header h2 {
+                font-size: 26px;
+            }
+
+            .reviews-score-container {
+                flex-direction: column;
+                gap: 25px;
+                padding: 20px;
+            }
+
+            .reviews-score-col.rating-col,
+            .reviews-score-col.recommend-col {
+                border: none;
+                padding: 0;
+            }
+
+            .reviews-score-col.rating-col {
+                border-bottom: 1px solid #eee;
+                padding-bottom: 25px;
+            }
+
+            .reviews-score-col.recommend-col {
+                border-top: 1px solid #eee;
+                padding-top: 25px;
+            }
+
+            .rating-number {
+                font-size: 48px;
+            }
+
+            .trustpilot-card-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .trustpilot-card-meta {
+                text-align: left;
+            }
+
+            .trustpilot-card-stars {
+                justify-content: flex-start;
+            }
+        }
+
+        /* Comparison Table Section */
+        .comparison-section {
+            background: #f5f7fa;
+            padding: 70px 20px;
+        }
+
+        .comparison-section .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .comparison-section .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a365d;
+            margin: 0 0 10px;
+        }
+
+        .comparison-section .section-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 15px;
+        }
+
+        .comparison-section .section-divider {
+            width: 80px;
+            height: 4px;
+            background: #3B5EAA;
+            margin: 0 auto 20px;
+            border-radius: 2px;
+        }
+
+        .comparison-section .section-desc {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .comparison-table {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr;
+            align-items: center;
+            padding: 25px 30px;
+            background: #fff;
+            border-bottom: 2px solid #eee;
+        }
+
+        .comparison-header h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #3B5EAA;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .comparison-header .header-images {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .comparison-header .product-img {
+            text-align: center;
+        }
+
+        .comparison-header .product-img img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .comparison-header .competitor-box {
+            text-align: center;
+            background: #f0f5ff;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .comparison-header .competitor-box img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 8px;
+        }
+
+        .comparison-header .competitor-box p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #3B5EAA;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            align-items: center;
+            padding: 18px 30px;
+        }
+
+        .comparison-row:nth-child(odd) {
+            background: #f8fafc;
+        }
+
+        .comparison-row:nth-child(even) {
+            background: #fff;
+        }
+
+        .comparison-row .criteria {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .comparison-row .icon {
+            text-align: center;
+        }
+
+        .comparison-row .icon.check {
+            color: #27ae60;
+            font-size: 22px;
+        }
+
+        .comparison-row .icon.cross {
+            color: #e74c3c;
+            font-size: 22px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-section {
+                padding: 50px 15px;
+            }
+
+            .comparison-section .section-header h2 {
+                font-size: 24px;
+            }
+
+            .comparison-section .section-header h3 {
+                font-size: 15px;
+            }
+
+            .comparison-section .section-desc {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .comparison-table {
+                border-radius: 12px;
+            }
+
+            .comparison-header {
+                display: grid;
+                grid-template-columns: 1.2fr 1fr 1fr;
+                gap: 10px;
+                padding: 15px 10px;
+                align-items: center;
+            }
+
+            .comparison-header h4 {
+                font-size: 13px;
+                text-align: left;
+            }
+
+            .comparison-header .header-images {
+                display: contents;
+            }
+
+            .comparison-header .product-img {
+                text-align: center;
+            }
+
+            .comparison-header .product-img img {
+                max-width: 80px;
+            }
+
+            .comparison-header .competitor-box {
+                padding: 10px 8px;
+                border-radius: 8px;
+            }
+
+            .comparison-header .competitor-box img {
+                width: 32px;
+                height: 32px;
+                margin-bottom: 5px;
+            }
+
+            .comparison-header .competitor-box p {
+                font-size: 10px;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1.2fr 1fr 1fr;
+                padding: 12px 10px;
+            }
+
+            .comparison-row .criteria {
+                font-size: 13px;
+            }
+
+            .comparison-row .icon.check,
+            .comparison-row .icon.cross {
+                font-size: 18px;
+            }
+        }
+
+        /* Trust Badges */
+        .trust-section {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .trust-badge i {
+            font-size: 24px;
+            color: #1a365d;
+        }
+
+        /* Featured Logos */
+        .featured {
+            background: #f8f9fa;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .featured img {
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Product Info Section */
+        .product-info {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        .product-info .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .product-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a365d;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .product-content h2 span {
+            color: #e67e22;
+        }
+
+        .product-content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .product-features li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-size: 18px;
+        }
+
+        .product-cta {
+            display: inline-block;
+            background: #e67e22;
+            color: #fff;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(230,126,34,0.3);
+        }
+
+        .product-cta:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-tag {
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: #e67e22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .how-it-works .section-title {
+            color: #1a365d;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            text-align: center;
+        }
+
+        .step-card img {
+            width: 100%;
+            max-width: 280px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #e67e22;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a365d;
+        }
+
+        .step-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .reviews .section-title {
+            color: #1a365d;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .review-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 20px;
+        }
+
+        .review-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .review-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 8px;
+        }
+
+        .review-content p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .review-content p strong {
+            color: #1a365d;
+        }
+
+        .review-author {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .review-stars img {
+            height: 15px;
+        }
+
+        /* Bottom CTA */
+        .bottom-cta {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .bottom-cta h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .bottom-cta h2 span {
+            color: #e67e22;
+        }
+
+        .bottom-cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .bottom-cta-btn {
+            display: inline-block;
+            background: #e67e22;
+            color: #fff;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .bottom-cta-btn:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .footer-desc {
+            font-size: 13px;
+            color: #999;
+            line-height: 1.7;
+        }
+
+        .footer-heading {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-contact {
+            color: #fff;
+            font-size: 14px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Desktop footer - center align Customer Care */
+        .footer-contact p {
+            text-align: center;
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .footer-customer-care {
+            text-align: center;
+        }
+
+        .footer-customer-care .footer-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Mobile footer fix */
+        @media (max-width: 768px) {
+            .footer-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            .footer-grid > div {
+                margin-bottom: 25px;
+            }
+            .footer-heading {
+                text-align: center !important;
+            }
+            .footer-customer-care .footer-heading {
+                text-align: center !important;
+            }
+            .footer-links {
+                text-align: center !important;
+            }
+            .footer-contact {
+                text-align: center !important;
+            }
+            .footer-contact p {
+                text-align: center !important;
+                margin: 8px 0;
+            }
+            .footer-desc {
+                text-align: center !important;
+            }
+            .footer-logo {
+                text-align: center !important;
+                margin-bottom: 15px;
+            }
+            .footer-bottom {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 15px;
+            }
+            .footer-payments {
+                justify-content: center !important;
+            }
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .footer-payments i {
+            font-size: 28px;
+            margin-left: 15px;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-offer h1 {
+                font-size: 24px;
+            }
+
+            .hero-offer h2 {
+                font-size: 18px;
+            }
+
+            .countdown-item span {
+                font-size: 28px;
+            }
+
+            .product-info .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .product-image {
+                order: -1;
+            }
+
+            .product-features {
+                text-align: left;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 50px auto 0;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-offer {
+                padding: 20px 15px 35px;
+            }
+
+            .hero-offer h1 {
+                font-size: 20px;
+            }
+
+            .hero-offer h2 {
+                font-size: 16px;
+            }
+
+            .countdown-item span {
+                font-size: 24px;
+            }
+
+            .countdown-separator {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .review-avatar {
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-grid > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-heading {
+                text-align: center !important;
+                width: 100%;
+            }
+
+            .footer-customer-care .footer-heading {
+                text-align: center !important;
+            }
+
+            .footer-customer-care {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+
+            .footer-contact {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                width: 100%;
+            }
+
+            .footer-contact p {
+                text-align: center !important;
+                margin: 8px 0;
+                width: 100%;
+            }
+
+            .footer-contact a {
+                display: inline-block;
+            }
+
+            .footer-links {
+                text-align: center !important;
+                padding: 0;
+            }
+
+            .footer-links li {
+                text-align: center !important;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+        }
+
+        .lang-btn .flag {
+            font-size: 18px;
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+
+        .lang-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .lang-option:last-child {
+            border-bottom: none;
+        }
+
+        .lang-option:hover {
+            background: #fff5f5;
+        }
+
+        .lang-option.active {
+            background: linear-gradient(135deg, #fff0f0 0%, #ffe5e5 100%);
+            color: #c41e3a;
+        }
+
+        .lang-option .flag {
+            font-size: 22px;
+        }
+
+        .lang-option .lang-name {
+            flex: 1;
+        }
+
+        .lang-option .check {
+            color: #c41e3a;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+
+            .lang-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .lang-btn .lang-text {
+                display: none;
+            }
+
+            .lang-dropdown {
+                min-width: 160px;
+            }
+        }
+        img { content-visibility: auto; }
+
+        /* ===== FOOTER MOBILE FIX ===== */
+        @media (max-width: 767px) {
+            .footer__innerContainer { display: flex !important; flex-direction: column !important; padding: 0 15px !important; }
+            .footer__listContainer { width: 100% !important; float: none !important; text-align: center !important; padding: 20px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .footer__logoContainer { padding: 20px 15px !important; }
+            .footer__logoContainerText { font-size: 14px !important; }
+            .footer__heading { text-align: center !important; font-size: 18px !important; }
+            .footer__chevron { display: none !important; }
+            .footer__list { text-align: center !important; padding: 0 !important; display: block !important; max-height: none !important; overflow: visible !important; opacity: 1 !important; visibility: visible !important; height: auto !important; }
+            .footer__listContainer { cursor: default !important; pointer-events: none; }
+            .footer__listContainer a { pointer-events: auto; }
+            .footer__listItem { text-align: center !important; display: block !important; padding: 6px 0 !important; }
+            .footer__list--customerCare { display: flex !important; flex-direction: column !important; align-items: center !important; }
+            .footer__help { display: flex !important; justify-content: center !important; }
+            .footer__ribbon { padding: 15px 10px !important; }
+            .footer__innerRibbonWrapper { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 10px !important; }
+            .footer__paymentLogos { max-width: 200px !important; height: auto !important; }
+            .footer__ribbonContent { text-align: center !important; }
+            footer.footer { padding-bottom: 20px !important; }
+        }
+
+        /* ===== NOTIFICATION MOBILE FIX ===== */
+        @media (max-width: 767px) {
+            .custom-social-proof { left: 8px !important; bottom: 8px !important; right: 8px !important; }
+            .custom-notification { width: auto !important; max-width: 280px !important; border-radius: 8px !important; padding-bottom: 5px !important; }
+            .custom-notification-container { max-width: 280px !important; height: auto !important; min-height: 60px !important; display: flex !important; align-items: center !important; }
+            .custom-notification-image-wrapper { width: 55px !important; flex-shrink: 0 !important; margin-top: 0 !important; }
+            .custom-notification-image-wrapper img { max-height: 50px !important; }
+            .custom-notification-content { font-size: 11px !important; line-height: 14px !important; width: auto !important; margin-left: 5px !important; margin-top: 8px !important; padding-bottom: 3px !important; }
+            .custom-notification-content small { font-size: 9px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn" onclick="toggleLangDropdown()">
+            <span class="flag">&#127468;&#127463;</span>
+            <span class="lang-text">English</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+            <div class="lang-option active" onclick="switchLanguage('en')">
+                <span class="flag">&#127468;&#127463;</span>
+                <span class="lang-name">English</span>
+                <span class="check">&#10003;</span>
+            </div>
+            <div class="lang-option" onclick="switchLanguage('es')">
+                <span class="flag">&#127466;&#127480;</span>
+                <span class="lang-name">Espanol</span>
+                <span class="check"></span>
+            </div>
+            <div class="lang-option" onclick="switchLanguage('de')">
+                <span class="flag">&#127465;&#127466;</span>
+                <span class="lang-name">Deutsch</span>
+                <span class="check"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        <span class="attention" data-i18n="attention">Attention:</span> <span data-i18n="discountUntil">This discount will only be available until</span> <span id="currentDate"></span>
+    </div>
+
+    <!-- Hero Offer Section -->
+    <section class="hero-offer">
+        <h1 data-i18n="heroTitle">Claim Your Discounted Clima Pest Guard</h1>
+        <h2 data-i18n="heroSubtitle">Now While Supplies Last!</h2>
+
+        <!-- Countdown Timer -->
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="minutes">14</span>
+                <small data-i18n="minutes">Minutes</small>
+            </div>
+            <span class="countdown-separator">:</span>
+            <div class="countdown-item">
+                <span id="seconds">59</span>
+                <small data-i18n="seconds">Seconds</small>
+            </div>
+        </div>
+
+        <div class="arrow-down"></div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="custom-product-sec">
+<div class="container">
+
+    <!-- What You Get - Sales Section -->
+    <div id="we-inline" style="max-width:960px; margin:0 auto 45px; text-align:center;">
+
+        <!-- 4x CTA Strip -->
+        <div class="cp-deal-strip" style="background:#fff; border:2px solid #e8ecf1; border-radius:16px; padding:28px 32px; margin-bottom:22px; position:relative; overflow:hidden;">
+            <!-- Left accent bar -->
+            <div style="position:absolute; left:0; top:0; bottom:0; width:5px; background:linear-gradient(180deg,#e67e22,#f39c12);"></div>
+
+            <div class="cp-deal-inner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+                <!-- Left -->
+                <div class="cp-deal-left" style="text-align:left; flex:1;">
+                    <div style="display:inline-flex; align-items:center; gap:8px; margin-bottom:12px;">
+                        <span style="background:#e67e22; color:#fff; font-size:11px; font-weight:800; padding:5px 14px; border-radius:6px; text-transform:uppercase; letter-spacing:1px;">Best Deal</span>
+                        <span style="font-size:13px; color:#e74c3c; font-weight:600;">Selling fast, limited stock!</span>
+                    </div>
+                    <h4 style="font-size:22px; font-weight:900; color:#2c3e50; margin:0 0 12px; line-height:1.3;">Get 4x Pest Guards for just <span style="color:#3baa43;">$149.99</span> <s style="font-size:15px; color:#aaa; font-weight:400;">$479.99</s></h4>
+                    <div class="cp-deal-perks" style="display:grid; grid-template-columns:1fr 1fr; gap:8px 20px; margin-top:2px;">
+                        <span style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:600; color:#555;"><i class="fas fa-check" style="color:#3baa43; font-size:13px;"></i> FREE USA Shipping</span>
+                        <span style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:600; color:#555;"><i class="fas fa-check" style="color:#3baa43; font-size:13px;"></i> FREE Same Day Priority Shipping</span>
+                        <span style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:600; color:#555;"><i class="fas fa-check" style="color:#3baa43; font-size:13px;"></i> FREE Replacement Warranty</span>
+                        <span style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:600; color:#555;"><i class="fas fa-check" style="color:#3baa43; font-size:13px;"></i> FREE 2-Year Warranty</span>
+                    </div>
+                </div>
+                <!-- Right -->
+                <div class="cp-deal-right" style="text-align:center; flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <span style="display:block; font-size:36px; font-weight:900; color:#e67e22; line-height:1;">Get 69% Off</span>
+                    <span style="display:block; font-size:12px; color:#999; margin:4px 0 14px;">You save $330.00</span>
+                    <a href="#buy-4x" class="cp-deal-btn" style="display:inline-block; text-decoration:none; transition:all 0.3s;"><img src="images/ordernow.webp" alt="Order Now" style="width:280px; display:block;" decoding="async"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Row -->
+        <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; background:#fff; border:1px solid #e0e4e8; border-radius:12px; padding:16px 25px;">
+            <span style="font-size:14px; color:#2c3e50; font-weight:700; display:flex; align-items:center; gap:6px;"><i class="fas fa-undo-alt" style="color:#3baa43; font-size:16px;"></i> 30-Day Returns</span>
+            <span style="font-size:14px; color:#2c3e50; font-weight:700; display:flex; align-items:center; gap:6px;"><i class="fas fa-shield-alt" style="color:#3B5EAA; font-size:16px;"></i> Warranty Included</span>
+            <span style="font-size:14px; color:#2c3e50; font-weight:700; display:flex; align-items:center; gap:6px;"><i class="fas fa-lock" style="color:#e67e22; font-size:16px;"></i> Secure Checkout</span>
+            <span style="font-size:14px; color:#2c3e50; font-weight:700; display:flex; align-items:center; gap:6px;"><i class="fas fa-headset" style="color:#3baa43; font-size:16px;"></i> 24hr Support</span>
+        </div>
+
+    </div>
+
+    <!-- Header -->
+    <p class="cp-happy"><i class="fas fa-star"></i> 13,000+ Happy Customers</p>
+    <p class="cp-rated">Rated 4.7/5 Based On 9,200+ Reviews</p>
+    <h2 class="cp-main-txt">How Many Clima Pest Guards Do You Need?</h2>
+    <p class="cp-sub-txt">Due To High Demand, Inventory Is Selling Fast</p>
+
+    <!-- Timer Box -->
+    <div class="cp-timer-box">
+        <div class="cp-timer-top">
+            <span class="cp-timer-dot"></span>
+            <span class="cp-timer-label">Flash Sale &mdash; Limited Stock</span>
+            <span class="cp-stock-badge">Only <span id="cp-stock">87</span> left</span>
+        </div>
+        <div class="cp-countdown">
+            <span class="cp-countdown-label">Offer ends in</span>
+            <span class="cp-digit" id="cp-h1">0</span>
+            <span class="cp-digit" id="cp-h2">2</span>
+            <span class="cp-colon">:</span>
+            <span class="cp-digit" id="cp-m1">0</span>
+            <span class="cp-digit" id="cp-m2">0</span>
+            <span class="cp-colon">:</span>
+            <span class="cp-digit" id="cp-s1">0</span>
+            <span class="cp-digit" id="cp-s2">0</span>
+        </div>
+    </div>
+
+    <!-- ===== 4 PRICING CARDS (Desktop) ===== -->
+    <div id="buy-4x" class="cp-cards-grid cp-desk-only">
+
+        <!-- Card 1: 1x -->
+        <div class="cp-card">
+            <div class="cp-banner cp-banner-blue">Save 50%</div>
+            <div class="cp-card-body">
+                <img src="images/1.webp" alt="1x Pest Guard" class="cp-card-img" loading="eager" decoding="async">
+                <h3 class="cp-card-title">1x Pest Guard</h3>
+                <p class="cp-card-subtitle">Try-It Bundle</p>
+                <span class="cp-price-old">$119.99</span>
+                <div class="cp-price-new">$59<sup>.99</sup></div>
+                <p class="cp-price-unit">$59.99 / pest guard</p>
+                <div class="cp-save-badge">You save $60.00</div>
+                <ul class="cp-features">
+                    <li><i class="fas fa-check-circle"></i> $9.99 USA Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> Quick Coverage Up To 150 Sq Ft</li>
+                    <li><i class="fas fa-check-circle"></i> Ideal For Bedrooms & Offices</li>
+                </ul>
+                <div class="cp-warranty" onclick="toggleWarranty(this)">
+                    <div class="cp-warranty-top">
+                        <input type="checkbox" id="warranty-1" >
+                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
+                    </div>
+                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
+                </div>
+                <div class="cp-total" id="total-1"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$84.97</span></div>
+                <a href="#buy-1x" class="cp-cta" style="display:block; text-align:center; padding:0; background:none; border:none;" data-base="69.98" data-link-normal="#buy-1x" data-link-warranty="#buy-1x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:115%; max-width:115%; margin-left:-7.5%;" decoding="async"></a>
+            </div>
+            <div class="cp-card-footer">
+                <img src="images/creadit-card.webp" alt="Payment" loading="eager" decoding="async">
+                <p>Secure 256-bit SSL Encrypted Payment</p>
+            </div>
+        </div>
+
+        <!-- Card 2: 2x -->
+        <div class="cp-card">
+            <div class="cp-banner cp-banner-green">Save 54%</div>
+            <div class="cp-card-body">
+                <img src="images/2.webp" alt="2x Clima Pest Guard" class="cp-card-img" loading="eager" decoding="async">
+                <h3 class="cp-card-title">2x Pest Guards</h3>
+                <p class="cp-card-subtitle">Best Value</p>
+                <span class="cp-price-old">$239.99</span>
+                <div class="cp-price-new">$109<sup>.99</sup></div>
+                <p class="cp-price-unit">$54.99 / pest guard</p>
+                <div class="cp-save-badge">You save $130.00</div>
+                <ul class="cp-features">
+                    <li><i class="fas fa-check-circle"></i> FREE USA Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> FREE Replacement Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> 360° Zapping Technology</li>
+                    <li><i class="fas fa-check-circle"></i> Cover Two Rooms At Once</li>
+                    <li><i class="fas fa-check-circle"></i> Bedroom + Living Room Coverage</li>
+                    <li><i class="fas fa-check-circle"></i> Save On Pest Control Costs</li>
+                </ul>
+                <div class="cp-warranty" onclick="toggleWarranty(this)">
+                    <div class="cp-warranty-top">
+                        <input type="checkbox" id="warranty-2" >
+                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
+                    </div>
+                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
+                </div>
+                <div class="cp-total" id="total-2"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$124.98</span></div>
+                <a href="#buy-2x" class="cp-cta" style="display:block; text-align:center; padding:0; background:none; border:none;" data-base="109.99" data-link-normal="#buy-2x" data-link-warranty="#buy-2x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:115%; max-width:115%; margin-left:-7.5%;" decoding="async"></a>
+            </div>
+            <div class="cp-card-footer">
+                <img src="images/creadit-card.webp" alt="Payment" loading="eager" decoding="async">
+                <p>Secure 256-bit SSL Encrypted Payment</p>
+            </div>
+        </div>
+
+        <!-- Card 3: 3x (FEATURED) -->
+        <div class="cp-card cp-featured">
+            <div class="cp-banner cp-banner-orange">Most Popular - Save 61%</div>
+            <div class="cp-card-body">
+                <img src="images/3.webp" alt="3x Clima Pest Guard" class="cp-card-img" loading="eager" decoding="async">
+                <h3 class="cp-card-title">3x Pest Guards</h3>
+                <p class="cp-card-subtitle">Family Pack</p>
+                <span class="cp-price-old">$359.99</span>
+                <div class="cp-price-new">$139<sup>.99</sup></div>
+                <p class="cp-price-unit">$46.66 / pest guard</p>
+                <div class="cp-save-badge">You save $220.00</div>
+                <ul class="cp-features">
+                    <li style="color:#e67e22; font-weight:700;"><i class="fas fa-gift" style="color:#e67e22;"></i> FREE 2-Year Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> FREE USA Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> FREE Replacement Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> 360° Zapping Technology</li>
+                    <li><i class="fas fa-check-circle"></i> Cover Three Rooms</li>
+                    <li><i class="fas fa-check-circle"></i> Bedroom, Office & Living Room</li>
+                    <li><i class="fas fa-check-circle"></i> Save On Pest Control vs. Sprays</li>
+                </ul>
+                <a href="#buy-3x" class="cp-cta" style="display:block; text-align:center; padding:0; background:none; border:none;" data-base="139.99" data-link-normal="#buy-3x" data-link-warranty="#buy-3x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:115%; max-width:115%; margin-left:-7.5%;" decoding="async"></a>
+            </div>
+            <div class="cp-card-footer">
+                <img src="images/creadit-card.webp" alt="Payment" loading="eager" decoding="async">
+                <p>Secure 256-bit SSL Encrypted Payment</p>
+            </div>
+        </div>
+
+        <!-- Card 4: 4x -->
+        <div class="cp-card">
+            <div class="cp-banner cp-banner-red">Best Value - Save 69%</div>
+            <div class="cp-card-body">
+                <img src="images/4.webp" alt="4x Clima Pest Guard" class="cp-card-img" loading="eager" decoding="async">
+                <h3 class="cp-card-title">4x Pest Guards</h3>
+                <p class="cp-card-subtitle">Whole Home Bundle</p>
+                <span class="cp-price-old">$479.99</span>
+                <div class="cp-price-new">$149<sup>.99</sup></div>
+                <p class="cp-price-unit">$37.50 / pest guard</p>
+                <div class="cp-save-badge">You save $330.00</div>
+                <p class="cp-chosen"><i class="fas fa-gem"></i> Customer Favorite - Big Bundle, Big Savings</p>
+                <ul class="cp-features">
+                    <li style="color:#e67e22; font-weight:700;"><i class="fas fa-gift" style="color:#e67e22;"></i> FREE 2-Year Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> FREE USA Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> FREE Same Day Priority Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> FREE Replacement Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> 360° Zapping Technology</li>
+                    <li><i class="fas fa-check-circle"></i> Cover Four Rooms At Once</li>
+                    <li><i class="fas fa-check-circle"></i> Whole Home Protection</li>
+                    <li><i class="fas fa-check-circle"></i> Save On Pest Control vs. Sprays</li>
+                </ul>
+                <a href="#buy-4x" class="cp-cta" style="display:block; text-align:center; padding:0; background:none; border:none;" data-base="149.99" data-link-normal="#buy-4x" data-link-warranty="#buy-4x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:115%; max-width:115%; margin-left:-7.5%;" decoding="async"></a>
+            </div>
+            <div class="cp-card-footer">
+                <img src="images/creadit-card.webp" alt="Payment" loading="eager" decoding="async">
+                <p>Secure 256-bit SSL Encrypted Payment</p>
+            </div>
+        </div>
+
+    </div><!-- end desktop cards -->
+
+    <!-- ===== 4 PRICING CARDS (Mobile) ===== -->
+    <div class="cp-mob-only" style="display:none;">
+
+        <!-- Mobile Card 1x -->
+        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
+            <div class="cp-banner cp-banner-blue">Save 50%</div>
+            <div class="cp-card-body">
+                <h3 class="cp-card-title">1x Pest Guard</h3>
+                <p class="cp-card-subtitle">Try-It Bundle</p>
+                <div class="cp-mob-top-row">
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> $9.99 US Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 150 Sq Ft</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedrooms & Offices</span>
+                </div>
+                <div class="cp-mob-split">
+                    <div class="cp-mob-img-side"><img src="images/1.webp" alt="1x Pest Guard" loading="eager" decoding="async"></div>
+                    <div class="cp-mob-txt-side">
+                        <span class="cp-price-old">$119.99</span>
+                        <div class="cp-price-new">$59<sup>.99</sup></div>
+                        <p class="cp-price-unit">$59.99 / pest guard</p>
+                        <div class="cp-save-badge">You save $60.00</div>
+                    </div>
+                </div>
+                <div class="cp-warranty" onclick="toggleWarranty(this)">
+                    <div class="cp-warranty-top">
+                        <input type="checkbox" id="warranty-m1" >
+                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
+                    </div>
+                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
+                </div>
+                <div class="cp-total" id="total-m1"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$84.97</span></div>
+                <a href="#buy-1x" style="display:block; text-align:center; margin-top:8px;" data-base="69.98" data-link-normal="#buy-1x" data-link-warranty="#buy-1x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async"></a>
+            </div>
+        </div>
+
+        <!-- Mobile Card 2x -->
+        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
+            <div class="cp-banner cp-banner-green">Save 54%</div>
+            <div class="cp-card-body">
+                <h3 class="cp-card-title">2x Pest Guards</h3>
+                <p class="cp-card-subtitle">Best Value</p>
+                <div class="cp-mob-top-row">
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 2 Rooms</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedroom + Living</span>
+                </div>
+                <div class="cp-mob-split">
+                    <div class="cp-mob-img-side"><img src="images/2.webp" alt="2x Pest Guard" loading="eager" decoding="async"></div>
+                    <div class="cp-mob-txt-side">
+                        <span class="cp-price-old">$239.99</span>
+                        <div class="cp-price-new">$109<sup>.99</sup></div>
+                        <p class="cp-price-unit">$54.99 / pest guard</p>
+                        <div class="cp-save-badge">You save $130.00</div>
+                    </div>
+                </div>
+                <div class="cp-warranty" onclick="toggleWarranty(this)">
+                    <div class="cp-warranty-top">
+                        <input type="checkbox" id="warranty-m2" >
+                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
+                    </div>
+                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
+                </div>
+                <div class="cp-total" id="total-m2"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$124.98</span></div>
+                <a href="#buy-2x" style="display:block; text-align:center; margin-top:8px;" data-base="109.99" data-link-normal="#buy-2x" data-link-warranty="#buy-2x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async"></a>
+            </div>
+        </div>
+
+        <!-- Mobile Card 3x (Most Popular) -->
+        <div class="cp-card cp-featured" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
+            <div class="cp-banner cp-banner-orange">Most Popular - Save 61%</div>
+            <div class="cp-card-body">
+                <h3 class="cp-card-title">3x Pest Guards</h3>
+                <p class="cp-card-subtitle">Family Pack</p>
+                <div class="cp-mob-top-row">
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> FREE 2-Year Warranty</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 3 Rooms</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedroom + Office + Living</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Save vs. Sprays</span>
+                </div>
+                <div class="cp-mob-split">
+                    <div class="cp-mob-img-side"><img src="images/3.webp" alt="3x Pest Guard" loading="eager" decoding="async"></div>
+                    <div class="cp-mob-txt-side">
+                        <span class="cp-price-old">$359.99</span>
+                        <div class="cp-price-new">$139<sup>.99</sup></div>
+                        <p class="cp-price-unit">$46.66 / pest guard</p>
+                        <div class="cp-save-badge">You save $220.00</div>
+                    </div>
+                </div>
+                <a href="#buy-3x" style="display:block; text-align:center; margin-top:8px;" data-base="139.99" data-link-normal="#buy-3x" data-link-warranty="#buy-3x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async"></a>
+            </div>
+        </div>
+
+        <!-- Mobile Card 4x -->
+        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
+            <div class="cp-banner cp-banner-red">Best Value - Save 69%</div>
+            <div class="cp-card-body">
+                <h3 class="cp-card-title">4x Pest Guards</h3>
+                <p class="cp-card-subtitle">Whole Home Bundle</p>
+                <div class="cp-mob-top-row">
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> FREE 2-Year Warranty</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Priority Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 4 Rooms</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Whole Home</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
+                </div>
+                <div class="cp-mob-split">
+                    <div class="cp-mob-img-side"><img src="images/4.webp" alt="4x Pest Guard" loading="eager" decoding="async"></div>
+                    <div class="cp-mob-txt-side">
+                        <span class="cp-price-old">$479.99</span>
+                        <div class="cp-price-new">$149<sup>.99</sup></div>
+                        <p class="cp-price-unit">$37.50 / pest guard</p>
+                        <div class="cp-save-badge">You save $330.00</div>
+                    </div>
+                </div>
+                <a href="#buy-4x" style="display:block; text-align:center; margin-top:8px;" data-base="149.99" data-link-normal="#buy-4x" data-link-warranty="#buy-4x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async"></a>
+            </div>
+        </div>
+
+    </div><!-- end mobile cards -->
+
+    <!-- Need Help -->
+    <p style="max-width:800px; margin:15px auto 0; font-size:13px; color:#888; line-height:1.6; text-align:center;"><strong style="color:#2c3e50;">Need Help?</strong> If you're having trouble placing an order, need a replacement, or have any questions about your purchase, our support team is here to help. Simply email us at <a href="mailto:support@climaoffical.com" style="color:#3B5EAA; text-decoration:none; font-weight:600;">support@climaoffical.com</a> and we'll get back to you as soon as possible.</p>
+
+</div>
+</section>
+
+    <!-- Buy With Confidence -->
+    <section class="confidence-section">
+        <div class="confidence-card">
+            <div class="confidence-badge">
+                <img src="images/guarantee.svg" alt="100% Money Back Guarantee" loading="eager" decoding="async">
+            </div>
+            <div class="confidence-content">
+                <h3 data-i18n="buyConfidence">Buy With Confidence - It's 100% Risk-Free!</h3>
+                <p data-i18n="confidenceText">If you aren't satisfied, we offer a 30-day money-back guarantee. Send your package back and get a full refund, no questions asked.</p>
+            </div>
+            <div class="confidence-image">
+                <img src="images/3.webp" alt="Clima Pest Guard" loading="eager" decoding="async">
+            </div>
+        </div>
+    </section>
+
+    <!-- Coupon Section -->
+    <section class="coupon-section">
+        <div class="coupon-card">
+            <div class="coupon-image">
+                <img src="images/3.webp" alt="Clima Pest Guard" loading="eager" decoding="async">
+            </div>
+            <div class="coupon-content">
+                <div class="coupon-flag">
+                    <img src="images/flag.svg" alt="USA" loading="eager" decoding="async">
+                    <span data-i18n="americaNo1">AMERICA's #1 Mosquito Zapper</span>
+                </div>
+                <h2 class="coupon-title" data-i18n="upTo75Off">UP TO 69% OFF FOR A LIMITED TIME ONLY!</h2>
+                <p class="coupon-subtitle" data-i18n="limitedDeal">This limited-time deal is in high demand and stock keeps selling out.</p>
+                <div class="coupon-social">
+                    <div class="coupon-avatars">
+                        <img src="images/users.webp" alt="Users" style="width: 70px; height: auto; border-radius: 0; border: none; margin: 0;" loading="eager" decoding="async">
+                    </div>
+                    <div class="coupon-divider"></div>
+                    <div class="coupon-rating">
+                        <img src="images/star-4.5.svg" alt="Rating" loading="eager" decoding="async">
+                        <span>4.7</span>
+                    </div>
+                    <div class="coupon-divider"></div>
+                    <div class="coupon-stock" data-i18n="inStock">In stock and ready to ship</div>
+                </div>
+                <a href="#custom-product-sec" class="coupon-btn" data-i18n="getDiscount">GET 69% OFF DISCOUNT NOW!</a>
+                <p class="coupon-guarantee" data-i18n="tryToday">Try it today with a 30-Day Money Back Guarantee!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Section -->
+    <section class="expert-section">
+        <div class="expert-card">
+            <div class="expert-content">
+                <h3 data-i18n="meetExpert">Meet Our Expert,</h3>
+                <p class="expert-title" data-i18n="hvacTech">Pest Control Specialist</p>
+                <p class="expert-text" data-i18n="expertText">After working with different pest control solutions for years, I can confirm that chemical sprays and zappers are not for everyone. That's why I'm proud to recommend the Clima Pest Guard. It's portable, safe, chemical-free, and eliminates mosquitoes instantly. It's indispensable for anyone who wants to enjoy their home and outdoor spaces without annoying bugs.</p>
+                <p class="expert-name" data-i18n="expertName">- Kevin Grant</p>
+                <img src="images/9-signature-2.svg" alt="Signature" class="expert-signature" loading="eager" decoding="async">
+            </div>
+            <div class="expert-image">
+                <img src="images/hvac image.jfif" alt="HVAC Expert" loading="eager" decoding="async">
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Reviews Section -->
+    <section class="results-reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="resultsTitle">Let the Results Speak for Themselves</h2>
+                <h3 data-i18n="resultsSubtitle">Discover Why People are Choosing Clima Pest Guard</h3>
+                <div class="section-divider"></div>
+            </div>
+            <p class="section-desc" data-i18n="resultsDesc">Hundreds of happy customers agree that chemical sprays and traditional bug zappers just don't cut it. Clima Pest Guard is here to change the game with its safe, chemical-free, and highly effective mosquito elimination technology.</p>
+            <div class="results-reviews-grid">
+                <div class="results-review-card">
+                    <img src="images/review1.webp" alt="Liam" class="review-img" loading="eager" decoding="async">
+                    <div class="results-review-content">
+                        <h4 data-i18n="reviewLiam">Daniel</h4>
+                        <div class="stars">
+                            <img src="images/star-5.svg" alt="5 Stars" loading="eager" decoding="async">
+                        </div>
+                        <p data-i18n="reviewLiamText">I couldn't believe how fast Clima Pest Guard eliminated mosquitoes from our patio. Just turn it on and within seconds the mosquitoes are gone! No chemicals, no mess. We can finally enjoy our evenings outdoors without getting bitten!</p>
+                    </div>
+                </div>
+                <div class="results-review-card">
+                    <img src="images/review2.webp" alt="Samantha" class="review-img" loading="eager" decoding="async">
+                    <div class="results-review-content">
+                        <h4 data-i18n="reviewSophie">Samantha</h4>
+                        <div class="stars">
+                            <img src="images/star-5.svg" alt="5 Stars" loading="eager" decoding="async">
+                        </div>
+                        <p data-i18n="reviewSophieText">Clima Pest Guard works silently and safely without any harmful chemicals. I love that it's completely safe for my kids and pets. The mosquitoes are gone and my family is protected! It's the best investment we've made for our home.</p>
+                    </div>
+                </div>
+                <div class="results-review-card">
+                    <img src="images/review3.webp" alt="Marcus" class="review-img" loading="eager" decoding="async">
+                    <div class="results-review-content">
+                        <h4 data-i18n="reviewRachel">Marcus</h4>
+                        <div class="stars">
+                            <img src="images/star-5.svg" alt="5 Stars" loading="eager" decoding="async">
+                        </div>
+                        <p data-i18n="reviewRachelText">I love how portable Clima Pest Guard is! I can take it anywhere - camping, backyard BBQs, even inside. The 360° coverage means mosquitoes don't stand a chance. Plus, it's USB rechargeable so I never have to worry about batteries!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trustpilot Reviews Section -->
+    <section class="trustpilot-reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="trustTitle">Thousands of Happy Clima Pest Guard Users</h2>
+                <p data-i18n="trustSubtitle">Check out these reviews from happy Clima Pest Guard customers around the world!</p>
+            </div>
+            <div class="section-divider"></div>
+
+            <!-- Reviews Score Summary -->
+            <div class="reviews-score-container">
+                <!-- Rating Column -->
+                <div class="reviews-score-col rating-col">
+                    <div class="rating-number">4.7</div>
+                    <div class="rating-stars">
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                    </div>
+                    <div class="rating-count">1,888 <span data-i18n="reviews">reviews</span></div>
+                </div>
+
+                <!-- Star Bars Column -->
+                <div class="reviews-score-col bars-col">
+                    <div class="star-bars">
+                        <div class="star-bar-row">
+                            <div class="star-bar-label">5<span class="star-icon">&#9733;</span></div>
+                            <div class="star-bar-track"><div class="star-bar-fill" style="width: 60%;"></div></div>
+                            <div class="star-bar-count">1,134</div>
+                        </div>
+                        <div class="star-bar-row">
+                            <div class="star-bar-label">4<span class="star-icon">&#9733;</span></div>
+                            <div class="star-bar-track"><div class="star-bar-fill" style="width: 39%;"></div></div>
+                            <div class="star-bar-count">736</div>
+                        </div>
+                        <div class="star-bar-row">
+                            <div class="star-bar-label">3<span class="star-icon">&#9733;</span></div>
+                            <div class="star-bar-track"><div class="star-bar-fill" style="width: 1%;"></div></div>
+                            <div class="star-bar-count">14</div>
+                        </div>
+                        <div class="star-bar-row">
+                            <div class="star-bar-label">2<span class="star-icon">&#9733;</span></div>
+                            <div class="star-bar-track"><div class="star-bar-fill" style="width: 0.2%;"></div></div>
+                            <div class="star-bar-count">4</div>
+                        </div>
+                        <div class="star-bar-row">
+                            <div class="star-bar-label">1<span class="star-icon">&#9733;</span></div>
+                            <div class="star-bar-track"><div class="star-bar-fill" style="width: 0%;"></div></div>
+                            <div class="star-bar-count">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommend Column -->
+                <div class="reviews-score-col recommend-col">
+                    <div class="recommend-percent">
+                        <b>97%</b> <span data-i18n="recommendText">of reviewers would recommend<br>this product to a friend</span>
+                    </div>
+                    <div class="quality-bars">
+                        <div class="quality-bar-row">
+                            <div class="quality-bar-label" data-i18n="results">Results</div>
+                            <div class="quality-bar-track"><div class="quality-bar-fill" style="width: 97%;"></div></div>
+                        </div>
+                        <div class="quality-bar-row">
+                            <div class="quality-bar-label" data-i18n="quality">Quality</div>
+                            <div class="quality-bar-track"><div class="quality-bar-fill" style="width: 92%;"></div></div>
+                        </div>
+                        <div class="quality-bar-row">
+                            <div class="quality-bar-label" data-i18n="satisfaction">Satisfaction</div>
+                            <div class="quality-bar-track"><div class="quality-bar-fill" style="width: 95%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Cards -->
+            <div class="trustpilot-cards">
+                <!-- Review 1 - Emily J. -->
+                <div class="trustpilot-card">
+                    <div class="trustpilot-card-header">
+                        <div class="trustpilot-card-user">
+                            <div class="trustpilot-avatar">
+                                <img src="images/RW1pbHktSi5qcGc-w_120-h_120-fit_crop.webp" alt="Emily J." loading="eager" decoding="async">
+                            </div>
+                            <div class="trustpilot-user-info">
+                                <h4>Emily J.</h4>
+                                <div class="trustpilot-verified">
+                                    <span>&#10003;</span> <span data-i18n="verifiedCustomer">Verified customer</span>
+                                </div>
+                                <div class="trustpilot-recommend">
+                                    <span>&#128077;</span> <span data-i18n="recommendProduct">I recommend this product</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trustpilot-card-meta">
+                            <div class="trustpilot-card-stars">
+                                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                            </div>
+                            <div class="trustpilot-card-date" data-i18n="review1Date">3 days ago</div>
+                        </div>
+                    </div>
+                    <div class="trustpilot-card-content">
+                        <h5 data-i18n="review1Title">No more mosquito bites!</h5>
+                        <p data-i18n="review1Text">Living in Florida means dealing with mosquitoes year-round. This pest guard has been a game changer! I place it on my patio and we can finally enjoy evenings outside without being eaten alive. Worth every penny!</p>
+                    </div>
+                    <div class="trustpilot-card-images">
+                        <img src="images/review4.webp" alt="Review image" loading="eager" decoding="async">
+                        <img src="images/review5.webp" alt="Review image" loading="eager" decoding="async">
+                    </div>
+                    <div class="trustpilot-card-footer">
+                        <div class="trustpilot-helpful">
+                            <span data-i18n="wasHelpful">Was this review helpful?</span>
+                            <div class="trustpilot-helpful-btn">&#128077; 22</div>
+                            <div class="trustpilot-helpful-btn">&#128078; 1</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 - David S. -->
+                <div class="trustpilot-card">
+                    <div class="trustpilot-card-header">
+                        <div class="trustpilot-card-user">
+                            <div class="trustpilot-avatar-initials" style="background: linear-gradient(135deg, #3498db, #2980b9);">DS</div>
+                            <div class="trustpilot-user-info">
+                                <h4>David S.</h4>
+                                <div class="trustpilot-verified">
+                                    <span>&#10003;</span> <span data-i18n="verifiedCustomer">Verified customer</span>
+                                </div>
+                                <div class="trustpilot-recommend">
+                                    <span>&#128077;</span> <span data-i18n="recommendProduct">I recommend this product</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trustpilot-card-meta">
+                            <div class="trustpilot-card-stars">
+                                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span class="empty">&#9733;</span>
+                            </div>
+                            <div class="trustpilot-card-date" data-i18n="review2Date">4 days ago</div>
+                        </div>
+                    </div>
+                    <div class="trustpilot-card-content">
+                        <h5 data-i18n="review2Title">Best sleep ever</h5>
+                        <p data-i18n="review2Text">Those annoying buzzing sounds at night used to drive me crazy! Since getting the Clima Pest Guard, I sleep peacefully through the night. It's completely silent and works like magic. No more mosquitoes in my bedroom!</p>
+                    </div>
+                    <div class="trustpilot-card-footer">
+                        <div class="trustpilot-helpful">
+                            <span data-i18n="wasHelpful">Was this review helpful?</span>
+                            <div class="trustpilot-helpful-btn">&#128077; 14</div>
+                            <div class="trustpilot-helpful-btn">&#128078; 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 - Michael B. -->
+                <div class="trustpilot-card">
+                    <div class="trustpilot-card-header">
+                        <div class="trustpilot-card-user">
+                            <div class="trustpilot-avatar">
+                                <img src="images/RnJhbWUtMjcyMS03Ni5wbmc-w_120-h_120-fit_crop.webp" alt="Michael B." loading="eager" decoding="async">
+                            </div>
+                            <div class="trustpilot-user-info">
+                                <h4>Michael B.</h4>
+                                <div class="trustpilot-verified">
+                                    <span>&#10003;</span> <span data-i18n="verifiedCustomer">Verified customer</span>
+                                </div>
+                                <div class="trustpilot-recommend">
+                                    <span>&#128077;</span> <span data-i18n="recommendProduct">I recommend this product</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trustpilot-card-meta">
+                            <div class="trustpilot-card-stars">
+                                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                            </div>
+                            <div class="trustpilot-card-date" data-i18n="review3Date">6 days ago</div>
+                        </div>
+                    </div>
+                    <div class="trustpilot-card-content">
+                        <h5 data-i18n="review3Title">Perfect for camping</h5>
+                        <p data-i18n="review3Text">I bought a couple of these for our family camping trips. They're so portable and the USB charging is super convenient. Our campsite is now mosquito-free and we can actually enjoy the outdoors. Highly recommend!</p>
+                    </div>
+                    <div class="trustpilot-card-images">
+                        <img src="images/review6.webp" alt="Review image" loading="eager" decoding="async">
+                    </div>
+                    <div class="trustpilot-card-footer">
+                        <div class="trustpilot-helpful">
+                            <span data-i18n="wasHelpful">Was this review helpful?</span>
+                            <div class="trustpilot-helpful-btn">&#128077; 8</div>
+                            <div class="trustpilot-helpful-btn">&#128078; 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 - Jamie V. -->
+                <div class="trustpilot-card">
+                    <div class="trustpilot-card-header">
+                        <div class="trustpilot-card-user">
+                            <div class="trustpilot-avatar">
+                                <img src="images/NC1KYW1pZS1WLWZhY2UucG5n-w_120-h_120-fit_crop.webp" alt="Jamie V." loading="eager" decoding="async">
+                            </div>
+                            <div class="trustpilot-user-info">
+                                <h4>Jamie V.</h4>
+                                <div class="trustpilot-verified">
+                                    <span>&#10003;</span> <span data-i18n="verifiedCustomer">Verified customer</span>
+                                </div>
+                                <div class="trustpilot-recommend">
+                                    <span>&#128077;</span> <span data-i18n="recommendProduct">I recommend this product</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trustpilot-card-meta">
+                            <div class="trustpilot-card-stars">
+                                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                            </div>
+                            <div class="trustpilot-card-date" data-i18n="review4Date">1 week ago</div>
+                        </div>
+                    </div>
+                    <div class="trustpilot-card-content">
+                        <h5 data-i18n="review4Title">Safe for my babies</h5>
+                        <p data-i18n="review4Text">As a mom, I was worried about using chemical sprays around my kids. This pest guard is 100% chemical-free and works instantly. My children can play in the backyard without getting bitten. Best purchase ever!</p>
+                    </div>
+                    <div class="trustpilot-card-footer">
+                        <div class="trustpilot-helpful">
+                            <span data-i18n="wasHelpful">Was this review helpful?</span>
+                            <div class="trustpilot-helpful-btn">&#128077; 11</div>
+                            <div class="trustpilot-helpful-btn">&#128078; 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 - Sarah M. -->
+                <div class="trustpilot-card">
+                    <div class="trustpilot-card-header">
+                        <div class="trustpilot-card-user">
+                            <div class="trustpilot-avatar-initials" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">SM</div>
+                            <div class="trustpilot-user-info">
+                                <h4>Sarah M.</h4>
+                                <div class="trustpilot-verified">
+                                    <span>&#10003;</span> <span data-i18n="verifiedCustomer">Verified customer</span>
+                                </div>
+                                <div class="trustpilot-recommend">
+                                    <span>&#128077;</span> <span data-i18n="recommendProduct">I recommend this product</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trustpilot-card-meta">
+                            <div class="trustpilot-card-stars">
+                                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                            </div>
+                            <div class="trustpilot-card-date" data-i18n="review5Date">1 week ago</div>
+                        </div>
+                    </div>
+                    <div class="trustpilot-card-content">
+                        <h5 data-i18n="review5Title">Works better than sprays!</h5>
+                        <p data-i18n="review5Text">I've tried every mosquito spray and candle out there. Nothing worked until I got the Clima Pest Guard. It covers a huge area and eliminates mosquitoes in seconds. No smell, no mess, just results!</p>
+                    </div>
+                    <div class="trustpilot-card-footer">
+                        <div class="trustpilot-helpful">
+                            <span data-i18n="wasHelpful">Was this review helpful?</span>
+                            <div class="trustpilot-helpful-btn">&#128077; 19</div>
+                            <div class="trustpilot-helpful-btn">&#128078; 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="compTitle">The Ultimate Mosquito Eliminator</h2>
+                <h3 data-i18n="compSubtitle">No Other Pest Control Compares</h3>
+                <div class="section-divider"></div>
+            </div>
+            <p class="section-desc" data-i18n="compDesc">Clima Pest Guard is all you need for a mosquito-free environment. It's compact enough for any space, but powerful enough to eliminate mosquitoes in seconds. Enjoy bug-free living instantly!</p>
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <h4 data-i18n="compVs">Clima Pest Guard vs Chemical Sprays</h4>
+                    <div class="header-images">
+                        <div class="product-img">
+                            <img src="images/compare 1.webp" alt="Clima Pest Guard" loading="eager" decoding="async">
+                        </div>
+                        <div class="competitor-box">
+                            <img src="images/Regular-Coolers.svg" alt="Chemical Sprays" loading="eager" decoding="async">
+                            <p data-i18n="regularHeaters">Chemical Sprays</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-body">
+                    <div class="comparison-row">
+                        <span class="criteria" data-i18n="compactPortable">Compact & Portable</span>
+                        <span class="icon check">&#10003;</span>
+                        <span class="icon cross">&#10005;</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="criteria" data-i18n="instantHeating">Instant Results</span>
+                        <span class="icon check">&#10003;</span>
+                        <span class="icon cross">&#10005;</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="criteria" data-i18n="energyEfficient">360° Coverage</span>
+                        <span class="icon check">&#10003;</span>
+                        <span class="icon cross">&#10005;</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="criteria" data-i18n="safeOperation">Chemical-Free</span>
+                        <span class="icon check">&#10003;</span>
+                        <span class="icon cross">&#10005;</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="criteria" data-i18n="whisperQuiet">Silent Operation</span>
+                        <span class="icon check">&#10003;</span>
+                        <span class="icon cross">&#10005;</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="criteria" data-i18n="easyToUse">Easy to Use</span>
+                        <span class="icon check">&#10003;</span>
+                        <span class="icon check">&#10003;</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="criteria" data-i18n="ecoFriendly">Safe for Kids & Pets</span>
+                        <span class="icon check">&#10003;</span>
+                        <span class="icon cross">&#10005;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Product Section -->
+    <section id="custom-product-sec-bottom">
+<div class="container">
+
+    <!-- Header -->
+    <p class="cp-happy"><i class="fas fa-star"></i> 13,000+ Happy Customers</p>
+    <p class="cp-rated">Rated 4.7/5 Based On 9,200+ Reviews</p>
+    <h2 class="cp-main-txt">How Many Clima Pest Guards Do You Need?</h2>
+    <p class="cp-sub-txt">Due To High Demand, Inventory Is Selling Fast</p>
+
+    <!-- Timer Box -->
+    <div class="cp-timer-box">
+        <div class="cp-timer-top">
+            <span class="cp-timer-dot"></span>
+            <span class="cp-timer-label">Flash Sale &mdash; Limited Stock</span>
+            <span class="cp-stock-badge">Only <span id="cp-stock-btm">87</span> left</span>
+        </div>
+        <div class="cp-countdown">
+            <span class="cp-countdown-label">Offer ends in</span>
+            <span class="cp-digit" id="cp-h1-btm">0</span>
+            <span class="cp-digit" id="cp-h2-btm">2</span>
+            <span class="cp-colon">:</span>
+            <span class="cp-digit" id="cp-m1-btm">0</span>
+            <span class="cp-digit" id="cp-m2-btm">0</span>
+            <span class="cp-colon">:</span>
+            <span class="cp-digit" id="cp-s1-btm">0</span>
+            <span class="cp-digit" id="cp-s2-btm">0</span>
+        </div>
+    </div>
+
+    <!-- ===== 4 PRICING CARDS (Desktop) ===== -->
+    <div class="cp-cards-grid cp-desk-only">
+
+        <!-- Card 1: 1x -->
+        <div class="cp-card">
+            <div class="cp-banner cp-banner-blue">Save 50%</div>
+            <div class="cp-card-body">
+                <img src="images/1.webp" alt="1x Pest Guard" class="cp-card-img" loading="eager" decoding="async">
+                <h3 class="cp-card-title">1x Pest Guard</h3>
+                <p class="cp-card-subtitle">Try-It Bundle</p>
+                <span class="cp-price-old">$119.99</span>
+                <div class="cp-price-new">$59<sup>.99</sup></div>
+                <p class="cp-price-unit">$59.99 / pest guard</p>
+                <div class="cp-save-badge">You save $60.00</div>
+                <ul class="cp-features">
+                    <li><i class="fas fa-check-circle"></i> $9.99 USA Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> Quick Coverage Up To 150 Sq Ft</li>
+                    <li><i class="fas fa-check-circle"></i> Ideal For Bedrooms & Offices</li>
+                </ul>
+                <div class="cp-warranty" onclick="toggleWarranty(this)">
+                    <div class="cp-warranty-top">
+                        <input type="checkbox" id="warranty-1-btm" >
+                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
+                    </div>
+                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
+                </div>
+                <div class="cp-total" id="total-1-btm"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$84.97</span></div>
+                <a href="#buy-1x" class="cp-cta" style="display:block; text-align:center; padding:0; background:none; border:none;" data-base="69.98" data-link-normal="#buy-1x" data-link-warranty="#buy-1x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:115%; max-width:115%; margin-left:-7.5%;" decoding="async"></a>
+            </div>
+            <div class="cp-card-footer">
+                <img src="images/creadit-card.webp" alt="Payment" loading="eager" decoding="async">
+                <p>Secure 256-bit SSL Encrypted Payment</p>
+            </div>
+        </div>
+
+        <!-- Card 2: 2x -->
+        <div class="cp-card">
+            <div class="cp-banner cp-banner-green">Save 54%</div>
+            <div class="cp-card-body">
+                <img src="images/2.webp" alt="2x Clima Pest Guard" class="cp-card-img" loading="eager" decoding="async">
+                <h3 class="cp-card-title">2x Pest Guards</h3>
+                <p class="cp-card-subtitle">Best Value</p>
+                <span class="cp-price-old">$239.99</span>
+                <div class="cp-price-new">$109<sup>.99</sup></div>
+                <p class="cp-price-unit">$54.99 / pest guard</p>
+                <div class="cp-save-badge">You save $130.00</div>
+                <ul class="cp-features">
+                    <li><i class="fas fa-check-circle"></i> FREE USA Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> FREE Replacement Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> 360° Zapping Technology</li>
+                    <li><i class="fas fa-check-circle"></i> Cover Two Rooms At Once</li>
+                    <li><i class="fas fa-check-circle"></i> Bedroom + Living Room Coverage</li>
+                    <li><i class="fas fa-check-circle"></i> Save On Pest Control Costs</li>
+                </ul>
+                <div class="cp-warranty" onclick="toggleWarranty(this)">
+                    <div class="cp-warranty-top">
+                        <input type="checkbox" id="warranty-2-btm" >
+                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
+                    </div>
+                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
+                </div>
+                <div class="cp-total" id="total-2-btm"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$124.98</span></div>
+                <a href="#buy-2x" class="cp-cta" style="display:block; text-align:center; padding:0; background:none; border:none;" data-base="109.99" data-link-normal="#buy-2x" data-link-warranty="#buy-2x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:115%; max-width:115%; margin-left:-7.5%;" decoding="async"></a>
+            </div>
+            <div class="cp-card-footer">
+                <img src="images/creadit-card.webp" alt="Payment" loading="eager" decoding="async">
+                <p>Secure 256-bit SSL Encrypted Payment</p>
+            </div>
+        </div>
+
+        <!-- Card 3: 3x (FEATURED) -->
+        <div class="cp-card cp-featured">
+            <div class="cp-banner cp-banner-orange">Most Popular - Save 61%</div>
+            <div class="cp-card-body">
+                <img src="images/3.webp" alt="3x Clima Pest Guard" class="cp-card-img" loading="eager" decoding="async">
+                <h3 class="cp-card-title">3x Pest Guards</h3>
+                <p class="cp-card-subtitle">Family Pack</p>
+                <span class="cp-price-old">$359.99</span>
+                <div class="cp-price-new">$139<sup>.99</sup></div>
+                <p class="cp-price-unit">$46.66 / pest guard</p>
+                <div class="cp-save-badge">You save $220.00</div>
+                <ul class="cp-features">
+                    <li style="color:#e67e22; font-weight:700;"><i class="fas fa-gift" style="color:#e67e22;"></i> FREE 2-Year Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> FREE USA Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> FREE Replacement Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> 360° Zapping Technology</li>
+                    <li><i class="fas fa-check-circle"></i> Cover Three Rooms</li>
+                    <li><i class="fas fa-check-circle"></i> Bedroom, Office & Living Room</li>
+                    <li><i class="fas fa-check-circle"></i> Save On Pest Control vs. Sprays</li>
+                </ul>
+                <a href="#buy-3x" class="cp-cta" style="display:block; text-align:center; padding:0; background:none; border:none;" data-base="139.99" data-link-normal="#buy-3x" data-link-warranty="#buy-3x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:115%; max-width:115%; margin-left:-7.5%;" decoding="async"></a>
+            </div>
+            <div class="cp-card-footer">
+                <img src="images/creadit-card.webp" alt="Payment" loading="eager" decoding="async">
+                <p>Secure 256-bit SSL Encrypted Payment</p>
+            </div>
+        </div>
+
+        <!-- Card 4: 4x -->
+        <div class="cp-card">
+            <div class="cp-banner cp-banner-red">Best Value - Save 69%</div>
+            <div class="cp-card-body">
+                <img src="images/4.webp" alt="4x Clima Pest Guard" class="cp-card-img" loading="eager" decoding="async">
+                <h3 class="cp-card-title">4x Pest Guards</h3>
+                <p class="cp-card-subtitle">Whole Home Bundle</p>
+                <span class="cp-price-old">$479.99</span>
+                <div class="cp-price-new">$149<sup>.99</sup></div>
+                <p class="cp-price-unit">$37.50 / pest guard</p>
+                <div class="cp-save-badge">You save $330.00</div>
+                <p class="cp-chosen"><i class="fas fa-gem"></i> Customer Favorite - Big Bundle, Big Savings</p>
+                <ul class="cp-features">
+                    <li style="color:#e67e22; font-weight:700;"><i class="fas fa-gift" style="color:#e67e22;"></i> FREE 2-Year Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> FREE USA Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> FREE Same Day Priority Shipping</li>
+                    <li><i class="fas fa-check-circle"></i> FREE Replacement Warranty</li>
+                    <li><i class="fas fa-check-circle"></i> 360° Zapping Technology</li>
+                    <li><i class="fas fa-check-circle"></i> Cover Four Rooms At Once</li>
+                    <li><i class="fas fa-check-circle"></i> Whole Home Protection</li>
+                    <li><i class="fas fa-check-circle"></i> Save On Pest Control vs. Sprays</li>
+                </ul>
+                <a href="#buy-4x" class="cp-cta" style="display:block; text-align:center; padding:0; background:none; border:none;" data-base="149.99" data-link-normal="#buy-4x" data-link-warranty="#buy-4x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:115%; max-width:115%; margin-left:-7.5%;" decoding="async"></a>
+            </div>
+            <div class="cp-card-footer">
+                <img src="images/creadit-card.webp" alt="Payment" loading="eager" decoding="async">
+                <p>Secure 256-bit SSL Encrypted Payment</p>
+            </div>
+        </div>
+
+    </div><!-- end desktop cards -->
+
+    <!-- ===== 4 PRICING CARDS (Mobile) ===== -->
+    <div class="cp-mob-only" style="display:none;">
+
+        <!-- Mobile Card 1x -->
+        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
+            <div class="cp-banner cp-banner-blue">Save 50%</div>
+            <div class="cp-card-body">
+                <h3 class="cp-card-title">1x Pest Guard</h3>
+                <p class="cp-card-subtitle">Try-It Bundle</p>
+                <div class="cp-mob-top-row">
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> $9.99 US Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 150 Sq Ft</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedrooms & Offices</span>
+                </div>
+                <div class="cp-mob-split">
+                    <div class="cp-mob-img-side"><img src="images/1.webp" alt="1x Pest Guard" loading="eager" decoding="async"></div>
+                    <div class="cp-mob-txt-side">
+                        <span class="cp-price-old">$119.99</span>
+                        <div class="cp-price-new">$59<sup>.99</sup></div>
+                        <p class="cp-price-unit">$59.99 / pest guard</p>
+                        <div class="cp-save-badge">You save $60.00</div>
+                    </div>
+                </div>
+                <div class="cp-warranty" onclick="toggleWarranty(this)">
+                    <div class="cp-warranty-top">
+                        <input type="checkbox" id="warranty-m1-btm" >
+                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
+                    </div>
+                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
+                </div>
+                <div class="cp-total" id="total-m1-btm"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$84.97</span></div>
+                <a href="#buy-1x" style="display:block; text-align:center; margin-top:8px;" data-base="69.98" data-link-normal="#buy-1x" data-link-warranty="#buy-1x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async"></a>
+            </div>
+        </div>
+
+        <!-- Mobile Card 2x -->
+        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
+            <div class="cp-banner cp-banner-green">Save 54%</div>
+            <div class="cp-card-body">
+                <h3 class="cp-card-title">2x Pest Guards</h3>
+                <p class="cp-card-subtitle">Best Value</p>
+                <div class="cp-mob-top-row">
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 2 Rooms</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedroom + Living</span>
+                </div>
+                <div class="cp-mob-split">
+                    <div class="cp-mob-img-side"><img src="images/2.webp" alt="2x Pest Guard" loading="eager" decoding="async"></div>
+                    <div class="cp-mob-txt-side">
+                        <span class="cp-price-old">$239.99</span>
+                        <div class="cp-price-new">$109<sup>.99</sup></div>
+                        <p class="cp-price-unit">$54.99 / pest guard</p>
+                        <div class="cp-save-badge">You save $130.00</div>
+                    </div>
+                </div>
+                <div class="cp-warranty" onclick="toggleWarranty(this)">
+                    <div class="cp-warranty-top">
+                        <input type="checkbox" id="warranty-m2-btm" >
+                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
+                    </div>
+                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
+                </div>
+                <div class="cp-total" id="total-m2-btm"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$124.98</span></div>
+                <a href="#buy-2x" style="display:block; text-align:center; margin-top:8px;" data-base="109.99" data-link-normal="#buy-2x" data-link-warranty="#buy-2x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async"></a>
+            </div>
+        </div>
+
+        <!-- Mobile Card 3x (Most Popular) -->
+        <div class="cp-card cp-featured" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
+            <div class="cp-banner cp-banner-orange">Most Popular - Save 61%</div>
+            <div class="cp-card-body">
+                <h3 class="cp-card-title">3x Pest Guards</h3>
+                <p class="cp-card-subtitle">Family Pack</p>
+                <div class="cp-mob-top-row">
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> FREE 2-Year Warranty</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 3 Rooms</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedroom + Office + Living</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Save vs. Sprays</span>
+                </div>
+                <div class="cp-mob-split">
+                    <div class="cp-mob-img-side"><img src="images/3.webp" alt="3x Pest Guard" loading="eager" decoding="async"></div>
+                    <div class="cp-mob-txt-side">
+                        <span class="cp-price-old">$359.99</span>
+                        <div class="cp-price-new">$139<sup>.99</sup></div>
+                        <p class="cp-price-unit">$46.66 / pest guard</p>
+                        <div class="cp-save-badge">You save $220.00</div>
+                    </div>
+                </div>
+                <a href="#buy-3x" style="display:block; text-align:center; margin-top:8px;" data-base="139.99" data-link-normal="#buy-3x" data-link-warranty="#buy-3x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async"></a>
+            </div>
+        </div>
+
+        <!-- Mobile Card 4x -->
+        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
+            <div class="cp-banner cp-banner-red">Best Value - Save 69%</div>
+            <div class="cp-card-body">
+                <h3 class="cp-card-title">4x Pest Guards</h3>
+                <p class="cp-card-subtitle">Whole Home Bundle</p>
+                <div class="cp-mob-top-row">
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> FREE 2-Year Warranty</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Priority Shipping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 4 Rooms</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Whole Home</span>
+                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
+                </div>
+                <div class="cp-mob-split">
+                    <div class="cp-mob-img-side"><img src="images/4.webp" alt="4x Pest Guard" loading="eager" decoding="async"></div>
+                    <div class="cp-mob-txt-side">
+                        <span class="cp-price-old">$479.99</span>
+                        <div class="cp-price-new">$149<sup>.99</sup></div>
+                        <p class="cp-price-unit">$37.50 / pest guard</p>
+                        <div class="cp-save-badge">You save $330.00</div>
+                    </div>
+                </div>
+                <a href="#buy-4x" style="display:block; text-align:center; margin-top:8px;" data-base="149.99" data-link-normal="#buy-4x" data-link-warranty="#buy-4x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async"></a>
+            </div>
+        </div>
+
+    </div><!-- end mobile cards -->
+
+    <!-- Need Help -->
+    <p style="max-width:800px; margin:15px auto 0; font-size:13px; color:#888; line-height:1.6; text-align:center;"><strong style="color:#2c3e50;">Need Help?</strong> If you're having trouble placing an order, need a replacement, or have any questions about your purchase, our support team is here to help. Simply email us at <a href="mailto:support@climaoffical.com" style="color:#3B5EAA; text-decoration:none; font-weight:600;">support@climaoffical.com</a> and we'll get back to you as soon as possible.</p>
+
+</div>
+</section>
+
+<!-- Countdown Timer Script for Pricing Sections -->
+<script>
+(function(){
+    var totalSeconds = 2 * 3600;
+    var stockEl = document.getElementById('cp-stock');
+    var stockCount = 87;
+    function updateTimer(){
+        if(totalSeconds <= 0) return;
+        totalSeconds--;
+        var h = Math.floor(totalSeconds / 3600);
+        var m = Math.floor((totalSeconds % 3600) / 60);
+        var s = totalSeconds % 60;
+        var hStr = String(h).padStart(2,'0');
+        var mStr = String(m).padStart(2,'0');
+        var sStr = String(s).padStart(2,'0');
+        document.getElementById('cp-h1').textContent = hStr[0];
+        document.getElementById('cp-h2').textContent = hStr[1];
+        document.getElementById('cp-m1').textContent = mStr[0];
+        document.getElementById('cp-m2').textContent = mStr[1];
+        document.getElementById('cp-s1').textContent = sStr[0];
+        document.getElementById('cp-s2').textContent = sStr[1];
+        // Sync bottom section timer
+        var btmIds = ['cp-h1-btm','cp-h2-btm','cp-m1-btm','cp-m2-btm','cp-s1-btm','cp-s2-btm'];
+        var vals = [hStr[0], hStr[1], mStr[0], mStr[1], sStr[0], sStr[1]];
+        for(var i=0; i<btmIds.length; i++){
+            var el = document.getElementById(btmIds[i]);
+            if(el) el.textContent = vals[i];
+        }
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+    setInterval(function(){
+        if(stockCount > 12){
+            stockCount -= Math.floor(Math.random()*2);
+            if(stockEl) stockEl.textContent = stockCount;
+            var stockBtm = document.getElementById('cp-stock-btm');
+            if(stockBtm) stockBtm.textContent = stockCount;
+        }
+    }, 30000);
+})();
+
+function toggleWarranty(el){
+    var cb = el.querySelector('input[type="checkbox"]');
+    if(event.target !== cb) cb.checked = !cb.checked;
+    var card = el.closest('.cp-card') || el.closest('[class*="cp-card"]');
+    var totalDiv = card.querySelector('.cp-total');
+    var btn = card.querySelector('.cp-cta');
+    if(cb.checked){
+        el.classList.add('active');
+        if(totalDiv) totalDiv.classList.add('show');
+    } else {
+        el.classList.remove('active');
+        if(totalDiv) totalDiv.classList.remove('show');
+    }
+}
+
+function handleBuy(btn){
+    var card = btn.closest('.cp-card') || btn.closest('[class*="cp-card"]');
+    var cb = card.querySelector('.cp-warranty input[type="checkbox"]');
+    var link = cb && cb.checked ? btn.getAttribute('data-link-warranty') : btn.getAttribute('data-link-normal');
+    if(link) window.location.href = link;
+}
+</script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="images/logo-111.webp" alt="Clima Pest Guard" loading="eager" decoding="async">
+                    </div>
+                    <p class="footer-desc"><span data-i18n="footerDesc">Clima Pest Guard is a revolutionary mosquito elimination solution that fits all homes and outdoor spaces. Enjoy chemical-free, portable, and effective pest control to protect your family.</span> <em data-i18n="footerDisclaimer">Individual results may vary due to a variety of factors and are not ensured.</em></p>
+                </div>
+                <div>
+                    <h4 class="footer-heading" data-i18n="information">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html" target="_blank" data-i18n="termsConditions">Terms & Conditions</a></li>
+                        <li><a href="privacy.html" target="_blank" data-i18n="privacyPolicy">Privacy Policy</a></li>
+                        <li><a href="mailto:affiliates@climaoffical.com" data-i18n="affiliate">Affiliate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading" data-i18n="order">Order</h4>
+                    <ul class="footer-links">
+                        <li><a href="shipping.html" target="_blank" data-i18n="shippingDelivery">Shipping & Delivery</a></li>
+                        <li><a href="return.html" target="_blank" data-i18n="returnsRefunds">Returns & Refunds</a></li>
+                        <li><a href="contact.html" target="_blank" data-i18n="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-customer-care">
+                    <h4 class="footer-heading" data-i18n="customerCare">Customer Care</h4>
+                    <div class="footer-contact">
+                        <p><a href="mailto:support@climaoffical.com">Send Us an Email</a></p>
+                        <p><a href="mailto:support@climaoffical.com">24/7 Live Chat</a></p>
+                        <p>(302) 200-3480</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-i18n="copyright">© 2026 Clima Pest Guard | All Rights Reserved</p>
+                <div class="footer-payments">
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                    <i class="fab fa-cc-discover"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set current date based on language
+        function setCurrentDate() {
+            const today = new Date();
+            let locale = 'en-US';
+            if (currentLang === 'es') locale = 'es-ES';
+            else if (currentLang === 'de') locale = 'de-DE';
+            const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
+            document.getElementById('currentDate').textContent = today.toLocaleDateString(locale, options);
+        }
+
+        // Initial date set
+        const today = new Date();
+        const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
+        document.getElementById('currentDate').textContent = today.toLocaleDateString('en-US', options);
+
+        // Countdown Timer
+        let totalSeconds = 15 * 60; // 15 minutes
+
+        function updateTimer() {
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (totalSeconds > 0) {
+                totalSeconds--;
+            } else {
+                totalSeconds = 15 * 60; // Reset timer
+            }
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Language Switcher Functions
+        function toggleLangDropdown() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const switcher = document.querySelector('.language-switcher');
+            const dropdown = document.getElementById('langDropdown');
+            if (!switcher.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        function switchLanguage(lang) {
+            // Save as MANUAL selection (user clicked switcher)
+            localStorage.setItem('climaManualLang', lang);
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.classList.remove('active');
+
+            // Apply translations without page reload
+            applyTranslations(lang);
+            setCurrentDate();
+        }
+    </script>
+
+<!-- popup start -->
+<link href="popup/css/style1.css" type="text/css" rel="stylesheet">
+<section class="custom-social-proof">
+    <div class="custom-notification">
+        <div class="custom-notification-container">
+            <div class="custom-notification-image-wrapper">
+                <img src="images/compare 1.webp" loading="eager" decoding="async">
+            </div>
+            <div class="custom-notification-content-wrapper">
+                <p class="custom-notification-content">
+                    <span id="notify-customer">Eli H</span> - <span id="notify-state">TX</span><br> Purchased <strong><span id="notify-quantity">7</span></strong> Pack(s) of <b>Clima Heat Mini</b> <small><span id="notify-ago">9 minutes ago</span></small>
+                </p>
+            </div>
+        </div>
+        <div class="custom-close"></div>
+    </div>
+</section>
+
+<div class="popup-loading-wrapper" style="display:none;">
+    <div class="popup">
+        <figure class="product-image"></figure>
+        <p>Reserving Your Pack Of</p>
+        <h2>Clima Heat Mini</h2>
+        <img src="images/icon-loading.png" alt="" class="loading-image" loading="eager" decoding="async">
+    </div>
+</div>
+
+<script type="text/javascript" src="popup/js/jquery-3.5.1.min.js" defer></script>
+<script type="text/javascript" src="popup/js/slick.min.js" defer></script>
+<script type="text/javascript" src="popup/js/social-proof.js" defer></script>
+<script type="text/javascript" src="popup/js/scripts.js" defer></script>
+<!-- popup end -->
+
+</body>
+</html>
