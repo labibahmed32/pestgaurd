@@ -23,7 +23,10 @@
       "Bash(where python)",
       "Bash(\"C:/Users/PMLS/AppData/Local/Microsoft/WindowsApps/python.exe\" -c \"from PIL import Image; print\\(''Pillow available''\\)\")",
       "Bash(where ffmpeg)",
-      "Bash(tr '{' '\\\\n{')"
+      "Bash(tr '{' '\\\\n{')",
+      "Bash(for f in v1.html v2.html v3.html dtc.html)",
+      "Bash(do echo \"=== $f ===\")",
+      "Read(//g/ECOM OFFERS ZIPS/pest gaurd/**)"
     ]
   }
 }

@@ -973,3 +973,77 @@ LOADING BAR
 @keyframes spin {
 100% {-webkit-transform: rotate(360deg);transform: rotate(360deg)}
 }
+
+/* ===== NOTIFICATION MOBILE FIX ===== */
+@media (max-width: 767px) {
+    .custom-social-proof {
+        left: 10px !important;
+        bottom: 80px !important;
+        right: auto !important;
+        width: auto !important;
+    }
+    .custom-notification {
+        width: calc(100vw - 20px) !important;
+        max-width: 320px !important;
+        border-radius: 10px !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+    .custom-notification-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        overflow: visible !important;
+    }
+    .custom-notification-image-wrapper {
+        width: 55px !important;
+        min-width: 55px !important;
+        flex-shrink: 0 !important;
+        float: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .custom-notification-image-wrapper img {
+        max-height: 55px !important;
+        width: 55px !important;
+        border-radius: 6px !important;
+        object-fit: contain !important;
+    }
+    .custom-notification-content-wrapper {
+        flex: 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        float: none !important;
+        width: auto !important;
+        height: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .custom-notification-content {
+        font-size: 13px !important;
+        line-height: 18px !important;
+        width: auto !important;
+        float: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: #333 !important;
+    }
+    .custom-notification-content small {
+        font-size: 11px !important;
+        display: block !important;
+        margin-top: 4px !important;
+        opacity: 0.6 !important;
+        color: #888 !important;
+    }
+    .custom-close {
+        top: 6px !important;
+        right: 6px !important;
+        opacity: 1 !important;
+    }
+}
