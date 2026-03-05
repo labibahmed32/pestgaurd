@@ -2877,126 +2877,63 @@ img { max-width: 100%; height: auto; }
     <!-- ===== 4 PRICING CARDS (Mobile) ===== -->
     <div class="cp-mob-only" style="display:none;">
 
-        <!-- Mobile Card 1x -->
-        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
-            <div class="cp-banner cp-banner-blue">Save 50%</div>
-            <div class="cp-card-body">
-                <h3 class="cp-card-title">1x Pest Guard</h3>
-                <p class="cp-card-subtitle">Try-It Bundle</p>
-                <div class="cp-mob-top-row">
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> $9.99 US Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 150 Sq Ft</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedrooms & Offices</span>
-                </div>
-                <div class="cp-mob-split">
-                    <div class="cp-mob-img-side"><img src="images/1.webp" alt="1x Pest Guard" loading="lazy" decoding="async" width="150" height="150"></div>
-                    <div class="cp-mob-txt-side">
-                        <span class="cp-price-old">$119.99</span>
-                        <div class="cp-price-new">$59<sup>.99</sup></div>
-                        <p class="cp-price-unit">$59.99 / pest guard</p>
-                        <div class="cp-save-badge">You save $60.00</div>
-                    </div>
-                </div>
-                <div class="cp-warranty" onclick="toggleWarranty(this)">
-                    <div class="cp-warranty-top">
-                        <input type="checkbox" id="warranty-m1" >
-                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
-                    </div>
-                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
-                </div>
-                <div class="cp-total" id="total-m1"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$84.97</span></div>
-                <a href="#buy-1x" style="display:block; text-align:center; margin-top:8px;" data-base="69.98" data-link-normal="#buy-1x" data-link-warranty="#buy-1x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async" width="300" height="50" loading="lazy"></a>
-            </div>
+    <style>
+    .bp-card{background:#fff;border:2px solid #e0e0e0;border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+    .bp-card.bp-featured{border:2px solid #e67e22;box-shadow:0 3px 14px rgba(230,126,34,.15)}
+    .bp-top{background:#2d2d2d;color:#fff;padding:8px 14px;display:flex;align-items:center;justify-content:space-between}
+    .bp-top h3{font-size:13px;font-weight:700;margin:0}
+    .bp-sv{background:#27ae60;color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:3px}
+    .bp-top-r{font-size:11px;font-weight:700;opacity:.85;display:flex;align-items:center;gap:5px}
+    .bp-body{display:flex;align-items:center;padding:10px 12px;gap:10px}
+    .bp-img{width:80px;flex-shrink:0;text-align:center}
+    .bp-img img{max-height:80px;object-fit:contain}
+    .bp-info{flex:1;min-width:0}
+    .bp-bundle{font-size:15px;font-weight:900;color:#222;margin-bottom:2px}
+    .bp-bundle span{background:#e67e22;color:#fff;font-size:9px;padding:2px 6px;border-radius:3px;font-weight:800;margin-left:4px}
+    .bp-only{font-size:11px;color:#27ae60;font-weight:700;text-transform:uppercase}
+    .bp-price{font-size:32px;font-weight:900;color:#222;line-height:1.1}
+    .bp-price sub{font-size:14px;font-weight:500;color:#888}
+    .bp-off{display:inline-block;background:#e74c3c;color:#fff;font-size:10px;font-weight:800;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:super}
+    .bp-feats{display:flex;flex-wrap:wrap;gap:4px;padding:0 12px 8px}
+    .bp-f{font-size:11px;color:#333;font-weight:500;display:flex;align-items:center;gap:4px;background:#f4f6f8;padding:3px 8px;border-radius:12px}
+    .bp-f i{color:#27ae60;font-size:10px}
+    .bp-war-free{background:linear-gradient(135deg,#e67e22,#f39c12);color:#fff;padding:5px 10px;margin:0 12px 6px;border-radius:5px;font-size:11px;font-weight:800;display:flex;align-items:center;gap:5px}
+    .bp-foot{background:#fafafa;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #eee;flex-wrap:wrap;gap:6px}
+    .bp-foot-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .bp-orig{font-size:13px;color:#c0392b;font-style:italic}
+    .bp-save{font-size:12px;color:#27ae60;font-weight:700;background:#eafbea;padding:3px 8px;border-radius:4px;display:inline-flex;align-items:center;gap:3px}
+    .bp-total{font-size:16px;color:#222;font-weight:800}
+    .bp-btn{padding:10px 20px;background:linear-gradient(135deg,#3b7ddd,#2563eb);color:#fff;font-size:14px;font-weight:800;border-radius:8px;border:none;text-decoration:none;display:inline-block;text-align:center}
+    </style>
+
+        <div class="bp-card">
+            <div class="bp-top"><div style="display:flex;align-items:center;gap:8px"><h3>1x Clima Pest Guard</h3><span class="bp-sv">SAVE 50%</span></div><div class="bp-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div></div>
+            <div class="bp-body"><div class="bp-img"><img src="images/1.webp" alt="1x" loading="lazy" width="80" height="80"></div><div class="bp-info"><div class="bp-bundle">Alpha Bundle</div><div class="bp-only">Only</div><div><span class="bp-price">$59<sub>.99/each</sub></span><span class="bp-off">-50%</span></div></div></div>
+            <div class="bp-feats"><span class="bp-f"><i class="fas fa-circle-check"></i> 1 Year Warranty</span><span class="bp-f"><i class="fas fa-circle-check"></i> $9.99 Shipping</span><span class="bp-f"><i class="fas fa-circle-check"></i> 150 Sq Ft</span></div>
+            <div class="bp-foot"><div class="bp-foot-left"><span class="bp-orig"><s>$119.99</s></span><span class="bp-save"><i class="fas fa-tag"></i> Save $60</span><span class="bp-total">$69.98</span></div><a href="#buy-1x" class="bp-btn">BUY NOW</a></div>
         </div>
 
-        <!-- Mobile Card 2x -->
-        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
-            <div class="cp-banner cp-banner-green">Save 54%</div>
-            <div class="cp-card-body">
-                <h3 class="cp-card-title">2x Pest Guards</h3>
-                <p class="cp-card-subtitle">Best Value</p>
-                <div class="cp-mob-top-row">
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 2 Rooms</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedroom + Living</span>
-                </div>
-                <div class="cp-mob-split">
-                    <div class="cp-mob-img-side"><img src="images/2.webp" alt="2x Pest Guard" loading="lazy" decoding="async" width="150" height="150"></div>
-                    <div class="cp-mob-txt-side">
-                        <span class="cp-price-old">$239.99</span>
-                        <div class="cp-price-new">$109<sup>.99</sup></div>
-                        <p class="cp-price-unit">$54.99 / pest guard</p>
-                        <div class="cp-save-badge">You save $130.00</div>
-                    </div>
-                </div>
-                <div class="cp-warranty" onclick="toggleWarranty(this)">
-                    <div class="cp-warranty-top">
-                        <input type="checkbox" id="warranty-m2" >
-                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
-                    </div>
-                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
-                </div>
-                <div class="cp-total" id="total-m2"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$124.98</span></div>
-                <a href="#buy-2x" style="display:block; text-align:center; margin-top:8px;" data-base="109.99" data-link-normal="#buy-2x" data-link-warranty="#buy-2x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async" width="300" height="50" loading="lazy"></a>
-            </div>
+        <div class="bp-card">
+            <div class="bp-top"><div style="display:flex;align-items:center;gap:8px"><h3>2x Clima Pest Guards</h3><span class="bp-sv">SAVE 54%</span></div><div class="bp-top-r"><i class="fas fa-truck-fast"></i> FREE SHIPPING</div></div>
+            <div class="bp-body"><div class="bp-img"><img src="images/2.webp" alt="2x" loading="lazy" width="80" height="80"></div><div class="bp-info"><div class="bp-bundle">Double Room Bundle</div><div class="bp-only">Only</div><div><span class="bp-price">$54<sub>.99/each</sub></span><span class="bp-off">-54%</span></div></div></div>
+            <div class="bp-feats"><span class="bp-f"><i class="fas fa-circle-check"></i> 1 Year Warranty</span><span class="bp-f"><i class="fas fa-circle-check"></i> FREE Shipping</span><span class="bp-f"><i class="fas fa-circle-check"></i> 2 Rooms</span></div>
+            <div class="bp-foot"><div class="bp-foot-left"><span class="bp-orig"><s>$239.99</s></span><span class="bp-save"><i class="fas fa-tag"></i> Save $130</span><span class="bp-total">$109.99</span></div><a href="#buy-2x" class="bp-btn">BUY NOW</a></div>
         </div>
 
-        <!-- Mobile Card 3x (Most Popular) -->
-        <div class="cp-card cp-featured" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
-            <div class="cp-banner cp-banner-orange">Most Popular - Save 61%</div>
-            <div class="cp-card-body">
-                <h3 class="cp-card-title">3x Pest Guards</h3>
-                <p class="cp-card-subtitle">Family Pack</p>
-                <div class="cp-mob-top-row">
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> FREE 2-Year Warranty</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 3 Rooms</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedroom + Office + Living</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Save vs. Sprays</span>
-                </div>
-                <div class="cp-mob-split">
-                    <div class="cp-mob-img-side"><img src="images/3.webp" alt="3x Pest Guard" loading="lazy" decoding="async" width="150" height="150"></div>
-                    <div class="cp-mob-txt-side">
-                        <span class="cp-price-old">$359.99</span>
-                        <div class="cp-price-new">$139<sup>.99</sup></div>
-                        <p class="cp-price-unit">$46.66 / pest guard</p>
-                        <div class="cp-save-badge">You save $220.00</div>
-                    </div>
-                </div>
-                <a href="#buy-3x" style="display:block; text-align:center; margin-top:8px;" data-base="139.99" data-link-normal="#buy-3x" data-link-warranty="#buy-3x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async" width="300" height="50" loading="lazy"></a>
-            </div>
+        <div class="bp-card bp-featured">
+            <div class="bp-top" style="background:linear-gradient(135deg,#e67e22,#d35400)"><div style="display:flex;align-items:center;gap:8px"><h3>3x Clima Pest Guards</h3><span class="bp-sv">SAVE 61%</span></div><div class="bp-top-r"><i class="fas fa-truck-fast"></i> FREE SHIPPING</div></div>
+            <div class="bp-body"><div class="bp-img"><img src="images/3.webp" alt="3x" loading="lazy" width="80" height="80"></div><div class="bp-info"><div class="bp-bundle">Family Pack <span>MOST POPULAR</span></div><div class="bp-only">Only</div><div><span class="bp-price">$46<sub>.66/each</sub></span><span class="bp-off">-61%</span></div></div></div>
+            <div class="bp-war-free"><i class="fas fa-gift"></i> FREE Extended Warranty</div>
+            <div class="bp-feats"><span class="bp-f"><i class="fas fa-circle-check"></i> FREE Shipping</span><span class="bp-f"><i class="fas fa-circle-check"></i> 3 Rooms</span><span class="bp-f"><i class="fas fa-circle-check"></i> 360 Zapping</span></div>
+            <div class="bp-foot"><div class="bp-foot-left"><span class="bp-orig"><s>$359.99</s></span><span class="bp-save"><i class="fas fa-tag"></i> Save $220</span><span class="bp-total">$139.99</span></div><a href="#buy-3x" class="bp-btn">BUY NOW</a></div>
         </div>
 
-        <!-- Mobile Card 4x -->
-        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
-            <div class="cp-banner cp-banner-red">Best Value - Save 69%</div>
-            <div class="cp-card-body">
-                <h3 class="cp-card-title">4x Pest Guards</h3>
-                <p class="cp-card-subtitle">Whole Home Bundle</p>
-                <div class="cp-mob-top-row">
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> FREE 2-Year Warranty</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Priority Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 4 Rooms</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Whole Home</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
-                </div>
-                <div class="cp-mob-split">
-                    <div class="cp-mob-img-side"><img src="images/4.webp" alt="4x Pest Guard" loading="lazy" decoding="async" width="150" height="150"></div>
-                    <div class="cp-mob-txt-side">
-                        <span class="cp-price-old">$479.99</span>
-                        <div class="cp-price-new">$149<sup>.99</sup></div>
-                        <p class="cp-price-unit">$37.50 / pest guard</p>
-                        <div class="cp-save-badge">You save $330.00</div>
-                    </div>
-                </div>
-                <a href="#buy-4x" style="display:block; text-align:center; margin-top:8px;" data-base="149.99" data-link-normal="#buy-4x" data-link-warranty="#buy-4x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" style="width:100%; max-width:300px;" decoding="async" width="300" height="50" loading="lazy"></a>
-            </div>
+        <div class="bp-card">
+            <div class="bp-top" style="background:linear-gradient(135deg,#c0392b,#e74c3c)"><div style="display:flex;align-items:center;gap:8px"><h3>4x Clima Pest Guards</h3><span class="bp-sv">SAVE 69%</span></div><div class="bp-top-r"><i class="fas fa-truck-fast"></i> FREE PRIORITY</div></div>
+            <div class="bp-body"><div class="bp-img"><img src="images/4.webp" alt="4x" loading="lazy" width="80" height="80"></div><div class="bp-info"><div class="bp-bundle">Whole Home <span style="background:#c0392b">BEST VALUE</span></div><div class="bp-only">Only</div><div><span class="bp-price">$37<sub>.50/each</sub></span><span class="bp-off">-69%</span></div></div></div>
+            <div class="bp-war-free"><i class="fas fa-gift"></i> FREE Extended Warranty</div>
+            <div class="bp-feats"><span class="bp-f"><i class="fas fa-circle-check"></i> FREE Priority</span><span class="bp-f"><i class="fas fa-circle-check"></i> 4 Rooms</span><span class="bp-f"><i class="fas fa-circle-check"></i> Whole Home</span></div>
+            <div class="bp-foot"><div class="bp-foot-left"><span class="bp-orig"><s>$479.99</s></span><span class="bp-save"><i class="fas fa-tag"></i> Save $330</span><span class="bp-total">$149.99</span></div><a href="#buy-4x" class="bp-btn">BUY NOW</a></div>
         </div>
 
     </div><!-- end mobile cards -->

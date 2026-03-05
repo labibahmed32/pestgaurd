@@ -26,7 +26,8 @@
       "Bash(tr '{' '\\\\n{')",
       "Bash(for f in v1.html v2.html v3.html dtc.html)",
       "Bash(do echo \"=== $f ===\")",
-      "Read(//g/ECOM OFFERS ZIPS/pest gaurd/**)"
+      "Read(//g/ECOM OFFERS ZIPS/pest gaurd/**)",
+      "Bash(/tmp/mobile_cards.html:*)"
     ]
   }
 }
