@@ -1962,127 +1962,321 @@ ${NEWCSS}
     <!-- ===== 4 PRICING CARDS (Mobile) ===== -->
     <div class="cp-mob-only" style="display:none;">
 
-        <!-- Mobile Card 1x -->
-        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
-            <div class="cp-banner cp-banner-blue">Save 50%</div>
-            <div class="cp-card-body">
-                <h3 class="cp-card-title">1x Pest Guard</h3>
-                <p class="cp-card-subtitle">Try-It Bundle</p>
-                <div class="cp-mob-top-row">
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> $9.99 US Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 150 Sq Ft</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedrooms & Offices</span>
-                </div>
-                <div class="cp-mob-split">
-                    <div class="cp-mob-img-side"><img src="images/1.webp" alt="1x Pest Guard" width="200" height="200" loading="lazy" decoding="async"></div>
-                    <div class="cp-mob-txt-side">
-                        <span class="cp-price-old">$119.99</span>
-                        <div class="cp-price-new">$59<sup>.99</sup></div>
-                        <p class="cp-price-unit">$59.99 / pest guard</p>
-                        <div class="cp-save-badge">You save $60.00</div>
-                    </div>
-                </div>
-                <div class="cp-warranty" onclick="toggleWarranty(this)">
-                    <div class="cp-warranty-top">
-                        <input type="checkbox" id="warranty-m1" >
-                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
-                    </div>
-                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
-                </div>
-                <div class="cp-total" id="total-m1"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$84.97</span></div>
-                <a href="#buy-1x" style="display:block; text-align:center; margin-top:8px;" data-base="69.98" data-link-normal="#buy-1x" data-link-warranty="#buy-1x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" width="300" height="56" style="width:100%; max-width:300px;" loading="lazy" decoding="async"></a>
-            </div>
-        </div>
+    <style>
+    /* Bundlepage Card CSS */
+        /* ========== PRICING CARD ========== */
+        .pc{background:#fff;border:2px solid #e0e0e0;border-radius:10px;margin-bottom:12px;cursor:pointer;transition:all .2s ease;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.05);position:relative}
+        .pc:hover{border-color:#3b7ddd;box-shadow:0 3px 14px rgba(59,125,221,.13)}
+        .pc.sel{border:2px solid #3b7ddd;box-shadow:0 3px 18px rgba(59,125,221,.18)}
 
-        <!-- Mobile Card 2x -->
-        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
-            <div class="cp-banner cp-banner-green">Save 54%</div>
-            <div class="cp-card-body">
-                <h3 class="cp-card-title">2x Pest Guards</h3>
-                <p class="cp-card-subtitle">Best Value</p>
-                <div class="cp-mob-top-row">
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 2 Rooms</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedroom + Living</span>
-                </div>
-                <div class="cp-mob-split">
-                    <div class="cp-mob-img-side"><img src="images/2.webp" alt="2x Pest Guard" width="200" height="200" loading="lazy" decoding="async"></div>
-                    <div class="cp-mob-txt-side">
-                        <span class="cp-price-old">$239.99</span>
-                        <div class="cp-price-new">$109<sup>.99</sup></div>
-                        <p class="cp-price-unit">$54.99 / pest guard</p>
-                        <div class="cp-save-badge">You save $130.00</div>
-                    </div>
-                </div>
-                <div class="cp-warranty" onclick="toggleWarranty(this)">
-                    <div class="cp-warranty-top">
-                        <input type="checkbox" id="warranty-m2" >
-                        <label ><i class="fas fa-shield-alt"></i> Add +1 Year Extended Warranty <span>+$14.99</span></label>
-                    </div>
-                    <div class="cp-warranty-info"><i class="fas fa-check-circle"></i> Extend your warranty to 2 years total! Get an extra year of protection against defects & malfunctions. Hassle-free replacement if your Pest Guard stops working.</div>
-                </div>
-                <div class="cp-total" id="total-m2"><span class="cp-total-label">Total:</span> <span class="cp-total-amount">$124.98</span></div>
-                <a href="#buy-2x" style="display:block; text-align:center; margin-top:8px;" data-base="109.99" data-link-normal="#buy-2x" data-link-warranty="#buy-2x-warranty" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" width="300" height="56" style="width:100%; max-width:300px;" loading="lazy" decoding="async"></a>
-            </div>
-        </div>
+        /* Card top bar */
+        .pc-top{background:#2d2d2d;color:#fff;padding:8px 16px;display:flex;align-items:center;justify-content:space-between}
+        .pc-top-l{display:flex;align-items:center;gap:10px}
+        .pc-top-l h3{font-size:14px;font-weight:700;letter-spacing:.3px}
+        .sv-badge{background:#27ae60;color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:3px;letter-spacing:.3px}
+        .pc-top-r{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;opacity:.85}
+        .pc-top-r i{font-size:13px}
 
-        <!-- Mobile Card 3x (Most Popular) -->
-        <div class="cp-card cp-featured" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
-            <div class="cp-banner cp-banner-orange">Most Popular - Save 61%</div>
-            <div class="cp-card-body">
-                <h3 class="cp-card-title">3x Pest Guards</h3>
-                <p class="cp-card-subtitle">Family Pack</p>
-                <div class="cp-mob-top-row">
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> FREE 2-Year Warranty</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 3 Rooms</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Bedroom + Office + Living</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Save vs. Sprays</span>
-                </div>
-                <div class="cp-mob-split">
-                    <div class="cp-mob-img-side"><img src="images/3.webp" alt="3x Pest Guard" width="200" height="200" loading="lazy" decoding="async"></div>
-                    <div class="cp-mob-txt-side">
-                        <span class="cp-price-old">$359.99</span>
-                        <div class="cp-price-new">$139<sup>.99</sup></div>
-                        <p class="cp-price-unit">$46.66 / pest guard</p>
-                        <div class="cp-save-badge">You save $220.00</div>
-                    </div>
-                </div>
-                <a href="#buy-3x" style="display:block; text-align:center; margin-top:8px;" data-base="139.99" data-link-normal="#buy-3x" data-link-warranty="#buy-3x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" width="300" height="56" style="width:100%; max-width:300px;" loading="lazy" decoding="async"></a>
-            </div>
-        </div>
+        /* Card body — two columns always visible */
+        .pc-body{display:flex;align-items:stretch;padding:10px 12px;gap:0;position:relative}
+        .pc-chk{position:absolute;top:8px;left:8px;width:26px;height:26px;background:#3b7ddd;color:#fff;border-radius:5px;display:none;align-items:center;justify-content:center;font-size:14px;z-index:6}
+        .pc.sel .pc-chk{display:flex}
 
-        <!-- Mobile Card 4x -->
-        <div class="cp-card" style="max-width:420px; margin:0 auto 18px; border-radius:16px; overflow:hidden;">
-            <div class="cp-banner cp-banner-red">Best Value - Save 69%</div>
-            <div class="cp-card-body">
-                <h3 class="cp-card-title">4x Pest Guards</h3>
-                <p class="cp-card-subtitle">Whole Home Bundle</p>
-                <div class="cp-mob-top-row">
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> FREE 2-Year Warranty</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free US Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Priority Shipping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> 360° Zapping</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Covers 4 Rooms</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Whole Home</span>
-                    <span class="cp-mob-badge"><i class="fas fa-check"></i> Free Warranty</span>
+        /* Left column — image | info | button in one row */
+        .pc-col-l{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+
+        /* Product images */
+        .pc-img{width:200px;flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:4px;background:none;border-radius:0;padding:0;position:relative}
+        .pc-img img{flex:1 1 0;min-width:0;max-height:145px;object-fit:contain;transition:transform .3s}
+        .pc:hover .pc-img img{transform:scale(1.04)}
+        .pc-qty{display:none}
+
+        /* Info — two columns: price left, action right */
+        .pc-info{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:flex-start;gap:0 16px}
+        .pc-bundle{flex:1 1 100%;font-size:19px;font-weight:900;color:#222;margin-bottom:2px}
+        .pc-price-side{flex:1;min-width:0}
+        .pc-only{font-size:13px;color:#27ae60;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+        .pc-price-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+        .pc-price{font-size:42px;font-weight:900;color:#222;line-height:1.1}
+        .pc-price sub{font-size:17px;font-weight:500;color:#888;bottom:0}
+        .pc-off{display:none}
+        .pc-orig{font-size:16px;color:#c0392b;font-style:italic;margin:2px 0 1px}
+        .pc-orig s{text-decoration:line-through}
+        .pc-action{display:none}
+        .pc-you-save{font-size:14px;color:#27ae60;font-weight:700;display:inline-flex;align-items:center;gap:4px;background:#eafbea;padding:3px 10px;border-radius:4px}
+        .pc-you-save i{font-size:12px}
+
+        /* Right column — features ALWAYS visible */
+        .pc-col-r{flex:0 0 230px;padding:6px 0 6px 12px;margin-left:10px;border-left:2px solid #eee;display:flex;flex-direction:column;justify-content:center}
+
+        /* Feature list */
+        .pc-feats-grid{display:flex;flex-direction:column;gap:0;padding:0}
+        .pc-f{font-size:12.5px;color:#333;font-weight:500;padding:3px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.35}
+        .pc-f i{color:#27ae60;font-size:14px;margin-top:1px;flex-shrink:0}
+
+        /* FREE 2-Year Warranty banner (3x/4x) */
+        .pc-war-free{background:linear-gradient(135deg,#e67e22,#f39c12);color:#fff;padding:7px 12px;border-radius:6px;font-size:13px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:7px;letter-spacing:.3px;white-space:nowrap}
+        .pc-war-free i{font-size:15px}
+
+        /* Customer favorite label (4x) */
+        .pc-fav-label{font-size:10px;color:#888;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:4px}
+        .pc-fav-label i{font-size:11px;color:#f39c12}
+
+        /* Card footer — orig, save, total + button */
+        .pc-foot{background:#fafafa;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #eee}
+        .pc-foot-left{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+        .pc-foot-left .pc-orig{font-size:15px;color:#c0392b;font-style:italic;letter-spacing:.3px}
+        .pc-foot-left .pc-you-save{font-size:15px;color:#27ae60;font-weight:700;display:inline-flex;align-items:center;gap:5px;background:#eafbea;padding:5px 14px;border-radius:5px;letter-spacing:.3px}
+        .pc-foot-left .pc-you-save i{font-size:13px}
+        .pc-foot-left .pc-total{font-size:20px;color:#222;font-weight:800;letter-spacing:.3px}
+        .pc-foot .pc-btn{padding:10px 28px;border:2px solid #3b7ddd;background:#3b7ddd;color:#fff;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;transition:all .2s;border-radius:8px;letter-spacing:.3px;text-align:center;flex-shrink:0}
+        .pc-foot .pc-btn:hover{background:#3b7ddd;color:#fff;box-shadow:0 3px 10px rgba(59,125,221,.25)}
+        .pc.sel .pc-foot .pc-btn{background:#3b7ddd;border-color:#3b7ddd;color:#fff;box-shadow:0 3px 10px rgba(59,125,221,.25)}
+
+        /* ========== ORDER SUMMARY ========== */
+        .os{background:#fff;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+        .os-img{display:none}
+        .os-hdr{background:#444;color:#fff;padding:11px 18px;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700}
+        .os-hdr i{font-size:17px}
+        .os-tbl{padding:0 18px 8px}
+        .os-r{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #eee;font-size:13px;color:#555}
+        .os-r:last-child{border-bottom:none}
+        .os-r.tot{border-top:2px solid #333;border-bottom:none;padding:12px 0;font-size:15px;font-weight:800;color:#333}
+        .os-r .lbl{font-style:italic}
+        .os-r .val{font-weight:700;color:#333}
+
+        /* Warranty row in order summary */
+        .os-warranty{background:#f0faf0;border-radius:6px;padding:10px 12px!important;margin:6px 0}
+        .os-warranty.free{background:#eafbea}
+        .war-chk{display:flex;align-items:center;gap:8px;cursor:pointer;font-style:normal;font-size:13px;font-weight:600;color:#333;user-select:none}
+        .war-chk input{display:none}
+        .war-box{width:18px;height:18px;border:2px solid #3b7ddd;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+        .war-chk input:checked~.war-box{background:#3b7ddd;border-color:#3b7ddd}
+        .war-chk input:checked~.war-box::after{content:'\2713';color:#fff;font-size:12px;font-weight:700}
+        .war-free-tag{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#27ae60;font-style:normal}
+        .war-free-tag i{font-size:14px}
+        .os-warranty .val.free-val{color:#27ae60;font-weight:800}
+
+        /* Buy Now button */
+        .os-buy-btn{display:block;background:linear-gradient(135deg,#3b7ddd,#2563eb);color:#fff;text-align:center;padding:14px 20px;font-size:16px;font-weight:800;font-family:inherit;text-decoration:none;letter-spacing:.5px;transition:all .2s;cursor:pointer}
+        .os-buy-btn:hover{background:linear-gradient(135deg,#2563eb,#1d4ed8);box-shadow:0 4px 16px rgba(37,99,235,.35)}
+        .os-buy-btn i{margin-right:6px;font-size:14px}
+
+        /* ========== REVIEWS ========== */
+        .rev-sec{max-width:1100px;margin:0 auto;padding:40px 16px}
+        .rev-h{text-align:center;font-size:21px;font-weight:800;color:#2c3e50;text-transform:uppercase;letter-spacing:.5px;margin-bottom:24px}
+
+    /* Bundlepage Mobile Card CSS */
+    @media(max-width:768px){
+            .pc{border-radius:0;margin-bottom:6px;border-left:none;border-right:none;box-shadow:0 1px 6px rgba(0,0,0,.05);overflow:hidden}
+            .pc.sel{border-color:#3b7ddd;box-shadow:0 2px 12px rgba(59,125,221,.12)}
+            .pc.popular{transform:none;margin-top:0;margin-bottom:6px}
+            .pc-top{padding:6px 10px}
+            .pc-top-l h3{font-size:11px}
+            .sv-badge{font-size:8px;padding:2px 6px}
+            .pc-top-r{font-size:8px}
+            .pc-top-r i{font-size:10px}
+
+            /* Body — wraps on mobile */
+            .pc-body{padding:12px 10px;gap:8px;flex-wrap:wrap}
+            .pc-chk{width:18px;height:18px;font-size:10px;top:4px;left:4px}
+
+            /* Image + Info stacked center */
+            .pc-col-l{flex:1 1 100%;display:flex;flex-direction:column;align-items:center;gap:8px}
+            .pc-img{width:auto;flex-shrink:0}
+            .pc-img img{max-height:120px;max-width:120px;object-fit:contain}
+            .pc-qty{display:none}
+            .pc-info{flex:none;width:100%;text-align:center}
+            .pc-bundle{font-size:15px;margin-bottom:2px;justify-content:center;flex-wrap:wrap}
+            .pc-bundle span{font-size:8px!important;padding:2px 6px!important;margin-left:4px!important}
+            .pc-only{font-size:9px}
+            .pc-price-row{gap:6px;justify-content:center}
+            .pc-price{font-size:32px}
+            .pc-price sub{font-size:12px}
+            .pc-action{display:none}
+
+            /* Features — full width below */
+            .pc-col-r{flex:1 1 100%;border-left:none;border-top:1px dashed #ddd;margin-left:0;margin-top:4px;padding:8px 4px 4px}
+            .pc-feats-grid{display:flex;flex-direction:column;gap:0}
+            .pc-f{font-size:11.5px;padding:3px 0;word-wrap:break-word}
+            .pc-f i{font-size:12px}
+            .pc-war-free{font-size:11px;padding:5px 8px;white-space:nowrap;justify-content:center}
+            .pc-war-free i{font-size:12px}
+
+            /* Card footer — stacked on mobile */
+            .pc-foot{flex-direction:column;gap:8px;padding:10px 12px;align-items:center}
+            .pc-foot-left{justify-content:center;gap:10px;flex-wrap:wrap}
+            .pc-foot-left .pc-orig{font-size:12px}
+            .pc-foot-left .pc-you-save{font-size:12px;padding:3px 8px}
+            .pc-foot-left .pc-you-save i{font-size:10px}
+            .pc-foot-left .pc-total{font-size:17px}
+            .pc-foot .pc-btn{padding:11px 36px;font-size:14px;width:auto;max-width:100%}
+
+            .os-img img{max-width:150px}
+            .os-warranty{padding:8px 10px!important;margin:4px 0}
+            .war-chk{font-size:12px;gap:6px}
+            .war-box{width:16px;height:16px}
+            .war-free-tag{font-size:12px}
+            .war-free-tag i{font-size:12px}
+            .os-buy-btn{padding:12px 16px;font-size:15px}
+            .rev-sec{padding:24px 6px}
+            .rev-h{font-size:16px}
+    }
+    .pc-btn{padding:10px 28px;border:2px solid #3b7ddd;background:#3b7ddd;color:#fff;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;border-radius:8px;text-align:center;display:inline-block;text-decoration:none}
+    </style>
+
+            <div class="pc">
+                <div class="pc-top">
+                    <div class="pc-top-l"><h3>1x Clima Pest Guard</h3><span class="sv-badge">SAVE 50%</span></div>
+                    <div class="pc-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div>
                 </div>
-                <div class="cp-mob-split">
-                    <div class="cp-mob-img-side"><img src="images/4.webp" alt="4x Pest Guard" width="200" height="200" loading="lazy" decoding="async"></div>
-                    <div class="cp-mob-txt-side">
-                        <span class="cp-price-old">$479.99</span>
-                        <div class="cp-price-new">$149<sup>.99</sup></div>
-                        <p class="cp-price-unit">$37.50 / pest guard</p>
-                        <div class="cp-save-badge">You save $330.00</div>
+                <div class="pc-body">
+                    <div class="pc-chk"><i class="fas fa-check"></i></div>
+                    <div class="pc-col-l">
+                        <div class="pc-img"><img src="images/1.webp" alt="Pest Guard"></div>
+                        <div class="pc-info">
+                            <div class="pc-bundle">Alpha Bundle</div>
+                            <div class="pc-price-side">
+                                <div class="pc-only">Only</div>
+                                <div class="pc-price-row"><span class="pc-price">$59.99<sub>/each</sub></span><span class="pc-off">-50%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-col-r">
+                        <div class="pc-feats-grid">
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> <strong>1 Year FREE Warranty</strong></div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> $9.99 USA Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Quick Coverage Up To 150 Sq Ft</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Ideal For Bedrooms &amp; Offices</div>
+                        </div>
                     </div>
                 </div>
-                <a href="#buy-4x" style="display:block; text-align:center; margin-top:8px;" data-base="149.99" data-link-normal="#buy-4x" data-link-warranty="#buy-4x" onclick="handleBuy(this)"><img src="images/ordernow.webp" alt="Order Now" width="300" height="56" style="width:100%; max-width:300px;" loading="lazy" decoding="async"></a>
+                <div class="pc-foot">
+                    <div class="pc-foot-left">
+                        <span class="pc-orig"><s>Orig $119.99</s></span>
+                        <span class="pc-you-save"><i class="fas fa-tag"></i> Save $60.00</span>
+                        <span class="pc-total">Total: $69.98</span>
+                    </div>
+                    <a href="#buy-1x" class="pc-btn" style="text-decoration:none;color:#fff;width:100%;display:block;padding:14px 20px;font-size:16px;text-align:center;border-radius:8px;margin-top:6px">BUY NOW</a>
+                </div>
             </div>
-        </div>
+
+            <!-- ====== 2x ====== -->
+            <div class="pc">
+                <div class="pc-top">
+                    <div class="pc-top-l"><h3>2x Clima Pest Guards</h3><span class="sv-badge">SAVE 54%</span></div>
+                    <div class="pc-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-chk"><i class="fas fa-check"></i></div>
+                    <div class="pc-col-l">
+                        <div class="pc-img"><img src="images/1.webp" alt="Pest Guard"><img src="images/1.webp" alt="Pest Guard"><span class="pc-qty">&times;2</span></div>
+                        <div class="pc-info">
+                            <div class="pc-bundle">Double Room Bundle</div>
+                            <div class="pc-price-side">
+                                <div class="pc-only">Only</div>
+                                <div class="pc-price-row"><span class="pc-price">$54.99<sub>/each</sub></span><span class="pc-off">-54%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-col-r">
+                        <div class="pc-feats-grid">
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> <strong>1 Year FREE Warranty</strong></div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> FREE USA Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> 360&deg; Zapping Technology</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Cover Two Rooms At Once</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Bedroom + Living Room Coverage</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Save On Pest Control Costs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <div class="pc-foot-left">
+                        <span class="pc-orig"><s>Orig $239.99</s></span>
+                        <span class="pc-you-save"><i class="fas fa-tag"></i> Save $130.00</span>
+                        <span class="pc-total">Total: $109.99</span>
+                    </div>
+                    <a href="#buy-2x" class="pc-btn" style="text-decoration:none;color:#fff;width:100%;display:block;padding:14px 20px;font-size:16px;text-align:center;border-radius:8px;margin-top:6px">BUY NOW</a>
+                </div>
+            </div>
+
+            <!-- ====== 3x ====== -->
+            <div class="pc">
+                <div class="pc-top">
+                    <div class="pc-top-l"><h3>3x Clima Pest Guards</h3><span class="sv-badge">SAVE 61%</span></div>
+                    <div class="pc-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-chk"><i class="fas fa-check"></i></div>
+                    <div class="pc-col-l">
+                        <div class="pc-img"><img src="images/3.webp" alt="3x Pest Guard"></div>
+                        <div class="pc-info">
+                            <div class="pc-bundle">Family Pack <span style="background:#e67e22;color:#fff;font-size:11px;padding:3px 10px;border-radius:4px;font-weight:800;margin-left:6px;vertical-align:middle">MOST POPULAR</span></div>
+                            <div class="pc-price-side">
+                                <div class="pc-only">Only</div>
+                                <div class="pc-price-row"><span class="pc-price">$46.66<sub>/each</sub></span><span class="pc-off">-61%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-col-r">
+                        <div class="pc-war-free"><i class="fas fa-gift"></i> FREE Extended Warranty</div>
+                        <div class="pc-feats-grid">
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> FREE USA Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> 360&deg; Zapping Technology</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Cover Three Rooms</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Bedroom, Office &amp; Living Room</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Save On Pest Control vs. Sprays</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <div class="pc-foot-left">
+                        <span class="pc-orig"><s>Orig $359.99</s></span>
+                        <span class="pc-you-save"><i class="fas fa-tag"></i> Save $220.00</span>
+                        <span class="pc-total">Total: $139.99</span>
+                    </div>
+                    <a href="#buy-3x" class="pc-btn" style="text-decoration:none;color:#fff;width:100%;display:block;padding:14px 20px;font-size:16px;text-align:center;border-radius:8px;margin-top:6px">BUY NOW</a>
+                </div>
+            </div>
+
+            <!-- ====== 4x ====== -->
+            <div class="pc">
+                <div class="pc-top">
+                    <div class="pc-top-l"><h3>4x Clima Pest Guards</h3><span class="sv-badge">SAVE 69%</span></div>
+                    <div class="pc-top-r"><i class="fas fa-truck-fast"></i> FAST SHIPPING</div>
+                </div>
+                <div class="pc-body">
+                    <div class="pc-chk"><i class="fas fa-check"></i></div>
+                    <div class="pc-col-l">
+                        <div class="pc-img"><img src="images/4.webp" alt="4x Pest Guard"></div>
+                        <div class="pc-info">
+                            <div class="pc-bundle">Whole Home Bundle <span style="background:#c0392b;color:#fff;font-size:11px;padding:3px 10px;border-radius:4px;font-weight:800;margin-left:6px;vertical-align:middle">BEST VALUE</span></div>
+                            <div class="pc-price-side">
+                                <div class="pc-only">Only</div>
+                                <div class="pc-price-row"><span class="pc-price">$37.50<sub>/each</sub></span><span class="pc-off">-69%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc-col-r">
+                        <div class="pc-war-free"><i class="fas fa-gift"></i> FREE Extended Warranty</div>
+                        <div class="pc-feats-grid">
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> FREE USA Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> FREE Same Day Priority Shipping</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> 360&deg; Zapping Technology</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Cover Four Rooms At Once</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Whole Home Protection</div>
+                            <div class="pc-f"><i class="fas fa-circle-check"></i> Save On Pest Control vs. Sprays</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pc-foot">
+                    <div class="pc-foot-left">
+                        <span class="pc-orig"><s>Orig $479.99</s></span>
+                        <span class="pc-you-save"><i class="fas fa-tag"></i> Save $330.00</span>
+                        <span class="pc-total">Total: $149.99</span>
+                    </div>
+                    <a href="#buy-4x" class="pc-btn" style="text-decoration:none;color:#fff;width:100%;display:block;padding:14px 20px;font-size:16px;text-align:center;border-radius:8px;margin-top:6px">BUY NOW</a>
+                </div>
 
     </div><!-- end mobile cards -->
 
