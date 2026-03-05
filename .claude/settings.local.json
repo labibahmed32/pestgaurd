@@ -27,7 +27,11 @@
       "Bash(for f in v1.html v2.html v3.html dtc.html)",
       "Bash(do echo \"=== $f ===\")",
       "Read(//g/ECOM OFFERS ZIPS/pest gaurd/**)",
-      "Bash(/tmp/mobile_cards.html:*)"
+      "Bash(/tmp/mobile_cards.html:*)",
+      "Bash(sed -i 's|<a href=\"\"#buy-1x\"\" class=\"\"pc-btn\"\" style=\"\"text-decoration:none;color:#fff\"\">BUY NOW</a>|<a href=\"\"#buy-1x\"\" class=\"\"pc-btn\"\" style=\"\"text-decoration:none;color:#fff;width:100%;display:block;padding:14px 20px;font-size:16px;text-align:center;border-radius:8px;margin-top:6px\"\">BUY NOW</a>|' \"g:/ECOM OFFERS ZIPS/pest gaurd/v1.html\")",
+      "Bash(sed -i 's|<a href=\"\"#buy-2x\"\" class=\"\"pc-btn\"\" style=\"\"text-decoration:none;color:#fff\"\">BUY NOW</a>|<a href=\"\"#buy-2x\"\" class=\"\"pc-btn\"\" style=\"\"text-decoration:none;color:#fff;width:100%;display:block;padding:14px 20px;font-size:16px;text-align:center;border-radius:8px;margin-top:6px\"\">BUY NOW</a>|' \"g:/ECOM OFFERS ZIPS/pest gaurd/v1.html\")",
+      "Bash(sed -i 's|<a href=\"\"#buy-3x\"\" class=\"\"pc-btn\"\" style=\"\"text-decoration:none;color:#fff\"\">BUY NOW</a>|<a href=\"\"#buy-3x\"\" class=\"\"pc-btn\"\" style=\"\"text-decoration:none;color:#fff;width:100%;display:block;padding:14px 20px;font-size:16px;text-align:center;border-radius:8px;margin-top:6px\"\">BUY NOW</a>|' \"g:/ECOM OFFERS ZIPS/pest gaurd/v1.html\")",
+      "Bash(sed -i 's|<a href=\"\"#buy-4x\"\" class=\"\"pc-btn\"\" style=\"\"text-decoration:none;color:#fff\"\">BUY NOW</a>|<a href=\"\"#buy-4x\"\" class=\"\"pc-btn\"\" style=\"\"text-decoration:none;color:#fff;width:100%;display:block;padding:14px 20px;font-size:16px;text-align:center;border-radius:8px;margin-top:6px\"\">BUY NOW</a>|' \"g:/ECOM OFFERS ZIPS/pest gaurd/v1.html\")"
     ]
   }
 }
