@@ -638,6 +638,8 @@
         }
         img { content-visibility: auto; }
     </style>
+<!-- BuyGoods Tracking -->
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=sol1u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
 </head>
 <body>
 
@@ -855,7 +857,7 @@
                 </div>
 
                 <div class="offer-cta-section">
-                    <button class="cta-button-new" onclick="alert('Upsell Added!')">
+                    <button class="cta-button-new" onclick="window.location.href='https://buygoods.com/secure/upsell/?account_id=12233&product_codename=sol1u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsNi5odG1s&sessid2='+ReadCookie('sessid2')">
                         ADD TO MY ORDER
                     </button>
                     <p style="color: white; font-size: 12px; margin: 8px 0 0; font-weight: 600;">Best Offer - Limited Time!</p>
@@ -867,7 +869,7 @@
                     </div>
             </div>
 
-            <a href="#" class="no-thanks" style="color: #000; display: block; text-align: center; margin-top: 20px;">
+            <a href="https://bg.climaofficial.com/pestgaurd/upsell6.html" class="no-thanks" style="color: #000; display: block; text-align: center; margin-top: 20px;">
                 No thanks, I will risk running out of power. Skip this offer.
             </a>
 
@@ -944,5 +946,10 @@
     }
 </style>
 
+<!-- BuyGoods Iframe -->
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+<!-- BuyGoods Disclaimer -->
+<span id=disclaimer></span>
+<script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=12233"></script>
 </body>
 </html>

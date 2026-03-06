@@ -537,6 +537,8 @@
             .tb-icon { width: 22px; height: 22px; font-size: 10px; }
         }
     </style>
+<!-- BuyGoods Tracking -->
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=coo1u,coo2u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
 </head>
 <body>
 
@@ -720,7 +722,7 @@
 
                 <!-- CTA -->
                 <div class="cta-area">
-                    <a href="#" id="ctaBtn" class="cta-btn">Yes, Add 1x Clima Cooler To My Order!</a>
+                    <a href="https://buygoods.com/secure/upsell/?account_id=12233&product_codename=coo1u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMy5odG1s" id="ctaBtn" class="cta-btn" onclick="this.href=this.href+'&sessid2='+ReadCookie('sessid2')">Yes, Add 1x Clima Cooler To My Order!</a>
                     <div class="cta-sub">FREE shipping - we'll ship it out with your order.</div>
                 </div>
 
@@ -735,7 +737,7 @@
 
         <!-- No Thanks -->
         <div class="no-thanks">
-            <a href="#">No thanks, I don't need cooling this summer. Skip this deal.</a>
+            <a href="https://bg.climaofficial.com/pestgaurd/upsell3.html">No thanks, I don't need cooling this summer. Skip this deal.</a>
         </div>
 
     </div>
@@ -838,6 +840,7 @@
             vb2.style.display = 'none';
             priceCompare.innerHTML = 'Regular Price <s>$59.99</s> &nbsp; Today Only <strong>$19.99</strong>';
             ctaBtn.textContent = 'Yes, Add 1x Clima Cooler To My Order!';
+            ctaBtn.href = 'https://buygoods.com/secure/upsell/?account_id=12233&product_codename=coo1u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMy5odG1s';
         } else {
             priceOld.textContent = '$119.98';
             priceNow.textContent = '$29.99';
@@ -845,9 +848,15 @@
             vb2.style.display = 'block';
             priceCompare.innerHTML = 'Regular Price <s>$119.98</s> &nbsp; Today Only <strong>$29.99</strong>';
             ctaBtn.textContent = 'Yes, Add 2x Clima Coolers To My Order!';
+            ctaBtn.href = 'https://buygoods.com/secure/upsell/?account_id=12233&product_codename=coo2u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMy5odG1s';
         }
     }
     </script>
 
+<!-- BuyGoods Iframe -->
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+<!-- BuyGoods Disclaimer -->
+<span id=disclaimer></span>
+<script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=12233"></script>
 </body>
 </html>

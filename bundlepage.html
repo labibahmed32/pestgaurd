@@ -374,6 +374,8 @@
             .footer__logo-box p{font-size:12px!important}
         }
     </style>
+<!-- BuyGoods Tracking -->
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=cli1,cli2,cli3,cli4,cli1w,cli2w&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
 </head>
 <body>
 
@@ -758,25 +760,31 @@
 
 <script>
 var pkgs={
-    1:{item:'1x Clima Pest Guard',price:59.99,ship:9.99,method:'UPS Ground',img:'images/1.webp',link:'#buy-1',linkWar:'#buy-1-warranty'},
-    2:{item:'2x Clima Pest Guards',price:109.99,ship:0,method:'FREE Shipping',img:'images/2.webp',link:'#buy-2',linkWar:'#buy-2-warranty'},
-    3:{item:'3x Clima Pest Guards',price:139.99,ship:0,method:'FREE Shipping',img:'images/3.webp',link:'#buy-3',linkWar:'#buy-3'},
-    4:{item:'4x Clima Pest Guards',price:149.99,ship:0,method:'FREE Priority',img:'images/4.webp',link:'#buy-4',linkWar:'#buy-4'}
+    1:{item:'1x Clima Pest Guard',price:59.99,ship:9.99,method:'UPS Ground',img:'images/1.webp',link:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',linkWar:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1w&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s'},
+    2:{item:'2x Clima Pest Guards',price:109.99,ship:0,method:'FREE Shipping',img:'images/2.webp',link:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',linkWar:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2w&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s'},
+    3:{item:'3x Clima Pest Guards',price:139.99,ship:0,method:'FREE Shipping',img:'images/3.webp',link:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli3&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',linkWar:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli3&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s'},
+    4:{item:'4x Clima Pest Guards',price:149.99,ship:0,method:'FREE Priority',img:'images/4.webp',link:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli4&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',linkWar:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli4&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s'}
 };
 var btnLabels=['btn1','btn2','btn3','btn4'];
 var curPkg=0;
 var warrantyPrice=14.99;
 
+function appendSessid(url){
+    var s=ReadCookie('sessid2');
+    return s ? url+'&sessid2='+s : url;
+}
 function updateBuyLink(){
     var btn=document.getElementById('buyBtn');
     if(curPkg===0){btn.href='#';return;}
     var p=pkgs[curPkg];
+    var link;
     if(curPkg>=3){
-        btn.href=p.link;
+        link=p.link;
     }else{
         var chk=document.getElementById('warChk');
-        btn.href=(chk&&chk.checked)?p.linkWar:p.link;
+        link=(chk&&chk.checked)?p.linkWar:p.link;
     }
+    btn.href=appendSessid(link);
 }
 
 function selectPkg(n){
@@ -861,5 +869,10 @@ function toggleFaq(el){
     if(!open){a.classList.add('show');el.classList.add('open')}
 }
 </script>
+<!-- BuyGoods Iframe -->
+<script type="text/javascript">setTimeout(function () {var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&s="+ReadCookie('sessid2'));document.body.appendChild(i);}, 1000);</script>
+<!-- BuyGoods Disclaimer -->
+<span id=disclaimer></span>
+<script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=12233"></script>
 </body>
 </html>

@@ -632,6 +632,8 @@
         }
         img { content-visibility: auto; }
     </style>
+<!-- BuyGoods Tracking -->
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=por1u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
 </head>
 <body>
 
@@ -888,7 +890,7 @@
                     </div>
 
                     <!-- Button -->
-                    <button class="buy-btn" style="width: 100%; margin-top: 18px; padding: 16px; font-size: 19px; background: linear-gradient(180deg, #f5c842 0%, #e6b800 50%, #d4a932 100%); box-shadow: 0 5px 0 #b38600; border-radius: 50px;" onclick="alert('Upsell Added!')" data-i18n="addToOrder">ADD TO MY ORDER</button>
+                    <button class="buy-btn" style="width: 100%; margin-top: 18px; padding: 16px; font-size: 19px; background: linear-gradient(180deg, #f5c842 0%, #e6b800 50%, #d4a932 100%); box-shadow: 0 5px 0 #b38600; border-radius: 50px;" onclick="window.location.href='https://buygoods.com/secure/upsell/?account_id=12233&product_codename=por1u&redirect=aHR0cHM6Ly9idXlnb29kcy5jb20vdGhhbmt5b3U/YWNjb3VudF9pZD0xMjIzMw==&sessid2='+ReadCookie('sessid2')" data-i18n="addToOrder">ADD TO MY ORDER</button>
 
                     <p style="color: #fff; font-size: 12px; margin: 10px 0 0; font-weight: 700; text-align: center;" data-i18n="finalOfferText">This Is Your FINAL Offer!</p>
                     <p style="color: rgba(255,255,255,0.7); font-size: 11px; margin: 5px 0 0; text-align: center;" data-i18n="secureCheckout">Secure SSL Checkout | 100% Safe Payment</p>
@@ -1136,7 +1138,7 @@
                     <li style="padding: 8px 0; font-size: 15px; color: #444; border-bottom: 1px solid #eee;"><span style="color: #e67e22; font-weight: 700; margin-right: 10px;">&#10003;</span><span data-i18n="productFeat4">AC 100-240V | Travel Ready</span></li>
                     <li style="padding: 8px 0; font-size: 15px; color: #444;"><span style="color: #e67e22; font-weight: 700; margin-right: 10px;">&#10003;</span><span data-i18n="productFeat5">Compact: 6.6 x 4.5 x 2.6cm | 51g</span></li>
                 </ul>
-                <button class="buy-btn" style="width: 100%; padding: 18px;" onclick="alert('Upsell Added!')" data-i18n="addToOrder">ADD TO MY ORDER</button>
+                <button class="buy-btn" style="width: 100%; padding: 18px;" onclick="window.location.href='https://buygoods.com/secure/upsell/?account_id=12233&product_codename=por1u&redirect=aHR0cHM6Ly9idXlnb29kcy5jb20vdGhhbmt5b3U/YWNjb3VudF9pZD0xMjIzMw==&sessid2='+ReadCookie('sessid2')" data-i18n="addToOrder">ADD TO MY ORDER</button>
             </div>
         </div>
     </div>
@@ -1225,7 +1227,7 @@
                     </div>
 
                     <!-- Button -->
-                    <button class="buy-btn" style="width: 100%; margin-top: 18px; padding: 16px; font-size: 19px; background: linear-gradient(180deg, #f5c842 0%, #e6b800 50%, #d4a932 100%); box-shadow: 0 5px 0 #b38600; border-radius: 50px;" onclick="alert('Upsell Added!')" data-i18n="addToOrder">ADD TO MY ORDER</button>
+                    <button class="buy-btn" style="width: 100%; margin-top: 18px; padding: 16px; font-size: 19px; background: linear-gradient(180deg, #f5c842 0%, #e6b800 50%, #d4a932 100%); box-shadow: 0 5px 0 #b38600; border-radius: 50px;" onclick="window.location.href='https://buygoods.com/secure/upsell/?account_id=12233&product_codename=por1u&redirect=aHR0cHM6Ly9idXlnb29kcy5jb20vdGhhbmt5b3U/YWNjb3VudF9pZD0xMjIzMw==&sessid2='+ReadCookie('sessid2')" data-i18n="addToOrder">ADD TO MY ORDER</button>
 
                     <p style="color: #fff; font-size: 12px; margin: 10px 0 0; font-weight: 700; text-align: center;" data-i18n="finalOfferText">This Is Your FINAL Offer!</p>
                     <p style="color: rgba(255,255,255,0.7); font-size: 11px; margin: 5px 0 0; text-align: center;" data-i18n="secureCheckout">Secure SSL Checkout | 100% Safe Payment</p>
@@ -1233,7 +1235,7 @@
             </div>
 
             <!-- No Thanks Button -->
-            <a href="#" style="display: block; text-align: center; color: #555; font-size: 13px; font-weight: 600; padding: 20px; text-decoration: underline; max-width: 450px; margin: 0 auto; line-height: 1.7;" data-i18n="noThanks">No thank you. I choose not to claim my exclusive savings on the 4-Port USB Charger, and I understand this final offer will not appear again.</a>
+            <a href="https://buygoods.com/thankyou?account_id=12233" style="display: block; text-align: center; color: #555; font-size: 13px; font-weight: 600; padding: 20px; text-decoration: underline; max-width: 450px; margin: 0 auto; line-height: 1.7;" data-i18n="noThanks">No thank you. I choose not to claim my exclusive savings on the 4-Port USB Charger, and I understand this final offer will not appear again.</a>
 
             <!-- Why Buy With Confidence -->
             <div style="background: #fff; border: 2px solid #eee; border-radius: 12px; padding: 25px; text-align: center;">
@@ -1271,5 +1273,10 @@
         <p class="footer-copy" data-i18n="footerCopyright">© 2026 Clima Pest Guard | All Rights Reserved</p>
     </footer>
 
+<!-- BuyGoods Iframe -->
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+<!-- BuyGoods Disclaimer -->
+<span id=disclaimer></span>
+<script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=12233"></script>
 </body>
 </html>

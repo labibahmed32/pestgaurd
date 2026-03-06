@@ -1,0 +1,159 @@
+→ TRACKING CODE needs to be added in the <head> of every page.
+
+→ BUY LINKS need to be added directly on the button, not injected with javascript or php. 
+
+If however you do that you need to grab all the URL parameters, including the session that is appended to the buy link. 
+The sessid parameter that is stored in the cookies first and then appended to the buy link.
+You will have to dynamically pass the buy links from each product that is selected to the big buy button and then redirect to it.
+You should have all the links added on each option ( but not as URL ) in the page and then grab it and send it to the buy link when you click on them.
+
+→ buygoods DISCLAIMER must be on every page.
+
+<span id=disclaimer></span>
+<script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=12233"></script>
+_______________________________________________________________________________________________________________________________________
+Tracking and Iframe and buy links for (All Landing Pages)
+
+
+(Tracking)
+
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=cli1,cli2,cli3,cli4,cli1w,cli2w&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+
+<script type="text/javascript">setTimeout(function () {var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&s="+ReadCookie('sessid2'));document.body.appendChild(i);}, 1000);</script>
+
+
+1 Piece
+
+https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s
+
+1 Piece + Warranty
+
+https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1w&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s
+
+2 Pieces
+
+https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s
+
+2 Pieces + Warranty
+
+https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2w&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s
+
+3 Pieces
+
+https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli3&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s
+
+4 Pieces
+
+https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli4&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s
+_______________________________________________________________________________________________________________________________________
+Tracking and Iframe and buy links for (https://bg.climaofficial.com/pestgaurd/upsell1.html)
+
+
+(Tracking)
+
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=cli1u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+
+
+Buy Link
+
+https://buygoods.com/secure/upsell/?account_id=12233&product_codename=cli1u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMi5odG1s
+
+No Thank you
+
+https://bg.climaofficial.com/pestgaurd/upsell2.html
+_______________________________________________________________________________________________________________________________________
+Tracking and Iframe and buy links for (https://bg.climaofficial.com/pestgaurd/upsell2.html)
+
+
+(Tracking)
+
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=coo1u,coo2u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+
+
+1 Piece
+
+https://buygoods.com/secure/upsell/?account_id=12233&product_codename=coo1u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMy5odG1s
+
+2 Pieces
+
+https://buygoods.com/secure/upsell/?account_id=12233&product_codename=coo2u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMy5odG1s
+
+No Thank you
+
+https://bg.climaofficial.com/pestgaurd/upsell3.html
+_______________________________________________________________________________________________________________________________________
+Tracking and Iframe and buy links for (https://bg.climaofficial.com/pestgaurd/upsell3.html)
+
+
+(Tracking)
+
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=bit1u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+
+
+Buy Link
+
+https://buygoods.com/secure/upsell/?account_id=12233&product_codename=bit1u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsNC5odG1s
+
+No Thank you
+
+https://bg.climaofficial.com/pestgaurd/upsell4.html
+_______________________________________________________________________________________________________________________________________
+Tracking and Iframe and buy links for (https://bg.climaofficial.com/pestgaurd/upsell4.html)
+
+
+(Tracking)
+
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=sma1u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+
+
+Buy Link
+
+https://buygoods.com/secure/upsell/?account_id=12233&product_codename=sma1u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsNS5odG1s
+
+No Thank you
+
+https://bg.climaofficial.com/pestgaurd/upsell5.html
+_______________________________________________________________________________________________________________________________________
+Tracking and Iframe and buy links for (https://bg.climaofficial.com/pestgaurd/upsell5.html)
+
+
+(Tracking)
+
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=sol1u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+
+
+Buy Link
+
+https://buygoods.com/secure/upsell/?account_id=12233&product_codename=sol1u&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsNi5odG1s
+
+No Thank you
+
+https://bg.climaofficial.com/pestgaurd/upsell6.html
+_______________________________________________________________________________________________________________________________________
+Tracking and Iframe and buy links for (https://bg.climaofficial.com/pestgaurd/upsell6.html)
+
+
+(Tracking)
+
+<script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=por1u&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+
+<script type="text/javascript">var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&conversion=1&s="+ReadCookie('sessid2')+"&o="+oid.get('order_id_global')+"&ut="+oid.get('token'));document.body.appendChild(i);</script>
+
+
+Buy Link
+
+https://buygoods.com/secure/upsell/?account_id=12233&product_codename=por1u&redirect=aHR0cHM6Ly9idXlnb29kcy5jb20vdGhhbmt5b3U/YWNjb3VudF9pZD0xMjIzMw==
+
+No Thank you
+
+https://buygoods.com/thankyou?account_id=12233

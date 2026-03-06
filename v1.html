@@ -67,6 +67,8 @@
   </style>
   <script async="" id="ze-snippet" src="js/snippet.js">
   </script>
+ <!-- BuyGoods Tracking -->
+ <script>var mysrc = "https://tracking.buygoods.com/track/?a=12233&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=cli1,cli2,cli3,cli4,cli1w,cli2w&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
  </head>
  <body class="floater-active" id="product-page-v4">
   <style>
@@ -3249,12 +3251,30 @@ function toggleWarranty(el){
     }
 }
 
+var buyLinksMap = {
+    '#buy-1x': 'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',
+    '#buy-1x-warranty': 'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1w&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',
+    '#buy-2x': 'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',
+    '#buy-2x-warranty': 'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2w&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',
+    '#buy-3x': 'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli3&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',
+    '#buy-4x': 'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli4&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s'
+};
+function resolveBuyLink(hash){
+    var url = buyLinksMap[hash];
+    if(url){ var s=ReadCookie('sessid2'); if(s) url+='&sessid2='+s; }
+    return url || hash;
+}
 function handleBuy(btn){
     var card = btn.closest('.cp-card') || btn.closest('[class*="cp-card"]');
-    var cb = card.querySelector('.cp-warranty input[type="checkbox"]');
+    var cb = card ? card.querySelector('.cp-warranty input[type="checkbox"]') : null;
     var link = cb && cb.checked ? btn.getAttribute('data-link-warranty') : btn.getAttribute('data-link-normal');
-    if(link) window.location.href = link;
+    var url = resolveBuyLink(link);
+    if(url) window.location.href = url;
 }
+document.addEventListener('click',function(e){
+    var a=e.target.closest('a.pc-btn[href^="#buy-"]');
+    if(a){e.preventDefault();window.location.href=resolveBuyLink(a.getAttribute('href'));}
+});
 
 // Clone pricing section and place above reviews
 (function(){
@@ -3636,6 +3656,11 @@ var pp_helpdesk = {"pp_helpdesk":{"helpdesk_widget_type":"zendesk","zendesk_key"
    </iframe>
   </div>
   
+ <!-- BuyGoods Iframe -->
+ <script type="text/javascript">setTimeout(function () {var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12233&t=3e918adfce149a2fd1005f278564c9ab&s="+ReadCookie('sessid2'));document.body.appendChild(i);}, 1000);</script>
+ <!-- BuyGoods Disclaimer -->
+ <span id=disclaimer></span>
+ <script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=12233"></script>
  </body>
 </html>
 
