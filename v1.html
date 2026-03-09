@@ -3245,11 +3245,19 @@ function toggleWarranty(el){
     if(cb.checked){
         el.classList.add('active');
         if(totalDiv) totalDiv.classList.add('show');
-        if(btn) btn.href = btn.getAttribute('data-link-warranty');
+        if(btn){
+            var from = btn.getAttribute('data-link-normal').match(/product_codename=([^&]+)/);
+            var to = btn.getAttribute('data-link-warranty').match(/product_codename=([^&]+)/);
+            if(from && to) btn.href = btn.href.replace('product_codename='+from[1], 'product_codename='+to[1]);
+        }
     } else {
         el.classList.remove('active');
         if(totalDiv) totalDiv.classList.remove('show');
-        if(btn) btn.href = btn.getAttribute('data-link-normal');
+        if(btn){
+            var from = btn.getAttribute('data-link-warranty').match(/product_codename=([^&]+)/);
+            var to = btn.getAttribute('data-link-normal').match(/product_codename=([^&]+)/);
+            if(from && to) btn.href = btn.href.replace('product_codename='+from[1], 'product_codename='+to[1]);
+        }
     }
 }
 
