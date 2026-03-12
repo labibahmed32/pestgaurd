@@ -599,7 +599,7 @@
                     </div>
                     <div class="os-r tot"><span>Today's Total:</span><span class="val" id="osTotal">$0.00</span></div>
                 </div>
-                <a href="#" id="buyBtn" class="os-buy-btn"><i class="fas fa-lock"></i> Confirm &amp; Continue To Payment</a>
+                <a href="https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli3&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s" id="buyBtn" class="os-buy-btn" onclick="this.href=this.href.split('&sessid2=')[0]+'&sessid2='+ReadCookie('sessid2')"><i class="fas fa-lock"></i> Confirm &amp; Continue To Payment</a>
             </div>
 
             <!-- TRUST BADGES -->
@@ -759,6 +759,7 @@
 </footer>
 
 <script>
+function ReadCookie(name){name+='=';var parts=document.cookie.split(/;\s*/);for(var i=0;i<parts.length;i++){var part=parts[i];if(part.indexOf(name)==0)return part.substring(name.length)}return '';}
 var pkgs={
     1:{item:'1x Clima Pest Guard',price:59.99,ship:9.99,method:'UPS Ground',img:'images/1.webp',link:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',linkWar:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1w&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s'},
     2:{item:'2x Clima Pest Guards',price:109.99,ship:0,method:'FREE Shipping',img:'images/2.webp',link:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s',linkWar:'https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2w&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s'},
@@ -769,22 +770,19 @@ var btnLabels=['btn1','btn2','btn3','btn4'];
 var curPkg=0;
 var warrantyPrice=14.99;
 
-function appendSessid(url){
-    var s=ReadCookie('sessid2');
-    return s ? url+'&sessid2='+s : url;
-}
 function updateBuyLink(){
     var btn=document.getElementById('buyBtn');
-    if(curPkg===0){btn.href='#';return;}
+    if(curPkg===0) return;
     var p=pkgs[curPkg];
-    var link;
+    var newCodename;
     if(curPkg>=3){
-        link=p.link;
+        newCodename=p.link.match(/product_codename=([^&]+)/)[1];
     }else{
         var chk=document.getElementById('warChk');
-        link=(chk&&chk.checked)?p.linkWar:p.link;
+        var url=(chk&&chk.checked)?p.linkWar:p.link;
+        newCodename=url.match(/product_codename=([^&]+)/)[1];
     }
-    btn.href=appendSessid(link);
+    btn.href=btn.href.replace(/product_codename=[^&]+/,'product_codename='+newCodename);
 }
 
 function selectPkg(n){
