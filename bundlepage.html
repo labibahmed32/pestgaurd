@@ -153,6 +153,10 @@
         .os-buy-btn:hover{background:linear-gradient(135deg,#2563eb,#1d4ed8);box-shadow:0 4px 16px rgba(37,99,235,.35)}
         .os-buy-btn i{margin-right:6px;font-size:14px}
 
+        /* ========== MOBILE BUY (hidden on desktop) ========== */
+        .mob-buy{display:none}
+        .mob-war{display:none}
+
         /* ========== REVIEWS ========== */
         .rev-sec{max-width:1100px;margin:0 auto;padding:40px 16px}
         .rev-h{text-align:center;font-size:21px;font-weight:800;color:#2c3e50;text-transform:uppercase;letter-spacing:.5px;margin-bottom:24px}
@@ -299,13 +303,25 @@
             .pc-foot-left .pc-total{font-size:17px}
             .pc-foot .pc-btn{padding:11px 36px;font-size:14px;width:auto;max-width:100%}
 
-            .os-img img{max-width:150px}
-            .os-warranty{padding:8px 10px!important;margin:4px 0}
-            .war-chk{font-size:12px;gap:6px}
-            .war-box{width:16px;height:16px}
-            .war-free-tag{font-size:12px}
-            .war-free-tag i{font-size:12px}
-            .os-buy-btn{padding:12px 16px;font-size:15px}
+            /* Hide select button & order summary on mobile */
+            .pc-foot .pc-btn{display:none}
+            .pc-chk{display:none!important}
+            .pc.sel .pc-chk{display:none!important}
+            .pc{cursor:default}
+            .pc:hover{border-color:#e0e0e0}
+            .pc.sel{border-color:#e0e0e0;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+            .right{display:none}
+
+            /* Show mobile buy links & warranty */
+            .mob-buy{display:block;background:linear-gradient(135deg,#27ae60,#1e8e3e);color:#fff;text-align:center;padding:13px 20px;font-size:15px;font-weight:800;text-decoration:none;letter-spacing:.5px;border-bottom-left-radius:10px;border-bottom-right-radius:10px}
+            .mob-buy:hover{background:linear-gradient(135deg,#1e8e3e,#177a34)}
+            .mob-buy i{margin-right:6px;font-size:13px}
+            .mob-war{display:block;padding:10px 12px;background:#f0faf0;border-top:1px dashed #cde6cd}
+            .mob-war-chk{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;font-weight:600;color:#333;user-select:none}
+            .mob-war-chk input{display:none}
+            .mob-war-chk .war-box{width:18px;height:18px;border:2px solid #3b7ddd;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+            .mob-war-chk input:checked~.war-box{background:#3b7ddd;border-color:#3b7ddd}
+            .mob-war-chk input:checked~.war-box::after{content:'\2713';color:#fff;font-size:12px;font-weight:700}
             .rev-sec{padding:24px 6px}
             .rev-h{font-size:16px}
             .rev{padding:14px;border-radius:10px}
@@ -460,6 +476,10 @@
                     </div>
                     <button class="pc-btn" id="btn1">Select Package</button>
                 </div>
+                <div class="mob-war" onclick="event.stopPropagation()">
+                    <label class="mob-war-chk"><input type="checkbox" class="mob-war-inp" data-pkg="1" onchange="toggleMobWar(this)"><span class="war-box"></span> <i class="fas fa-shield-halved" style="color:#3b7ddd;margin-right:2px"></i> Add Extended Warranty <span style="font-weight:800;color:#333">+$14.99</span></label>
+                </div>
+                <a href="https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli1&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s" class="mob-buy" onclick="event.stopPropagation();this.href=this.href.split('&sessid2=')[0]+'&sessid2='+ReadCookie('sessid2')"><i class="fas fa-lock"></i> Order Now</a>
             </div>
 
             <!-- ====== 2x ====== -->
@@ -499,6 +519,10 @@
                     </div>
                     <button class="pc-btn" id="btn2">Select Package</button>
                 </div>
+                <div class="mob-war" onclick="event.stopPropagation()">
+                    <label class="mob-war-chk"><input type="checkbox" class="mob-war-inp" data-pkg="2" onchange="toggleMobWar(this)"><span class="war-box"></span> <i class="fas fa-shield-halved" style="color:#3b7ddd;margin-right:2px"></i> Add Extended Warranty <span style="font-weight:800;color:#333">+$14.99</span></label>
+                </div>
+                <a href="https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli2&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s" class="mob-buy" onclick="event.stopPropagation();this.href=this.href.split('&sessid2=')[0]+'&sessid2='+ReadCookie('sessid2')"><i class="fas fa-lock"></i> Order Now</a>
             </div>
 
             <!-- ====== 3x ====== -->
@@ -538,6 +562,7 @@
                     </div>
                     <button class="pc-btn" id="btn3">Select Package</button>
                 </div>
+                <a href="https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli3&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s" class="mob-buy" onclick="event.stopPropagation();this.href=this.href.split('&sessid2=')[0]+'&sessid2='+ReadCookie('sessid2')"><i class="fas fa-lock"></i> Order Now</a>
             </div>
 
             <!-- ====== 4x ====== -->
@@ -578,6 +603,7 @@
                     </div>
                     <button class="pc-btn" id="btn4">Select Package</button>
                 </div>
+                <a href="https://buygoods.com/secure/checkout.html?account_id=12233&product_codename=cli4&redirect=aHR0cHM6Ly9iZy5jbGltYW9mZmljaWFsLmNvbS9wZXN0Z2F1cmQvdXBzZWxsMS5odG1s" class="mob-buy" onclick="event.stopPropagation();this.href=this.href.split('&sessid2=')[0]+'&sessid2='+ReadCookie('sessid2')"><i class="fas fa-lock"></i> Order Now</a>
             </div>
 
         </div>
@@ -850,6 +876,15 @@ function toggleWarranty(){
     if(chk.checked) total+=warrantyPrice;
     document.getElementById('osTotal').textContent='$'+total.toFixed(2);
     updateBuyLink();
+}
+
+// Mobile warranty toggle — swap product_codename on the card's mob-buy link
+function toggleMobWar(chk){
+    var n=parseInt(chk.getAttribute('data-pkg'));
+    var p=pkgs[n];
+    var link=chk.parentElement.closest('.pc').querySelector('.mob-buy');
+    var newCodename=(chk.checked?p.linkWar:p.link).match(/product_codename=([^&]+)/)[1];
+    link.href=link.href.replace(/product_codename=[^&]+/,'product_codename='+newCodename);
 }
 
 // Init — no package selected on load
