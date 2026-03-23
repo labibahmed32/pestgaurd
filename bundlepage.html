@@ -878,13 +878,18 @@ function toggleWarranty(){
     updateBuyLink();
 }
 
-// Mobile warranty toggle — swap product_codename on the card's mob-buy link
+// Mobile warranty toggle — swap product_codename + update total on card
 function toggleMobWar(chk){
     var n=parseInt(chk.getAttribute('data-pkg'));
     var p=pkgs[n];
-    var link=chk.parentElement.closest('.pc').querySelector('.mob-buy');
+    var card=chk.parentElement.closest('.pc');
+    var link=card.querySelector('.mob-buy');
     var newCodename=(chk.checked?p.linkWar:p.link).match(/product_codename=([^&]+)/)[1];
     link.href=link.href.replace(/product_codename=[^&]+/,'product_codename='+newCodename);
+    // Update total amount in card footer
+    var total=p.price+p.ship;
+    if(chk.checked) total+=warrantyPrice;
+    card.querySelector('.pc-total').textContent='Total: $'+total.toFixed(2);
 }
 
 // Init — no package selected on load
